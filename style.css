@@ -1,35 +1,86 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #0056b3;
+  --background-color: #f9f9f9;
+  --text-color: #333;
+  --shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
-  background: #f9f9f9;
-  color: #333;
+  background: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
 }
 
 header {
   background: #fff;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 1rem 2rem;
   border-bottom: 1px solid #ddd;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 nav a {
-  margin-left: 1rem;
+  margin-left: 1.5rem;
   text-decoration: none;
-  color: #007bff;
+  color: var(--primary-color);
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--secondary-color);
 }
 
 button {
-  background: #007bff;
+  background: var(--primary-color);
   color: white;
   border: none;
   padding: 0.7rem 1.2rem;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: 500;
+}
+
+button:hover {
+  background: var(--secondary-color);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
 }
 
 section.usuarios {
   display: flex;
   gap: 2rem;
   padding: 2rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  nav a {
+    margin: 0 0.5rem;
+  }
+
+  section.usuarios {
+    padding: 1rem;
+    gap: 1rem;
+  }
 }
