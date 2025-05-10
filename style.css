@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f9f9f9;
+  color: #333;
+}
+
+header {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+}
+
+nav a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #007bff;
+}
+
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+section.usuarios {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+}
