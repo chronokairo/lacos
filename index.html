@@ -3,52 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Troque habilidades com o SkillSwap!">
   <title>SkillSwap</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>SkillSwap</h1>
-    <nav>
-      <a href="#">Explorar</a>
-      <a href="#">Minhas Trocas</a>
-      <a href="#">Oferecer Habilidade</a>
-    </nav>
+  <header class="header">
+    <div class="container header-container">
+      <h1 class="logo">SkillSwap</h1>
+      <nav class="nav">
+        <a href="#" class="nav-link">Explorar</a>
+        <a href="#" class="nav-link">Minhas Trocas</a>
+        <a href="#" class="nav-link">Oferecer Habilidade</a>
+      </nav>
+    </div>
   </header>
 
   <main>
     <section class="hero">
-      <h2>Escambo de habilidades</h2>
-      <p>Troque suas habilidades com outras pessoas</p>
-      <button>Oferecer Habilidade</button>
+      <div class="container hero-container">
+        <h2 class="hero-title">Escambo de Habilidades</h2>
+        <p class="hero-description">Troque suas habilidades com pessoas incríveis</p>
+        <button class="hero-button">Oferecer Habilidade</button>
+      </div>
     </section>
 
-    <!-- Troca de habilidades -->
     <section class="troca">
-      <p>💡 Trocar lâmpada ↔️ Trocar pneu 🔧</p>
-      <button>Entrar em contato</button>
+      <div class="container troca-container">
+        <p class="troca-text">💡 Trocar lâmpada ↔️ Trocar pneu 🔧</p>
+        <button class="troca-button">Entrar em contato</button>
+      </div>
     </section>
 
-    <!-- Categorias -->
     <section class="categorias">
-      <h3>Habilidades</h3>
-      <ul>
-        <li>Trabalho doméstico</li>
-        <li>Reparos</li>
-        <li>Jardinagem</li>
-        <li>Idiomas</li>
-      </ul>
+      <div class="container categorias-container">
+        <h3 class="categorias-title">Habilidades</h3>
+        <ul class="categorias-list">
+          <li class="categorias-item">Trabalho doméstico</li>
+          <li class="categorias-item">Reparos</li>
+          <li class="categorias-item">Jardinagem</li>
+          <li class="categorias-item">Idiomas</li>
+        </ul>
+      </div>
     </section>
 
-    <!-- Usuários -->
     <section class="usuarios">
-      <div class="usuario">
-        <img src="assets/fotos/amanda.jpg" alt="Amanda">
-        <h4>Amanda</h4>
-        <p>⭐ 4.9</p>
-        <p>Montagem de móveis, Aulas de violão</p>
+      <div class="container usuarios-container">
+        <div class="usuario">
+          <img src="assets/fotos/amanda.jpg" alt="Amanda" class="usuario-img">
+          <h4 class="usuario-name">Amanda</h4>
+          <p class="usuario-rating">⭐ 4.9</p>
+          <p class="usuario-skills">Montagem de móveis, Aulas de violão</p>
+        </div>
       </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="container footer-container">
+      <p class="footer-text">© 2025 SkillSwap. Todos os direitos reservados.</p>
+    </div>
+  </footer>
 </body>
 </html>
