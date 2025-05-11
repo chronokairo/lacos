@@ -35,7 +35,8 @@
 
 body {
     font-family: 'Inter', Arial, sans-serif;
-    background: var(--background-color);
+    background: #ff0000 !important;
+    /* Bright red background */
     color: var(--text-color);
     line-height: 1.6;
     font-size: 16px;
