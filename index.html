@@ -4,16 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SkillSwap - Plataforma para troca de habilidades">
-    <title>SkillSwap</title>
+    <meta name="description" content="SkillSwap - Plataforma para troca de habilidades de forma colaborativa e prática">
+    <meta name="keywords" content="SkillSwap, troca de habilidades, permuta, aprendizado, comunidade">
+    <meta name="author" content="SkillSwap Team">
+    <meta name="robots" content="index, follow">
+    <title>SkillSwap - Troca de Habilidades</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
     <header class="header">
         <div class="container">
-            <h1 class="logo">SkillSwap</h1>
-            <nav class="nav">
+            <h1 class="logo">
+                <i class="fas fa-exchange-alt"></i> SkillSwap
+            </h1>
+            <nav class="nav" aria-label="Navegação principal">
                 <a href="#o-que-e" class="nav-link">O que é</a>
                 <a href="#objetivo" class="nav-link">Objetivo</a>
                 <a href="#comentarios" class="nav-link">Comentários</a>
@@ -25,44 +32,53 @@
     <main>
         <section id="skillswap" class="hero-section">
             <div class="container">
-                <h2 class="section-title">Bem-vindo ao SkillSwap</h2>
-                <p class="section-description">A plataforma que conecta pessoas para trocar habilidades de forma prática
-                    e colaborativa.</p>
+                <h2 class="section-title">Descubra o SkillSwap</h2>
+                <p class="section-description">Conecte-se com pessoas para trocar habilidades, aprender algo novo e
+                    compartilhar seu conhecimento de forma colaborativa.</p>
+                <a href="#o-que-e" class="cta-button">Junte-se agora</a>
             </div>
         </section>
 
         <section id="o-que-e" class="info-section">
             <div class="container">
                 <h2 class="section-title">O que é o SkillSwap?</h2>
-                <p class="section-description">SkillSwap é uma plataforma online onde você pode oferecer suas
-                    habilidades, como consertar uma lâmpada ou dar aulas de violão, e trocá-las por outras habilidades
-                    que precisa, como aprender a trocar um pneu ou receber aulas de idiomas. É uma comunidade baseada na
-                    colaboração e no aprendizado mútuo.</p>
+                <p class="section-description">O SkillSwap é uma plataforma inovadora que permite a troca de habilidades
+                    entre pessoas. Ofereça o que você sabe fazer, como consertar uma torneira ou ensinar idiomas, e
+                    encontre alguém que possa te ajudar com o que você precisa, como aulas de culinária ou reparos
+                    domésticos. É simples, econômico e fortalece a comunidade.</p>
             </div>
         </section>
 
         <section id="objetivo" class="info-section">
             <div class="container">
-                <h2 class="section-title">Qual o objetivo?</h2>
-                <p class="section-description">Nosso objetivo é promover a troca de conhecimentos e habilidades entre
-                    pessoas, reduzindo custos e fortalecendo laços comunitários. Queremos criar um espaço onde todos
-                    possam ensinar e aprender, valorizando o potencial de cada indivíduo.</p>
+                <h2 class="section-title">Nosso Objetivo</h2>
+                <p class="section-description">Queremos criar uma rede de aprendizado e colaboração onde todos possam
+                    ensinar e aprender. O SkillSwap valoriza o potencial humano, promove a troca de conhecimentos e
+                    reduz custos ao conectar pessoas com habilidades complementares.</p>
             </div>
         </section>
 
         <section id="comentarios" class="comentarios-section">
             <div class="container">
-                <h2 class="section-title">Comentários da Comunidade</h2>
+                <h2 class="section-title">O que dizem sobre nós</h2>
                 <div class="comentarios-list">
                     <div class="comentario">
-                        <p class="comentario-text">"Troquei aulas de inglês por consertos na minha casa. O SkillSwap é
-                            incrível!"</p>
-                        <p class="comentario-autor">— João, São Paulo</p>
+                        <i class="fas fa-quote-left comentario-icon"></i>
+                        <p class="comentario-text">Troquei aulas de inglês por consertos na minha casa. O SkillSwap
+                            mudou minha forma de aprender!</p>
+                        <p class="comentario-autor">— João Silva, São Paulo</p>
                     </div>
                     <div class="comentario">
-                        <p class="comentario-text">"Aprendi jardinagem com uma vizinha e ensinei fotografia. Super
-                            prático!"</p>
-                        <p class="comentario-autor">— Maria, Rio de Janeiro</p>
+                        <i class="fas fa-quote-left comentario-icon"></i>
+                        <p class="comentario-text">Aprendi jardinagem com uma vizinha e ensinei fotografia. A plataforma
+                            é prática e inspiradora!</p>
+                        <p class="comentario-autor">— Maria Oliveira, Rio de Janeiro</p>
+                    </div>
+                    <div class="comentario">
+                        <i class="fas fa-quote-left comentario-icon"></i>
+                        <p class="comentario-text">Consegui aulas de violão em troca de manutenção de bicicletas.
+                            Recomendo muito!</p>
+                        <p class="comentario-autor">— Carlos Mendes, Belo Horizonte</p>
                     </div>
                 </div>
             </div>
@@ -70,12 +86,13 @@
 
         <section id="perfil" class="perfil-section">
             <div class="container">
-                <h2 class="section-title">Perfil de Usuário</h2>
+                <h2 class="section-title">Conheça nossos usuários</h2>
                 <div class="perfil">
-                    <img src="assets/fotos/amanda.jpg" alt="Amanda" class="perfil-img">
-                    <h3 class="perfil-nome">Amanda</h3>
-                    <p class="perfil-rating">⭐ 4.9</p>
+                    <img src="assets/fotos/amanda.jpg" alt="Amanda, usuária do SkillSwap" class="perfil-img">
+                    <h3 class="perfil-nome">Amanda Costa</h3>
+                    <p class="perfil-rating">⭐ 4.9 (32 avaliações)</p>
                     <p class="perfil-habilidades">Habilidades: Montagem de móveis, Aulas de violão</p>
+                    <a href="#" class="perfil-button">Ver perfil completo</a>
                 </div>
             </div>
         </section>
@@ -84,6 +101,11 @@
     <footer class="footer">
         <div class="container">
             <p class="footer-text">© 2025 SkillSwap. Todos os direitos reservados.</p>
+            <nav class="footer-nav" aria-label="Navegação do rodapé">
+                <a href="#" class="footer-link">Sobre</a>
+                <a href="#" class="footer-link">Contato</a>
+                <a href="#" class="footer-link">Termos de Uso</a>
+            </nav>
         </div>
     </footer>
 </body>
