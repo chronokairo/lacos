@@ -1,81 +1,51 @@
 <!DOCTYPE html>
+<!-- SkillSwap - Página Inicial -->
 <html lang="pt-BR">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SkillSwap - Troque suas habilidades com pessoas incríveis">
-    <title>SkillSwap - Login e Registro</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+<head>Bem-Vindo ao SkillSwap</head>
 
 <body>
-    <header class="header">
-        <div class="container header-container">
-            <h1 class="logo">SkillSwap</h1>
-            <nav class="nav">
-                <a href="#login" class="nav-link">Login</a>
-                <a href="#registro" class="nav-link">Registro</a>
-            </nav>
-        </div>
+    <header>
+        <h1>SkillSwap</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
-        <section id="login" class="login-section">
-            <div class="container login-container">
-                <h2 class="section-title">Entrar no SkillSwap</h2>
-                <p class="section-description">Acesse sua conta para começar a trocar habilidades</p>
-                <form class="login-form">
-                    <div class="form-group">
-                        <label for="login-email">E-mail</label>
-                        <input type="email" id="login-email" name="email" placeholder="seu.email@exemplo.com" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="login-senha">Senha</label>
-                        <input type="password" id="login-senha" name="senha" placeholder="Digite sua senha" required>
-                    </div>
-                    <button type="submit" class="form-button">Entrar</button>
-                    <p class="form-link">Não tem conta? <a href="#registro">Crie uma agora</a></p>
-                </form>
-            </div>
+        <section id="intro">
+            <h2>Troque Habilidades com Outros Usuários</h2>
+            <p>SkillSwap é uma plataforma onde você pode trocar habilidades com outros usuários. Aprenda algo novo e
+                ensine o que você sabe!</p>
         </section>
 
-        <section id="registro" class="registro-section">
-            <div class="container registro-container">
-                <h2 class="section-title">Crie sua Conta</h2>
-                <p class="section-description">Junte-se ao SkillSwap e comece a trocar habilidades</p>
-                <form class="registro-form">
-                    <div class="form-group">
-                        <label for="registro-nome">Nome</label>
-                        <input type="text" id="registro-nome" name="nome" placeholder="Seu nome completo" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="registro-email">E-mail</label>
-                        <input type="email" id="registro-email" name="email" placeholder="seu.email@exemplo.com"
-                            required>
-                    </div>
-                    <div class="form-group">
-                        <label for="registro-senha">Senha</label>
-                        <input type="password" id="registro-senha" name name="senha" placeholder="Crie uma senha segura"
-                            required>
-                    </div>
-                    <div class="form-group">
-                        <label for="registro-confirma-senha">Confirmar Senha</label>
-                        <input type="password" id="registro-confirma-senha" name="confirma-senha"
-                            placeholder="Confirme sua senha" required>
-                    </div>
-                    <button type="submit" class="form-button">Cadastrar</button>
-                    <p class="form-link">Já tem conta? <a href="#login">Faça login</a></p>
-                </form>
-            </div>
+        <section id="como-funciona">
+            <h2>Como Funciona?</h2>
+            <ol>
+                <li>Crie um perfil.</li>
+                <li>Ofereça suas habilidades.</li>
+                <li>Encontre usuários com habilidades que você deseja aprender.</li>
+                <li>Troque conhecimentos!</li>
+            </ol>
         </section>
+
+        <section id="depoimentos">
+            <h2>Depoimentos</h2>
+            <blockquote>"SkillSwap mudou minha vida! Aprendi a tocar violão e ensinei inglês!" - Maria</blockquote>
+            <blockquote>"Uma experiência incrível! Conheci pessoas fantásticas." - João</blockquote>
+        </section>
+
+        <section id="chamada-para-acao">
+            <h2>Pronto para Começar?</h2>
+            <p><a href="cadastro.html">Cadastre-se agora!</a></p>
+        </section>
+
     </main>
 
-    <footer class="footer">
-        <div class="container footer-container">
-            <p class="footer-text">© 2025 SkillSwap. Todos os direitos reservados.</p>
-        </div>
+    <footer>
+        <p>&copy; 2023 SkillSwap. Todos os direitos reservados.</p>
     </footer>
-</body>
-
-</html>
