@@ -1,13 +1,18 @@
 :root {
-    /* Professional Blue Color Palette */
-    --primary-color: #0A2647;
-    /* Deep blue */
-    --secondary-color: #144272;
-    /* Medium blue */
-    --accent-color: #205295;
-    /* Light blue */
+    /* Cores */
+    --primary-color: #1E3A8A;
+    /* Azul escuro elegante */
+    --secondary-color: #3B82F6;
+    /* Azul claro para destaques */
+    --accent-color: #F59E0B;
+    /* Amarelo para ratings */
+    --background-color: #F8FAFC;
+    /* Cinza claro suave */
+    --text-color: #1F2937;
+    /* Cinza escuro para texto */
     --white: #FFFFFF;
     --border-color: #E5E7EB;
+    /* Cinza claro para bordas */
     --shadow-color: rgba(0, 0, 0, 0.1);
 
     /* Espaçamento */
@@ -30,10 +35,8 @@
 
 body {
     font-family: 'Inter', Arial, sans-serif;
-    background: #E3F2FD;
-    /* Light blue background */
-    color: #0A2647;
-    /* Deep blue text */
+    background: var(--background-color);
+    color: var(--text-color);
     line-height: 1.6;
     font-size: 16px;
 }
@@ -47,8 +50,7 @@ body {
 
 /* Header */
 .header {
-    background: #FFFFFF;
-    border-bottom: 3px solid #0A2647;
+    background: var(--white);
     padding: var(--spacing-md) 0;
     box-shadow: var(--shadow-sm);
     position: sticky;
@@ -82,13 +84,13 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-weight: 500;
     transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .nav-link:hover {
-    color: var(--accent-color);
+    color: var(--secondary-color);
     transform: translateY(-2px);
 }
 
