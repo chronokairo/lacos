@@ -12,10 +12,12 @@ Colaboração: Todos contribuem para o crescimento coletivo.
 Inclusividade: Qualquer habilidade, de simples a avançada, é valorizada.
 Sustentabilidade: Promove uma economia não monetária baseada em troca.
 3. Público-Alvo
+   
 Indivíduos: Pessoas de todas as idades que querem aprender ou ensinar habilidades práticas (ex.: estudantes, profissionais, aposentados).
 Comunidades: Grupos locais que desejam fortalecer conexões por meio do aprendizado mútuo.
 Exemplo: Um estudante universitário que ensina edição de vídeo em troca de aulas de culinária; uma dona de casa que troca consertos domésticos por aulas de yoga.
-4. Diferenciais
+5. Diferenciais
+
 Sem Dinheiro: A troca é baseada em habilidades, eliminando barreiras financeiras.
 Flexibilidade: Usuários escolhem o que ensinar e aprender, sem currículo fixo.
 Comunidade: Foco em conexões humanas, com avaliações e depoimentos para construir confiança (ex.: perfil da Amanda com 4.9 estrelas).
