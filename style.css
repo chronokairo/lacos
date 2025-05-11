@@ -1,15 +1,11 @@
 :root {
     /* Professional Blue Color Palette */
     --primary-color: #0A2647;
-    /* Deep professional blue */
+    /* Deep blue */
     --secondary-color: #144272;
     /* Medium blue */
     --accent-color: #205295;
-    /* Lighter blue for emphasis */
-    --background-color: #F8FAFC;
-    /* Light gray background */
-    --text-color: #1F2937;
-    /* Dark gray for text */
+    /* Light blue */
     --white: #FFFFFF;
     --border-color: #E5E7EB;
     --shadow-color: rgba(0, 0, 0, 0.1);
@@ -34,8 +30,10 @@
 
 body {
     font-family: 'Inter', Arial, sans-serif;
-    background: var(--background-color);
-    color: var(--text-color);
+    background: #E3F2FD;
+    /* Light blue background */
+    color: #0A2647;
+    /* Deep blue text */
     line-height: 1.6;
     font-size: 16px;
 }
@@ -49,8 +47,8 @@ body {
 
 /* Header */
 .header {
-    background: var(--white);
-    border-bottom: 3px solid var(--primary-color);
+    background: #FFFFFF;
+    border-bottom: 3px solid #0A2647;
     padding: var(--spacing-md) 0;
     box-shadow: var(--shadow-sm);
     position: sticky;
