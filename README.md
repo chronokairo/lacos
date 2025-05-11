@@ -1,2 +1,2 @@
 # SkillSwap
-SkillSwap é uma pagina web de troca de habilidades
+💡 Conceito Central — SkillSwap é uma plataforma onde pessoas trocam serviços/habilidades diretamente, sem envolver dinheiro. 
