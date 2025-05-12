@@ -1,10 +1,11 @@
-:root body {
+body {
     color: white;
     background-color: black;
 }
 
 ul {
     display: flex;
-    justify-self: right;
+    justify-content: right;
+    /* ou 'flex-end' para melhor compatibilidade */
     list-style-type: none;
 }
