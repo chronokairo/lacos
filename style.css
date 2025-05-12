@@ -1,7 +1,10 @@
-:root {
-    --primary-color: #3498db;
-    --secondary-color: #2ecc71;
-    --background-color: #ecf0f1;
-    --text-color: #2c3e50;
-    --font-family: 'Arial', sans-serif;
+body {
+    color: white;
+    background-color: black;
+}
+
+ul {
+    display: flex;
+    justify-self: right;
+    list-style-type: none;
 }
