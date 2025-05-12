@@ -1,75 +1,236 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trocas de Habilidades em Destaque</title>
+    <meta name="description" content="Descubra as trocas de habilidades mais populares no SkillSwap!">
+    <title>Trocas de Habilidades em Destaque - SkillSwap</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://via.placeholder.com/32" />
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+        nav {
+            transition: background-color 0.3s ease;
         }
-
-        header {
-            background: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
+        nav.sticky {
+            position: sticky;
+            top: 0;
+            background-color: rgba(51, 51, 51, 0.95);
+            z-index: 1000;
         }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
         .highlight {
-            background: #e7f3ff;
-            border-left: 5px solid #007bff;
-            padding: 10px;
-            margin: 10px 0;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        footer {
-            text-align: center;
-            padding: 10px 0;
-            background: #333;
-            color: #fff;
-            margin-top: 20px;
+        .highlight:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            background: linear-gradient(to right, #007bff, #00c4b4);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
     </style>
 </head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="bg-gray-800 text-white p-4">
+        <div class="container mx-auto flex flex-wrap justify-between items-center">
+            <h1 class="text-2xl font-bold">SkillSwap</h1>
+            <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 mt-4 md:mt-0">
+                <li><a href="index.html#sobre" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Sobre</a></li>
+                <li><a href="comofunciona.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Como Funciona</a></li>
+                <li><a href="habilidade.html" class="block px-4 py-2 bg-gray-600 text-blue-300 rounded">Habilidades em Destaque</a></li>
+                <li><a href="comunidade.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Participe da Comunidade</a></li>
+                <li><a href="mercado.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Mercado de Trocas</a></li>
+                <li><a href="eventos.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Eventos e Oficinas</a></li>
+                <li><a href="perfil.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Perfil</a></li>
+                <li><a href="comentarios.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Comentários</a></li>
+                <li><a href="servicos.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Serviços</a></li>
+            </ul>
+        </div>
+    </nav>
 
-<body>
-    <header>
-        <h1>Trocas de Habilidades em Destaque</h1>
+    <!-- Header -->
+    <header class="text-white py-16 text-center">
+        <div class="container mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold">Trocas de Habilidades em Destaque</h1>
+            <p class="text-lg md:text-xl mt-4">Explore as trocas mais inspiradoras da nossa comunidade e junte-se ao aprendizado colaborativo!</p>
+        </div>
     </header>
-    <div class="container">
-        <p>Bem-vindo à nossa plataforma de troca de habilidades! Aqui estão algumas das trocas mais populares em
-            destaque:</p>
-        <div class="highlight">
-            <h2>Desenvolvimento Web ↔ Design Gráfico</h2>
-            <p>Aprenda a criar sites incríveis enquanto ensina técnicas de design visual.</p>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12">
+        <p class="text-lg leading-relaxed max-w-3xl mx-auto mb-12 text-center">
+            No SkillSwap, conectamos pessoas apaixonadas por aprender e ensinar. Aqui estão 20 das trocas de habilidades mais populares da nossa comunidade, mostrando como membros estão transformando seus conhecimentos em experiências incríveis. Inspire-se e comece sua própria troca!
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="highlight bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-blue-600 mb-2">Desenvolvimento Web ↔ Design Gráfico</h2>
+                <p class="mb-4">Crie sites incríveis enquanto aprende a desenvolver interfaces visuais impactantes.</p>
+                <p class="text-sm italic"><strong>Personas:</strong> Ana, desenvolvedora front-end, quer dominar design gráfico. João, designer, busca aprender HTML e CSS para protótipos.</p>
+                <a href="mercado.html" class="mt-4 inline-block text-blue-600 hover:underline" aria-label="Saiba mais sobre troca de desenvolvimento web e design gráfico">Saiba Mais</a>
+            </div>
+            <div class="highlight bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-blue-600 mb-2">Fotografia ↔ Edição de Vídeo</h2>
+                <p class="mb-4">Capture momentos perfeitos e aprenda a criar vídeos dinâmicos e profissionais.</p>
+                <p class="text-sm italic"><strong>Personas:</strong> Lucas, fotógrafo amador, deseja editar vídeos. Mariana, editora de vídeos, quer aprimorar sua fotografia.</p>
+                <a href="mercado.html" class="mt-4 inline-block text-blue-600 hover:underline" aria-label="Saiba mais sobre troca de fotografia e edição de vídeo">Saiba Mais</a>
+            </div>
+            <div class="highlight bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-blue-600 mb-2">Idiomas ↔ Música</h2>
+                <p class="mb-4">Ensine um idioma e aprenda a tocar um instrumento musical com paixão.</p>
+                <p class="text-sm italic"><strong>Personas:</strong> Sofia, fluente em inglês, quer tocar violão. Pedro, guitarrista, busca melhorar seu inglês conversacional.</p>
+                <a href="mercado.html" class="mt-4 inline-block text-blue-600 hover:underline" aria-label="Saiba mais sobre troca de idiomas e música">Saiba Mais</a>
+            </div>
+            <div class="highlight bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-blue-600 mb-2">Culinária ↔ Jardinagem</h2>
+                <p class="mb-4">Prepare pratos deliciosos enquanto aprende a cultivar ervas e vegetais frescos.</p>
+                <p class="text-sm italic"><strong>Personas:</strong> Clara, cozinheira, quer cultivar ervas. Miguel, jardineiro, deseja criar receitas criativas.</p>
+                <a href="mercado.html" class="mt-4 inline-block text-blue-600 hover:underline" aria-label="Saiba mais sobre troca de culinária e jardinagem">Saiba Mais</a>
+            </div>
+            <div class="highlight bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-blue-600 mb-2">Marketing Digital ↔ Escrita Criativa</h2>
+                <p class="mb-4">Domine estratégias de marketing online e aprenda a criar histórias envolventes.</p>
+                <p class="text-sm italic"><strong>Personas:</strong> Rafael, marketeiro, quer melhorar seu storytelling. Laura, escritora, busca promover seus textos.</p>
+                <a href="mercado.html" class="mt-4 inline-block text-blue-600 hover:underline" aria-label="Saiba mais sobre troca de marketing digital e escrita criativa">Saiba Mais</a>
+            </div>
+            <div class="highlight bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-blue-600 mb-2">Yoga ↔ Nutrição</h2>
+                <p class="mb-4">Ensine práticas de yoga e aprenda a criar planos de alimentação saudável.</p>
+                <p class="text-sm italic"><strong>Personas:</strong> Fernanda, instrutora de yoga, quer entender nutrição. Daniel, nutricionista, busca incorporar yoga.</p>
+                <a href="mercado.html" class="mt-4 inline-block text-blue-600 hover:underline" aria-label="Saiba mais sobre troca de yoga e nutrição">Saiba Mais</a>
+            </div>
+            <div class="highlight bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-blue-600 mb-2">Programação Python ↔ Ilustração Digital</h2>
+                <p class="mb-4">Desenvolva scripts em Python enquanto aprende a criar ilustrações digitais.</p>
+                <p class="text-sm italic"><strong>Personas:</strong> Beatriz, programadora, quer ilustrar. Thiago, ilustrador, deseja automatizar tarefas com Python.</p>
+                <a href="mercado.html" class="mt-4 inline-block text-blue-600 hover:underline" aria-label="Saiba mais sobre troca de programação Python e ilustração digital">Saiba Mais</a>
+            </div>
+            <div class="highlight bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-blue-600 mb-2">Costura ↔ Artesanato</h2>
+                <p class="mb-4">Crie roupas únicas enquanto aprende técnicas de artesanato criativo.</p>
+                <p class="text-sm italic"><strong>Personas:</strong> Juliana, costureira, quer explorar artesanato. Renata, artesã, deseja aprender a costurar.</p>
+                <a href="mercado.html" class="mt-4 inline-block text-blue-600 hover:underline" aria-label="Saiba mais sobre troca de costura e artesanato">Saiba Mais</a>
+            </div>
+            <div class="highlight bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-blue-600 mb-2">Ensino de Matemática ↔ Escrita Acadêmica</h2>
+                <p class="mb-4">Ensine conceitos matemáticos enquanto aprende a escrever artigos acadêmicos.</p>
+                <p class="text-sm italic"><strong>Personas:</strong> Carlos, professor de matemática, quer escrever papers. Isabela, pesquisadora, busca reforçar matemática.</p>
+                <a href="mercado.html" class="mt-4 inline-block text-blue-600 hover:underline" aria-label="Saiba mais sobre troca de ensino de matemática e escrita acadêmica">Saiba Mais</a>
+            </div>
+            <div class="highlight bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-blue-600 mb-2">Dança ↔ Fitness</h2>
+                <p class="mb-4">Ensine coreografias de dança enquanto aprende rotinas de condicionamento físico.</p>
+                <p class="text-sm italic"><strong>Personas:</strong> Larissa, dançarina, quer melhorar sua resistência. Gabriel, personal trainer, deseja aprender dança.</p>
+                <a href="mercado.html" class="mt-4 inline-block text-blue-600 hover:underline" aria-label="Saiba mais sobre troca de dança e fitness">Saiba Mais</a>
+            </div>
+            <div class="highlight bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-blue-600 mb-2">Edição de Áudio ↔ Produção Musical</h2>
+                <p class="mb-4">Aprimore áudios enquanto aprende a compor músicas originais.</p>
+                <p class="text-sm italic"><strong>Personas:</strong> Bruno, editor de áudio, quer produzir músicas. Camila, musicista, busca melhorar a qualidade de suas gravações.</p>
+                <a href="mercado.html" class="mt-4 inline-block text-blue-600 hover:underline" aria-label="Saiba mais sobre troca de edição de áudio e produção musical">Saiba Mais</a>
+            </div>
+            <div class="highlight bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-blue-600 mb-2">Reparos Domésticos ↔ Carpintaria</h2>
+                <p class="mb-4">Consertos em casa em troca de técnicas para construir móveis de madeira.</p>
+                <p class="text-sm italic"><strong>Personas:</strong> Eduardo, faz-tudo, quer aprender carpintaria. André, marceneiro, precisa de ajuda com reparos.</p>
+                <a href="mercado.html" class="mt-4 inline-block text-blue-600 hover:underline" aria-label="Saiba mais sobre troca de reparos domésticos e carpintaria">Saiba Mais</a>
+            </div>
+            <div class="highlight bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-blue-600 mb-2">Fotografia de Alimentos ↔ Culinária Vegana</h2>
+                <p class="mb-4">Fotografe pratos apetitosos enquanto aprende receitas veganas deliciosas.</p>
+                <p class="text-sm italic"><strong>Personas:</strong> Marina, fotógrafa de alimentos, quer cozinhar vegano. Lívia, chef vegana, deseja fotografar suas criações.</p>
+                <a href="mercado.html" class="mt-4 inline-block text-blue-600 hover:underline" aria-label="Saiba mais sobre troca de fotografia de alimentos e culinária vegana">Saiba Mais</a>
+            </div>
+            <div class="highlight bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-blue-600 mb-2">Design de Interiores ↔ Organização Residencial</h2>
+                <p class="mb-4">Crie ambientes elegantes enquanto aprende a organizar espaços de forma prática.</p>
+                <p class="text-sm italic"><strong>Personas:</strong> Patrícia, designer de interiores, quer técnicas de organização. Vanessa, organizadora, busca inspiração em design.</p>
+                <a href="mercado.html" class="mt-4 inline-block text-blue-600 hover:underline" aria-label="Saiba mais sobre troca de design de interiores e organização residencial">Saiba Mais</a>
+            </div>
+            <div class="highlight bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-blue-600 mb-2">Escrita de Roteiros ↔ Animação 2D</h2>
+                <p class="mb-4">Escreva roteiros cativantes enquanto aprende a criar animações 2D.</p>
+                <p class="text-sm italic"><strong>Personas:</strong> Diego, roteirista, quer animar suas histórias. Alice, animadora, deseja melhorar seus roteiros.</p>
+                <a href="mercado.html" class="mt-4 inline-block text-blue-600 hover:underline" aria-label="Saiba mais sobre troca de escrita de roteiros e animação 2D">Saiba Mais</a>
+            </div>
+            <div class="highlight bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-blue-600 mb-2">Meditação ↔ Escrita de Poesia</h2>
+                <p class="mb-4">Ensine técnicas de meditação enquanto aprende a criar poesias emocionantes.</p>
+                <p class="text-sm italic"><strong>Personas:</strong> Helena, praticante de meditação, quer escrever poesia. Gustavo, poeta, busca mindfulness para inspiração.</p>
+                <a href="mercado.html" class="mt-4 inline-block text-blue-600 hover:underline" aria-label="Saiba mais sobre troca de meditação e escrita de poesia">Saiba Mais</a>
+            </div>
+            <div class="highlight bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-blue-600 mb-2">SEO ↔ Copywriting</h2>
+                <p class="mb-4">Otimize sites para buscas enquanto aprende a escrever textos persuasivos.</p>
+                <p class="text-sm italic"><strong>Personas:</strong> Leonardo, especialista em SEO, quer melhorar sua escrita. Clara, copywriter, deseja entender SEO.</p>
+                <a href="mercado.html" class="mt-4 inline-block text-blue-600 hover:underline" aria-label="Saiba mais sobre troca de SEO e copywriting">Saiba Mais</a>
+            </div>
+            <div class="highlight bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-blue-600 mb-2">Pintura ↔ Escultura</h2>
+                <p class="mb-4">Crie telas vibrantes enquanto aprende a modelar esculturas únicas.</p>
+                <p class="text-sm italic"><strong>Personas:</strong> Sofia, pintora, quer explorar escultura. Mateus, escultor, deseja aprender pintura.</p>
+                <a href="mercado.html" class="mt-4 inline-block text-blue-600 hover:underline" aria-label="Saiba mais sobre troca de pintura e escultura">Saiba Mais</a>
+            </div>
+            <div class="highlight bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-blue-600 mb-2">Ensino de Ciências ↔ Robótica</h2>
+                <p class="mb-4">Explique conceitos científicos enquanto aprende a construir robôs.</p>
+                <p class="text-sm italic"><strong>Personas:</strong> Raquel, professora de ciências, quer aprender robótica. Vinicius, entusiasta de robôs, busca bases científicas.</p>
+                <a href="mercado.html" class="mt-4 inline-block text-blue-600 hover:underline" aria-label="Saiba mais sobre troca de ensino de ciências e robótica">Saiba Mais</a>
+            </div>
+            <div class="highlight bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h2 class="text-xl font-semibold text-blue-600 mb-2">Jardinagem Urbana ↔ Sustentabilidade</h2>
+                <p class="mb-4">Cultive em espaços pequenos enquanto aprende práticas sustentáveis.</p>
+                <p class="text-sm italic"><strong>Personas:</strong> Bárbara, jardineira urbana, quer adotar sustentabilidade. Felipe, ambientalista, deseja criar uma horta.</p>
+                <a href="mercado.html" class="mt-4 inline-block text-blue-600 hover:underline" aria-label="Saiba mais sobre troca de jardinagem urbana e sustentabilidade">Saiba Mais</a>
+            </div>
         </div>
-        <div class="highlight">
-            <h2>Fotografia ↔ Edição de Vídeo</h2>
-            <p>Troque conhecimentos sobre capturar momentos perfeitos e criar vídeos impressionantes.</p>
-        </div>
-        <div class="highlight">
-            <h2>Idiomas ↔ Música</h2>
-            <p>Ensine um idioma enquanto aprende a tocar um instrumento musical.</p>
+
+        <!-- Call to Action -->
+        <div class="text-center mt-12">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">Pronto para começar sua troca?</h2>
+            <p class="text-lg mb-6">Junte-se à nossa comunidade e descubra um mundo de possibilidades para aprender e ensinar!</p>
+            <a href="mercado.html" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition" aria-label="Explorar o Mercado de Trocas">Explorar o Mercado</a>
         </div>
     </div>
-    <footer>
-        <p>&copy; 2023 SkillSwap. Todos os direitos reservados.</p>
-    </footer>
-</body>
 
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-6">
+        <p>© 2025 SkillSwap. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- JavaScript for Sticky Navbar, Smooth Scroll, and Animation -->
+    <script>
+        // Sticky Navbar
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('sticky');
+            } else {
+                navbar.classList.remove('sticky');
+            }
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animation on Scroll
+        const highlights = document.querySelectorAll('.highlight');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, { threshold: 0.2 });
+
+        highlights.forEach(highlight => observer.observe(highlight));
+    </script>
+</body>
 </html>

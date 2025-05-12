@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serviços - SkillSwap</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://via.placeholder.com/32" />
+    <style>
+        nav {
+            transition: background-color 0.3s ease;
+        }
+        nav.sticky {
+            position: sticky;
+            top: 0;
+            background-color: rgba(51, 51, 51, 0.95);
+            z-index: 1000;
+        }
+        .service-card, .category-card, .story-card, .benefit-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover, .category-card:hover, .story-card:hover, .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        header {
+            background: linear-gradient(to right, #007bff, #00c4b4);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800 font-sans">
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="bg-gray-800 text-white p-4">
+        <div class="container mx-auto flex flex-wrap justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <h1 class="text-2xl font-bold">SkillSwap</h1>
+            </div>
+            <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 mt-4 md:mt-0">
+                <li><a href="index.html#sobre" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Sobre</a></li>
+                <li><a href="comofunciona.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Como Funciona</a></li>
+                <li><a href="habilidade.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Habilidades em Destaque</a></li>
+                <li><a href="comunidade.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Participe da Comunidade</a></li>
+                <li><a href="mercado.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Mercado de Trocas</a></li>
+                <li><a href="eventos.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Eventos e Oficinas</a></li>
+                <li><a href="perfil.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Perfil</a></li>
+                <li><a href="comentarios.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Comentários</a></li>
+                <li><a href="servicos.html" class="block px-4 py-2 bg-gray-600 text-blue-300 rounded">Serviços</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="text-white py-16 text-center">
+        <div class="container mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold">Serviços do SkillSwap</h1>
+            <p class="text-lg md:text-xl mt-4">Descubra como nossa plataforma capacita você a aprender, ensinar e crescer!</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Introduction to Services -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-blue-600 mb-6 text-center">O que o SkillSwap Oferece?</h2>
+            <p class="text-lg leading-relaxed max-w-3xl mx-auto mb-8">O SkillSwap é mais do que uma plataforma de troca de habilidades; é um ecossistema de aprendizado colaborativo que conecta pessoas para compartilhar conhecimentos, desenvolver novas competências e construir redes de contatos valiosas. Nossos serviços são projetados para serem acessíveis, inclusivos e centrados na comunidade, permitindo que qualquer pessoa, independentemente de sua formação ou localização, participe do aprendizado mútuo.</p>
+        </section>
+
+        <!-- Core Services -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-blue-600 mb-6 text-center">Nossos Serviços Principais</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-2">Troca de Habilidades</h3>
+                    <p class="text-sm mb-4">Conecte-se com outros membros para ensinar o que você sabe e aprender o que deseja. Ofereça aulas de violão, programação, culinária ou qualquer habilidade, e encontre parceiros para trocas como idiomas, design ou jardinagem.</p>
+                    <p class="text-sm italic"><strong>Exemplo:</strong> João ensina violão e aprende espanhol com Mariana, criando uma troca enriquecedora.</p>
+                    <a href="mercado.html" class="inline-block mt-4 text-blue-600 hover:underline">Explorar Trocas</a>
+                </div>
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-2">Comunidade Colaborativa</h3>
+                    <p class="text-sm mb-4">Participe de fóruns e grupos de discussão para tirar dúvidas, compartilhar dicas e conectar-se com outros entusiastas. Nossa comunidade é um espaço seguro para colaboração e aprendizado contínuo.</p>
+                    <p class="text-sm italic"><strong>Exemplo:</strong> Beatriz perguntou sobre trocas seguras e recebeu conselhos de Mariana e João na seção de comentários.</p>
+                    <a href="comunidade.html" class="inline-block mt-4 text-blue-600 hover:underline">Junte-se à Comunidade</a>
+                </div>
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-2">Eventos e Oficinas</h3>
+                    <p class="text-sm mb-4">Participe de workshops, feiras de trocas e seminários presenciais ou online, ministrados por especialistas e membros da comunidade. Aprenda novas habilidades em um ambiente prático e interativo.</p>
+                    <p class="text-sm italic"><strong>Exemplo:</strong> Clara participou da Oficina de Fotografia Criativa e agora registra suas plantas com técnicas profissionais.</p>
+                    <a href="eventos.html" class="inline-block mt-4 text-blue-600 hover:underline">Ver Eventos</a>
+                </div>
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-2">Mercado de Trocas</h3>
+                    <p class="text-sm mb-4">Explore um mercado vibrante com milhares de ofertas de trocas. Use filtros para encontrar habilidades específicas, como tecnologia ou bem-estar, e conecte-se diretamente com outros membros.</p>
+                    <p class="text-sm italic"><strong>Exemplo:</strong> Ana encontrou Lucas no mercado para trocar aulas de desenvolvimento web por inglês conversacional.</p>
+                    <a href="mercado.html" class="inline-block mt-4 text-blue-600 hover:underline">Visitar Mercado</a>
+                </div>
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-2">Personalização de Perfil</h3>
+                    <p class="text-sm mb-4">Crie um perfil detalhado com suas habilidades, preferências de troca (online ou presencial) e bio. Gerencie suas trocas, receba avaliações e construa sua reputação na comunidade.</p>
+                    <p class="text-sm italic"><strong>Exemplo:</strong> Rafael personalizou seu perfil com habilidades de marketing digital e atraiu trocas com fotógrafos.</p>
+                    <a href="perfil.html" class="inline-block mt-4 text-blue-600 hover:underline">Editar Perfil</a>
+                </div>
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-2">Suporte e Dúvidas</h3>
+                    <p class="text-sm mb-4">Tire dúvidas sobre a plataforma, trocas ou qualquer outro tema na seção de comentários. Nossa comunidade e equipe de suporte estão prontas para ajudar a qualquer momento.</p>
+                    <p class="text-sm italic"><strong>Exemplo:</strong> Fernanda perguntou sobre organização de tempo e recebeu dicas práticas de Daniel e outros membros.</p>
+                    <a href="comentarios.html" class="inline-block mt-4 text-blue-600 hover:underline">Acessar Comentários</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Categories -->
+        <section class="bg-blue-50 py-12">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-blue-600 mb-6 text-center">Categorias de Serviços</h2>
+                <p class="text-lg leading-relaxed max-w-3xl mx-auto mb-8 text-center">No SkillSwap, as habilidades são organizadas em categorias para facilitar a descoberta. Aqui estão algumas das áreas mais populares disponíveis para troca.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="category-card bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Tecnologia</h3>
+                        <p class="text-sm mb-4">Aprenda programação, desenvolvimento web, design de aplicativos, inteligência artificial, cibersegurança e muito mais. Ensine suas habilidades técnicas para membros que buscam crescer na área.</p>
+                        <p class="text-sm italic"><strong>Exemplo:</strong> Ana oferece aulas de HTML e CSS e troca por aulas de yoga.</p>
+                    </div>
+                    <div class="category-card bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Idiomas</h3>
+                        <p class="text-sm mb-4">Pratique inglês, espanhol, francês, japonês ou qualquer idioma com falantes nativos ou professores experientes. Ofereça seu idioma nativo em troca.</p>
+                        <p class="text-sm italic"><strong>Exemplo:</strong> Lucas ensina inglês conversacional e aprende edição de vídeo.</p>
+                    </div>
+                    <div class="category-card bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Artes</h3>
+                        <p class="text-sm mb-4">Explore pintura, fotografia, design gráfico, música, escrita criativa e outras formas de expressão. Compartilhe sua criatividade com a comunidade.</p>
+                        <p class="text-sm italic"><strong>Exemplo:</strong> Emília ensina técnicas de pintura e troca por aulas de culinária.</p>
+                    </div>
+                    <div class="category-card bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Culinária</h3>
+                        <p class="text-sm mb-4">Aprenda receitas caseiras, culinária sustentável, confeitaria ou pratos internacionais. Ensine suas receitas favoritas para outros entusiastas.</p>
+                        <p class="text-sm italic"><strong>Exemplo:</strong> Miguel troca aulas de culinária por dicas de reparos domésticos.</p>
+                    </div>
+                    <div class="category-card bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Bem-Estar</h3>
+                        <p class="text-sm mb-4">Descubra yoga, meditação, nutrição, fitness ou terapias holísticas. Ofereça suas práticas de bem-estar para ajudar outros a viverem melhor.</p>
+                        <p class="text-sm italic"><strong>Exemplo:</strong> Clara oferece planos de nutrição e troca por aulas de yoga.</p>
+                    </div>
+                    <div class="category-card bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Negócios e Marketing</h3>
+                        <p class="text-sm mb-4">Domine marketing digital, SEO, gestão de projetos, empreendedorismo ou finanças pessoais. Ensine suas estratégias para pequenos negócios ou startups.</p>
+                        <p class="text-sm italic"><strong>Exemplo:</strong> Rafael oferece marketing digital e troca por escrita criativa.</p>
+                    </div>
+                    <div class="category-card bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Habilidades Manuais</h3>
+                        <p class="text-sm mb-4">Aprenda carpintaria, costura, jardinagem, reparos domésticos ou artesanato. Compartilhe suas habilidades práticas com a comunidade.</p>
+                        <p class="text-sm italic"><strong>Exemplo:</strong> Sofia ensina jardinagem e troca por fotografia.</p>
+                    </div>
+                    <div class="category-card bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Educação e Tutoria</h3>
+                        <p class="text-sm mb-4">Ofereça tutoria em matemática, ciências, história ou preparação para exames. Aprenda com tutores especializados em áreas que você deseja explorar.</p>
+                        <p class="text-sm italic"><strong>Exemplo:</strong> Daniel oferece aulas de biologia e troca por técnicas de meditação.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits of Using Services -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-blue-600 mb-6 text-center">Benefícios dos Nossos Serviços</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div class="benefit-card bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                    <h3 class="text-lg font-semibold text-blue-600 mb-2">Acessibilidade</h3>
+                    <p class="text-sm">Nossos serviços são gratuitos, eliminando barreiras financeiras para o aprendizado. Tudo o que você precisa é uma habilidade para compartilhar.</p>
+                </div>
+                <div class="benefit-card bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                    <h3 class="text-lg font-semibold text-blue-600 mb-2">Flexibilidade</h3>
+                    <p class="text-sm">Escolha entre trocas online ou presenciais, ajustando-se à sua rotina. Configure seu perfil para encontrar parceiros que atendam suas preferências.</p>
+                </div>
+                <div class="benefit-card bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                    <h3 class="text-lg font-semibold text-blue-600 mb-2">Comunidade Global</h3>
+                    <p class="text-sm">Conecte-se com mais de 15.000 membros em todo o mundo, criando oportunidades de aprendizado intercultural e networking.</p>
+                </div>
+                <div class="benefit-card bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                    <h3 class="text-lg font-semibold text-blue-600 mb-2">Crescimento Pessoal</h3>
+                    <p class="text-sm">Desenvolva novas competências, ganhe confiança ao ensinar e construa uma rede de contatos que pode abrir portas para novas oportunidades.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Stories -->
+        <section class="bg-gray-200 py-12">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-blue-600 mb-6 text-center">Como Nossos Serviços Transformam Vidas</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="story-card bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Fotografia ↔ Marketing</h3>
+                        <p class="text-sm mb-4">Mariana, fotógrafa, usou o Mercado de Trocas para ensinar composição fotográfica a Rafael, que compartilhou estratégias de marketing digital. Agora, Mariana promove seu trabalho online com confiança.</p>
+                        <p class="text-sm italic">"O SkillSwap me ajudou a crescer como profissional!" - Mariana</p>
+                    </div>
+                    <div class="story-card bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Culinária ↔ Jardinagem</h3>
+                        <p class="text-sm mb-4">Clara participou da Feira de Trocas e aprendeu a cultivar ervas com Miguel, que dominou receitas sustentáveis. Eles criaram um jardim comestível juntos.</p>
+                        <p class="text-sm italic">"Cozinhar com ervas frescas é uma alegria!" - Clara</p>
+                    </div>
+                    <div class="story-card bg-white p-6 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-semibold text-blue-600 mb-2">Inglês ↔ Design</h3>
+                        <p class="text-sm mb-4">Lucas usou a seção de Comunidade para encontrar Ana, que trocou aulas de design gráfico por inglês conversacional. Lucas agora cria materiais visuais para suas aulas.</p>
+                        <p class="text-sm italic">"Minhas aulas estão mais profissionais!" - Lucas</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Features -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-blue-600 mb-6 text-center">Funcionalidades dos Nossos Serviços</h2>
+            <div class="space-y-6 max-w-3xl mx-auto">
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-lg font-semibold text-blue-600 mb-2">Filtros Avançados</h3>
+                    <p class="text-sm">No Mercado de Trocas, use filtros por categoria, formato (online/presencial) e localização para encontrar a troca perfeita rapidamente.</p>
+                </div>
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-lg font-semibold text-blue-600 mb-2">Sistema de Avaliações</h3>
+                    <p class="text-sm">Após cada troca, avalie seu parceiro e receba feedback. As avaliações ajudam a construir confiança e reputação na comunidade.</p>
+                </div>
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-lg font-semibold text-blue-600 mb-2">Notificações Personalizadas</h3>
+                    <p class="text-sm">Receba alertas sobre novas ofertas, mensagens de parceiros de troca ou eventos que correspondem aos seus interesses.</p>
+                </div>
+                <div class="service-card bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-lg font-semibold text-blue-600 mb-2">Suporte Multilíngue</h3>
+                    <p class="text-sm">Nossa plataforma suporta vários idiomas, facilitando a participação de membros de diferentes países e culturas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="text-center py-12">
+            <h2 class="text-3xl font-bold text-blue-600 mb-4">Comece a Usar Nossos Serviços Hoje!</h2>
+            <p class="text-lg mb-6 max-w-2xl mx-auto">Seja você um iniciante ou um especialista, o SkillSwap tem algo para oferecer. Explore nossos serviços, personalize seu perfil e junte-se a uma comunidade global de aprendizado colaborativo.</p>
+            <div class="flex justify-center gap-4">
+                <a href="mercado.html" class="inline-block bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition">Explorar Mercado</a>
+                <a href="perfil.html" class="inline-block bg-white text-blue-600 border border-blue-600 px-8 py-4 rounded-full font-semibold hover:bg-blue-100 transition">Criar Perfil</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-lg mb-4">© 2025 SkillSwap. Todos os direitos reservados.</p>
+            <div class="flex justify-center gap-4">
+                <a href="comofunciona.html" class="hover:text-blue-300 transition">Como Funciona</a>
+                <a href="comunidade.html" class="hover:text-blue-300 transition">Comunidade</a>
+                <a href="eventos.html" class="hover:text-blue-300 transition">Eventos</a>
+                <a href="mercado.html" class="hover:text-blue-300 transition">Mercado</a>
+                <a href="servicos.html" class="hover:text-blue-300 transition">Serviços</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Sticky Navbar and Smooth Scroll -->
+    <script>
+        // Sticky Navbar
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('sticky');
+            } else {
+                navbar.classList.remove('sticky');
+            }
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
