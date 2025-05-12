@@ -356,3 +356,32 @@ footer p {
         transform: translateY(0);
     }
 }
+
+/* Modo Escuro */
+body.dark {
+    background: #1f2937; /* Fundo escuro */
+    color: #e5e7eb; /* Texto claro */
+}
+
+body.dark .highlight {
+    background: #374151; /* Fundo dos destaques */
+    color: #e5e7eb; /* Texto claro */
+}
+
+body.dark nav {
+    background: rgba(31, 41, 55, 0.95); /* Fundo do menu de navegação */
+}
+
+body.dark footer {
+    background: #1f2937; /* Fundo do rodapé */
+    color: #9ca3af; /* Texto do rodapé */
+}
+
+body.dark .botao-cadastro {
+    background: linear-gradient(135deg, #374151, #4b5563); /* Botão no modo escuro */
+    color: #e5e7eb;
+}
+
+body.dark .botao-cadastro:hover {
+    background: linear-gradient(135deg, #4b5563, #374151);
+}

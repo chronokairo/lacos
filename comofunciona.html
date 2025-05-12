@@ -3,135 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Como Funciona o SkillSwap</title>
+    <title>Comunidade SkillSwap</title>itle>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        nav {
+    <link rel="icon" type="image/png" href="https://via.placeholder.com/32" />
+    <style> {
+        nav {ransition: background-color 0.3s ease;
             transition: background-color 0.3s ease;
-        }
-        nav.sticky {
+        }av.sticky {
+        nav.sticky {: sticky;
             position: sticky;
-            top: 0;
+            top: 0;und-color: rgba(51, 51, 51, 0.95);
             background-color: rgba(51, 51, 51, 0.95);
             z-index: 1000;
-        }
-        .step, .faq-item {
+        }step, .faq-item {
+        .post, .highlight, .member-card {se, box-shadow 0.3s ease;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .step:hover, .faq-item:hover {
-            transform: translateY(-5px);
+        }step:hover, .faq-item:hover {
+        .post:hover, .highlight:hover, .member-card:hover {
+            transform: translateY(-5px);(0, 0, 0, 0.1);
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-        header {
+        }eader {
+        header {ground: linear-gradient(to right, #007bff, #00c4b4);
             background: linear-gradient(to right, #007bff, #00c4b4);
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-        }
-        .faq-toggle {
-            cursor: pointer;
-        }
-        .faq-answer {
-            display: none;
-        }
-        .faq-answer.active {
-            display: block;
-        }
+        }faq-toggle {
+        .comment {: pointer;
+            border-left: 3px solid #4CAF50;
+        }faq-answer {
+        .filter-button:hover {
+            background-color: #2563eb;
+        }faq-answer.active {
+        .like-button:hover {
+            color: #2563eb;
+        }le>
     </style>
-</head>
-<body class="bg-gray-100 text-gray-800 font-sans">
-    <nav id="navbar" class="bg-gray-800 text-white p-4">
-        <div class="container mx-auto flex flex-wrap justify-between items-center">
-            <h1 class="text-2xl font-bold">SkillSwap</h1>
-            <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 mt-4 md:mt-0">
-                <li><a href="index.html#sobre" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Sobre</a></li>
-                <li><a href="comofunciona.html" class="block px-4 py-2 bg-gray-600 text-blue-300 rounded">Como Funciona</a></li>
+</head>lass="bg-gray-100 text-gray-800 font-sans">
+<body class="bg-gray-100 text-gray-800 font-sans"> p-4">
+    <!-- Navigation Bar -->er mx-auto flex flex-wrap justify-between items-center">
+    <nav id="navbar" class="bg-gray-800 text-white p-4">>
+        <div class="container mx-auto flex flex-wrap justify-between items-center">4 mt-4 md:mt-0">
+            <div class="flex items-center space-x-3">"block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Sobre</a></li>
+                <h1 class="text-2xl font-bold">SkillSwap</h1>px-4 py-2 bg-gray-600 text-blue-300 rounded">Como Funciona</a></li>
+            </div>i><a href="habilidade.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Habilidades em Destaque</a></li>
+            <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 mt-4 md:mt-0">lue-300 rounded transition">Participe da Comunidade</a></li>
+                <li><a href="index.html#sobre" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Sobre</a></li>/a></li>
+                <li><a href="comofunciona.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Como Funciona</a></li>
                 <li><a href="habilidade.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Habilidades em Destaque</a></li>
-                <li><a href="comunidade.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Participe da Comunidade</a></li>
+                <li><a href="comunidade.html" class="block px-4 py-2 bg-gray-600 text-blue-300 rounded">Participe da Comunidade</a></li>ios</a></li>
                 <li><a href="mercado.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Mercado de Trocas</a></li>
                 <li><a href="eventos.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Eventos e Oficinas</a></li>
                 <li><a href="perfil.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Perfil</a></li>
                 <li><a href="comentarios.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Comentários</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Header -->
+            </ul>->
+        </div>ass="text-white py-16 text-center">
+    </nav>iv class="container mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold">Como Funciona o SkillSwap</h1>
+    <!-- Header -->s="text-lg md:text-xl mt-4">Aprenda como trocar habilidades de forma simples e colaborativa!</p>
     <header class="text-white py-16 text-center">
         <div class="container mx-auto">
-            <h1 class="text-4xl md:text-5xl font-bold">Como Funciona o SkillSwap</h1>
-            <p class="text-lg md:text-xl mt-4">Aprenda como trocar habilidades de forma simples e colaborativa!</p>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <section class="container mx-auto px-4 py-12">
-        <div class="bg-white p-8 rounded-lg shadow-lg max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold">Comunidade SkillSwap</h1>
+            <p class="text-lg md:text-xl mt-4">Conecte-se, colabore e cresça com milhares de membros compartilhando conhecimentos!</p>
+        </div>lass="container mx-auto px-4 py-12">
+    </header>class="bg-white p-8 rounded-lg shadow-lg max-w-4xl mx-auto">
             <h2 class="text-2xl font-bold text-blue-600 mb-4">O que é o SkillSwap?</h2>
-            <p class="text-lg leading-relaxed mb-6">O SkillSwap é uma plataforma inovadora que conecta pessoas interessadas em trocar habilidades e conhecimentos. A ideia é simples: você ensina algo que sabe e aprende algo que deseja, sem a necessidade de pagamentos financeiros. Seja ensinar culinária, aprender um idioma ou trocar dicas de marketing, o SkillSwap promove o aprendizado mútuo e a colaboração.</p>
-
-            <h2 class="text-2xl font-bold text-blue-600 mb-4">Como funciona?</h2>
-            <div class="space-y-6">
+    <!-- Main Content -->t-lg leading-relaxed mb-6">O SkillSwap é uma plataforma inovadora que conecta pessoas interessadas em trocar habilidades e conhecimentos. A ideia é simples: você ensina algo que sabe e aprende algo que deseja, sem a necessidade de pagamentos financeiros. Seja ensinar culinária, aprender um idioma ou trocar dicas de marketing, o SkillSwap promove o aprendizado mútuo e a colaboração.</p>
+    <main class="container mx-auto px-4 py-12">
+        <!-- Community Stats -->font-bold text-blue-600 mb-4">Como funciona?</h2>
+        <div class="bg-blue-50 p-6 rounded-lg shadow-lg mb-8 text-center">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">Nossa Comunidade em Números</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">600 mb-2">1. Cadastro</h3>
+                <div>p>Crie uma conta na plataforma e preencha seu perfil com suas habilidades e interesses. Por exemplo, indique que você sabe fotografia e quer aprender edição de vídeo. Um perfil detalhado aumenta suas chances de encontrar bons parceiros!</p>
+                    <p class="text-3xl font-semibold text-blue-600">15.832</p>
+                    <p>Membros Ativos</p>50 border-l-4 border-blue-500 p-6 rounded-lg">
+                </div>3 class="text-xl font-semibold text-blue-600 mb-2">2. Busca</h3>
+                <div>p>Navegue pela plataforma para encontrar pessoas que oferecem as habilidades que você deseja aprender. Use filtros como categoria (ex.: idiomas, tecnologia) ou localização para refinar sua busca.</p>
+                    <p class="text-3xl font-semibold text-blue-600">2.415</p>
+                    <p>Novos Tópicos este Mês</p>r-l-4 border-blue-500 p-6 rounded-lg">
+                </div>3 class="text-xl font-semibold text-blue-600 mb-2">3. Conexão</h3>
+                <div>p>Entre em contato com outros usuários para combinar uma troca de habilidades. Envie uma mensagem amigável, como: "Oi, vi que você ensina violão! Posso te ensinar inglês em troca." Discuta expectativas e formatos (online ou presencial).</p>
+                    <p class="text-3xl font-semibold text-blue-600">12.109</p>
+                    <p>Comentários Postados</p>der-l-4 border-blue-500 p-6 rounded-lg">
+                </div>3 class="text-xl font-semibold text-blue-600 mb-2">4. Troca</h3>
+            </div>  <p>Agende uma sessão para ensinar sua habilidade e aprender a habilidade do outro usuário. Pode ser uma videochamada, um encontro presencial ou até um projeto colaborativo, como criar um site juntos.</p>
+        </div>  </div>
                 <div class="step bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
-                    <h3 class="text-xl font-semibold text-blue-600 mb-2">1. Cadastro</h3>
-                    <p>Crie uma conta na plataforma e preencha seu perfil com suas habilidades e interesses. Por exemplo, indique que você sabe fotografia e quer aprender edição de vídeo. Um perfil detalhado aumenta suas chances de encontrar bons parceiros!</p>
-                </div>
-                <div class="step bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
-                    <h3 class="text-xl font-semibold text-blue-600 mb-2">2. Busca</h3>
-                    <p>Navegue pela plataforma para encontrar pessoas que oferecem as habilidades que você deseja aprender. Use filtros como categoria (ex.: idiomas, tecnologia) ou localização para refinar sua busca.</p>
-                </div>
-                <div class="step bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
-                    <h3 class="text-xl font-semibold text-blue-600 mb-2">3. Conexão</h3>
-                    <p>Entre em contato com outros usuários para combinar uma troca de habilidades. Envie uma mensagem amigável, como: "Oi, vi que você ensina violão! Posso te ensinar inglês em troca." Discuta expectativas e formatos (online ou presencial).</p>
-                </div>
-                <div class="step bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
-                    <h3 class="text-xl font-semibold text-blue-600 mb-2">4. Troca</h3>
-                    <p>Agende uma sessão para ensinar sua habilidade e aprender a habilidade do outro usuário. Pode ser uma videochamada, um encontro presencial ou até um projeto colaborativo, como criar um site juntos.</p>
-                </div>
-                <div class="step bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
-                    <h3 class="text-xl font-semibold text-blue-600 mb-2">5. Avaliação</h3>
-                    <p>Após a troca, avalie a experiência e deixe um comentário sobre o parceiro. Isso ajuda a comunidade a encontrar parceiros confiáveis e mantém a qualidade das trocas.</p>
-                </div>
-            </div>
-
-            <h2 class="text-2xl font-bold text-blue-600 mt-8 mb-4">Dicas para uma Troca Bem-Sucedida</h2>
-            <ul class="list-disc pl-6 mb-6 text-lg">
-                <li>Seja claro sobre suas expectativas: defina o tempo, formato e nível de habilidade desejado.</li>
-                <li>Prepare-se para ensinar: organize seu conteúdo para facilitar o aprendizado do outro.</li>
-                <li>Respeite o tempo do parceiro: cumpra os horários combinados e seja pontual.</li>
-                <li>Comunique-se abertamente: tire dúvidas e ajuste a troca conforme necessário.</li>
-                <li>Divirta-se: aproveite o processo de ensinar e aprender algo novo!</li>
-            </ul>
-
-            <h2 class="text-2xl font-bold text-blue-600 mt-8 mb-4">Benefícios do SkillSwap</h2>
-            <ul class="list-disc pl-6 mb-6 text-lg">
-                <li>Aprenda novas habilidades de forma gratuita, economizando em cursos ou aulas.</li>
+        <!-- New Post Form -->"text-xl font-semibold text-blue-600 mb-2">5. Avaliação</h3>
+        <div class="bg-white p-6 rounded-lg shadow-lg mb-8">deixe um comentário sobre o parceiro. Isso ajuda a comunidade a encontrar parceiros confiáveis e mantém a qualidade das trocas.</p>
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">Crie um Novo Tópico</h2>
+            <div action="#" class="space-y-4">
+                <input type="text" placeholder="Título do Tópico" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <select class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="">Selecione uma Categoria</option>
+                    <option value="trocas">Trocas e Parcerias</option>, formato e nível de habilidade desejado.</li>
+                    <option value="dicas">Dicas de Habilidades</option> facilitar o aprendizado do outro.</li>
+                    <option value="eventos">Eventos e Oficinas</option>mbinados e seja pontual.</li>
+                    <option value="suporte">Suporte e Dúvidas</option>troca conforme necessário.</li>
+                    <option value="outros">Outros</option>sinar e aprender algo novo!</li>
+                </select>
+                <textarea placeholder="Escreva sua mensagem..." class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" rows="6"></textarea>
+                <button type="submit" class="bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700 transition">Publicar Tópico</button>
+            </div>ass="list-disc pl-6 mb-6 text-lg">
+        </div>  <li>Aprenda novas habilidades de forma gratuita, economizando em cursos ou aulas.</li>
                 <li>Compartilhe seu conhecimento com outras pessoas, contribuindo para a comunidade.</li>
-                <li>Construa uma rede de contatos com interesses semelhantes, abrindo portas para colaborações futuras.</li>
-                <li>Promova a colaboração e o aprendizado mútuo, fortalecendo laços e desenvolvendo-se pessoal e profissionalmente.</li>
-            </ul>
-
-            <h2 class="text-2xl font-bold text-blue-600 mt-8 mb-4">Perguntas Frequentes</h2>
-            <div class="space-y-4">
-                <div class="faq-item bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
-                    <h3 class="faq-toggle text-xl font-semibold text-blue-600 mb-2">Posso trocar habilidades mesmo sem experiência profissional?</h3>
-                    <p class="faq-answer text-lg">Sim! No SkillSwap, todos os níveis de habilidade são bem-vindos. Você pode oferecer algo que sabe, como cozinhar uma receita caseira, e aprender algo novo, como tocar um instrumento básico.</p>
-                </div>
-                <div class="faq-item bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
-                    <h3 class="faq-toggle text-xl font-semibold text-blue-600 mb-2">As trocas são sempre presenciais?</h3>
-                    <p class="faq-answer text-lg">Não! Você pode combinar trocas presenciais ou online, via videochamadas ou troca de materiais. Escolha o formato que for mais conveniente para ambos.</p>
-                </div>
-                <div class="faq-item bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
-                    <h3 class="faq-toggle text-xl font-semibold text-blue-600 mb-2">E se a troca não funcionar como esperado?</h3>
+        <!-- Topic Filters -->ma rede de contatos com interesses semelhantes, abrindo portas para colaborações futuras.</li>
+        <div class="bg-white p-6 rounded-lg shadow-lg mb-8">tuo, fortalecendo laços e desenvolvendo-se pessoal e profissionalmente.</li>
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">Filtrar Tópicos</h2>
+            <div class="flex flex-col md:flex-row gap-4">
+                <select class="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="">Categoria</option>
+                    <option value="trocas">Trocas e Parcerias</option>-500 p-6 rounded-lg">
+                    <option value="dicas">Dicas de Habilidades</option>ue-600 mb-2">Posso trocar habilidades mesmo sem experiência profissional?</h3>
+                    <option value="eventos">Eventos e Oficinas</option>dos os níveis de habilidade são bem-vindos. Você pode oferecer algo que sabe, como cozinhar uma receita caseira, e aprender algo novo, como tocar um instrumento básico.</p>
+                    <option value="suporte">Suporte e Dúvidas</option>
+                    <option value="outros">Outros</option> border-blue-500 p-6 rounded-lg">
+                </select>lass="faq-toggle text-xl font-semibold text-blue-600 mb-2">As trocas são sempre presenciais?</h3>
+                <input type="text" placeholder="Buscar por palavra-chave..." class="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 flex-1"> for mais conveniente para ambos.</p>
+                <button class="filter-button bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700 transition">Aplicar Filtros</button>
+            </div>iv class="faq-item bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+        </div>      <h3 class="faq-toggle text-xl font-semibold text-blue-600 mb-2">E se a troca não funcionar como esperado?</h3>
                     <p class="faq-answer text-lg">Você pode conversar com seu parceiro para ajustar a troca ou encerrá-la respeitosamente. Use o sistema de avaliação para compartilhar sua experiência e ajudar a comunidade.</p>
+        <!-- Community Highlights -->
+        <div class="bg-blue-50 p-6 rounded-lg shadow-lg mb-8">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">Destaques da Comunidade</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="highlight bg-white p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold">Troca de Sucesso!</h3>
+                    <p>Clara e Miguel trocaram aulas de culinária e jardinagem, criando um jardim de ervas e pratos incríveis juntos!</p>
+                    <a href="mercado.html" class="text-blue-600 hover:underline">Ver Mercado</a>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white text-center py-6">
-        <p>© 2025 SkillSwap. Todos os direitos reservados.</p>
-    </footer>
-
+                <div class="highlight bg-white p-4 rounded-lg">
     <!-- JavaScript for Sticky Navbar, Smooth Scroll, and FAQ Toggle -->
     <script>
         // Sticky Navbar

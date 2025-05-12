@@ -58,15 +58,23 @@
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-12">
-        <!-- Profile Overview -->
-        <div class="profile-card bg-white p-6 rounded-lg shadow-lg mb-8">
-            <div class="flex flex-col md:flex-row items-center gap-6">
-                <img src="https://via.placeholder.com/150" alt="Foto de Perfil" class="w-32 h-32 rounded-full">
-                <div class="text-center md:text-left">
-                    <h2 class="text-2xl font-bold text-blue-600">João Silva</h2>
-                    <p class="text-lg">Músico e entusiasta de idiomas</p>
-                    <p class="text-sm text-gray-600">Membro desde: Janeiro 2025</p>
-                    <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Editar Foto</button>
+        <!-- Informações do Perfil -->
+        <div class="profile-card bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-3xl font-bold text-blue-600 mb-4">João Silva</h2>
+            <p class="text-lg">Membro desde 2023</p>
+        </div>
+
+        <!-- Conquistas -->
+        <div class="bg-blue-50 p-6 rounded-lg mt-8">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">Conquistas</h2>
+            <div class="flex gap-4">
+                <div class="text-center">
+                    <img src="https://via.placeholder.com/50" alt="Insígnia">
+                    <p class="text-sm">Primeira Troca</p>
+                </div>
+                <div class="text-center">
+                    <img src="https://via.placeholder.com/50" alt="Insígnia">
+                    <p class="text-sm">Mestre da Comunidade</p>
                 </div>
             </div>
         </div>
@@ -131,6 +139,23 @@
         <!-- Trade History and Reviews -->
         <div class="bg-white p-6 rounded-lg shadow-lg">
             <h2 class="text-2xl font-bold text-blue-600 mb-4">Histórico de Trocas e Avaliações</h2>
+            
+            <!-- Avaliações -->
+            <div class="bg-white p-6 rounded-lg shadow-lg mt-8">
+                <h2 class="text-2xl font-bold text-blue-600 mb-4">Avaliações</h2>
+                <div class="space-y-4">
+                    <div class="border-b pb-4">
+                        <p class="font-semibold">Mariana ★★★★★</p>
+                        <p>"João foi um ótimo professor de violão! Super paciente e didático."</p>
+                    </div>
+                    <div class="border-b pb-4">
+                        <p class="font-semibold">Lucas ★★★★☆</p>
+                        <p>"A troca foi incrível, mas poderia ter mais sessões."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Avaliações existentes -->
             <div class="space-y-4">
                 <div class="review-card bg-blue-50 p-4 rounded-lg">
                     <p><strong>Troca:</strong> Aulas de Violão ↔ Prática de Espanhol com Mariana</p>

@@ -44,7 +44,6 @@
                 <li><a href="eventos.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Eventos e Oficinas</a></li>
                 <li><a href="perfil.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Perfil</a></li>
                 <li><a href="comentarios.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Comentários</a></li>
-                <li><a href="servicos.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Serviços</a></li>
             </ul>
         </div>
     </nav>
@@ -59,9 +58,27 @@
 
     <!-- Main Content -->
     <div class="container mx-auto px-4 py-12">
+        <!-- Filtro de Habilidades -->
+        <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">Filtrar Habilidades</h2>
+            <div class="flex flex-col md:flex-row gap-4">
+                <select class="p-3 border rounded-lg" id="category-filter">
+                    <option value="">Todas as Categorias</option>
+                    <option value="tecnologia">Tecnologia</option>
+                    <option value="artes">Artes</option>
+                    <option value="bem-estar">Bem-Estar</option>
+                    <option value="praticas">Habilidades Práticas</option>
+                </select>
+                <input type="text" id="search" placeholder="Buscar habilidades..." class="p-3 border rounded-lg flex-1">
+            </div>
+        </div>
+
+        <!-- Texto introdutório -->
         <p class="text-lg leading-relaxed max-w-3xl mx-auto mb-12 text-center">
             No SkillSwap, conectamos pessoas apaixonadas por aprender e ensinar. Aqui estão 20 das trocas de habilidades mais populares da nossa comunidade, mostrando como membros estão transformando seus conhecimentos em experiências incríveis. Inspire-se e comece sua própria troca!
         </p>
+
+        <!-- Lista de Habilidades -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="highlight bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
                 <h2 class="text-xl font-semibold text-blue-600 mb-2">Desenvolvimento Web ↔ Design Gráfico</h2>
@@ -197,6 +214,11 @@
     <footer class="bg-gray-800 text-white text-center py-6">
         <p>© 2025 SkillSwap. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- Notificação -->
+    <div class="fixed top-4 right-4 bg-blue-600 text-white p-4 rounded-lg shadow-lg hidden" id="notification">
+        <p>Novo tópico na comunidade! <a href="comunidade.html" class="underline">Ver agora</a></p>
+    </div>
 
     <!-- JavaScript for Sticky Navbar, Smooth Scroll, and Animation -->
     <script>
