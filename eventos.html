@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,25 +11,32 @@
         nav {
             transition: background-color 0.3s ease;
         }
+
         nav.sticky {
             position: sticky;
             top: 0;
             background-color: rgba(51, 51, 51, 0.95);
             z-index: 1000;
         }
-        .event-card, .highlight-card {
+
+        .event-card,
+        .highlight-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .event-card:hover, .highlight-card:hover {
+
+        .event-card:hover,
+        .highlight-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
+
         header {
             background: linear-gradient(to right, #007bff, #00c4b4);
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
     </style>
 </head>
+
 <body class="bg-gray-100 text-gray-800 font-sans">
     <!-- Navigation Bar -->
     <nav id="navbar" class="bg-gray-800 text-white p-4">
@@ -37,14 +45,24 @@
                 <h1 class="text-2xl font-bold">SkillSwap</h1>
             </div>
             <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 mt-4 md:mt-0">
-                <li><a href="index.html#sobre" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Sobre</a></li>
-                <li><a href="comofunciona.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Como Funciona</a></li>
-                <li><a href="habilidade.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Habilidades em Destaque</a></li>
-                <li><a href="comunidade.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Participe da Comunidade</a></li>
-                <li><a href="mercado.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Mercado de Trocas</a></li>
-                <li><a href="eventos.html" class="block px-4 py-2 bg-gray-600 text-blue-300 rounded">Eventos e Oficinas</a></li>
-                <li><a href="perfil.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Perfil</a></li>
-                <li><a href="comentarios.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Comentários</a></li>
+                <li><a href="comofunciona.html"
+                        class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Como
+                        Funciona</a></li>
+                <li><a href="habilidade.html"
+                        class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Habilidades em
+                        Destaque</a></li>
+                <li><a href="comunidade.html"
+                        class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Participe da
+                        Comunidade</a></li>
+                <li><a href="mercado.html"
+                        class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Mercado de
+                        Trocas</a></li>
+                <li><a href="eventos.html" class="block px-4 py-2 bg-gray-600 text-blue-300 rounded">Eventos e
+                        Oficinas</a></li>
+                </li>
+                <li><a href="perfil.html"
+                        class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Perfil</a>
+                </li>
             </ul>
         </div>
     </nav>
@@ -64,69 +82,89 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div class="event-card bg-white p-6 rounded-lg shadow-lg">
                 <h3 class="text-xl font-semibold text-blue-600 mb-2">Semana de Networking</h3>
-                <p class="mb-4">Conecte-se com profissionais de diversas áreas, troque experiências e expanda sua rede de contatos em um ambiente colaborativo.</p>
+                <p class="mb-4">Conecte-se com profissionais de diversas áreas, troque experiências e expanda sua rede
+                    de contatos em um ambiente colaborativo.</p>
                 <ul class="text-sm mb-4">
                     <li><strong>Data:</strong> 20 a 24 de novembro de 2025</li>
                     <li><strong>Local:</strong> Centro de Convenções SkillSwap, São Paulo</li>
                     <li><strong>Atividades:</strong> Palestras, workshops e sessões de networking</li>
                 </ul>
-                <p class="text-sm italic"><strong>Persona:</strong> Organizado por Mariana, especialista em networking, que deseja conectar pessoas para colaborações futuras. Ideal para Lucas, que busca contatos na área de design.</p>
-                <a href="#inscricao" class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Inscrever-se</a>
+                <p class="text-sm italic"><strong>Persona:</strong> Organizado por Mariana, especialista em networking,
+                    que deseja conectar pessoas para colaborações futuras. Ideal para Lucas, que busca contatos na área
+                    de design.</p>
+                <a href="#inscricao"
+                    class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Inscrever-se</a>
             </div>
             <div class="event-card bg-white p-6 rounded-lg shadow-lg">
                 <h3 class="text-xl font-semibold text-blue-600 mb-2">Workshop de Desenvolvimento Web</h3>
-                <p class="mb-4">Aprenda HTML, CSS e JavaScript com especialistas. Perfeito para iniciantes e profissionais que querem se atualizar.</p>
+                <p class="mb-4">Aprenda HTML, CSS e JavaScript com especialistas. Perfeito para iniciantes e
+                    profissionais que querem se atualizar.</p>
                 <ul class="text-sm mb-4">
                     <li><strong>Data:</strong> 27 de novembro de 2025</li>
                     <li><strong>Local:</strong> Sala 101, SkillSwap Hub, Rio de Janeiro</li>
                     <li><strong>Atividades:</strong> Aulas práticas e desafios de programação</li>
                 </ul>
-                <p class="text-sm italic"><strong>Persona:</strong> Facilitado por João, desenvolvedor sênior, que ama ensinar tecnologia. Ideal para Ana, que quer aprender web para complementar seu design gráfico.</p>
-                <a href="#inscricao" class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Inscrever-se</a>
+                <p class="text-sm italic"><strong>Persona:</strong> Facilitado por João, desenvolvedor sênior, que ama
+                    ensinar tecnologia. Ideal para Ana, que quer aprender web para complementar seu design gráfico.</p>
+                <a href="#inscricao"
+                    class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Inscrever-se</a>
             </div>
             <div class="event-card bg-white p-6 rounded-lg shadow-lg">
                 <h3 class="text-xl font-semibold text-blue-600 mb-2">Oficina de Fotografia Criativa</h3>
-                <p class="mb-4">Explore técnicas de fotografia com smartphones e câmeras. Aprenda composição e edição em um ambiente prático.</p>
+                <p class="mb-4">Explore técnicas de fotografia com smartphones e câmeras. Aprenda composição e edição em
+                    um ambiente prático.</p>
                 <ul class="text-sm mb-4">
                     <li><strong>Data:</strong> 5 de dezembro de 2025</li>
                     <li><strong>Local:</strong> Online via Zoom</li>
                     <li><strong>Atividades:</strong> Sessões práticas e análise de fotos</li>
                 </ul>
-                <p class="text-sm italic"><strong>Persona:</strong> Liderado por Clara, fotógrafa profissional, que quer inspirar iniciantes. Perfeito para Rafael, que busca melhorar suas fotos para marketing.</p>
-                <a href="#inscricao" class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Inscrever-se</a>
+                <p class="text-sm italic"><strong>Persona:</strong> Liderado por Clara, fotógrafa profissional, que quer
+                    inspirar iniciantes. Perfeito para Rafael, que busca melhorar suas fotos para marketing.</p>
+                <a href="#inscricao"
+                    class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Inscrever-se</a>
             </div>
             <div class="event-card bg-white p-6 rounded-lg shadow-lg">
                 <h3 class="text-xl font-semibold text-blue-600 mb-2">Feira de Trocas de Habilidades</h3>
-                <p class="mb-4">Um evento presencial para trocar habilidades ao vivo! Traga sua expertise e aprenda algo novo com outros membros.</p>
+                <p class="mb-4">Um evento presencial para trocar habilidades ao vivo! Traga sua expertise e aprenda algo
+                    novo com outros membros.</p>
                 <ul class="text-sm mb-4">
                     <li><strong>Data:</strong> 12 de dezembro de 2025</li>
                     <li><strong>Local:</strong> Parque Cultural SkillSwap, Belo Horizonte</li>
                     <li><strong>Atividades:</strong> Mesas de troca, palestras rápidas e networking</li>
                 </ul>
-                <p class="text-sm italic"><strong>Persona:</strong> Organizado por Sofia, entusiasta de trocas, que quer criar um espaço vibrante. Ideal para Beatriz, que busca conexões locais.</p>
-                <a href="#inscricao" class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Inscrever-se</a>
+                <p class="text-sm italic"><strong>Persona:</strong> Organizado por Sofia, entusiasta de trocas, que quer
+                    criar um espaço vibrante. Ideal para Beatriz, que busca conexões locais.</p>
+                <a href="#inscricao"
+                    class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Inscrever-se</a>
             </div>
             <div class="event-card bg-white p-6 rounded-lg shadow-lg">
                 <h3 class="text-xl font-semibold text-blue-600 mb-2">Masterclass de Culinária Sustentável</h3>
-                <p class="mb-4">Aprenda a cozinhar pratos deliciosos com ingredientes sustentáveis. Inclui dicas de cultivo caseiro.</p>
+                <p class="mb-4">Aprenda a cozinhar pratos deliciosos com ingredientes sustentáveis. Inclui dicas de
+                    cultivo caseiro.</p>
                 <ul class="text-sm mb-4">
                     <li><strong>Data:</strong> 15 de dezembro de 2025</li>
                     <li><strong>Local:</strong> Cozinha SkillSwap, Porto Alegre</li>
                     <li><strong>Atividades:</strong> Demonstrações culinárias e degustações</li>
                 </ul>
-                <p class="text-sm italic"><strong>Persona:</strong> Facilitado por Miguel, chef sustentável, que ama ensinar. Perfeito para Fernanda, que quer combinar culinária com yoga.</p>
-                <a href="#inscricao" class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Inscrever-se</a>
+                <p class="text-sm italic"><strong>Persona:</strong> Facilitado por Miguel, chef sustentável, que ama
+                    ensinar. Perfeito para Fernanda, que quer combinar culinária com yoga.</p>
+                <a href="#inscricao"
+                    class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Inscrever-se</a>
             </div>
             <div class="event-card bg-white p-6 rounded-lg shadow-lg">
                 <h3 class="text-xl font-semibold text-blue-600 mb-2">Seminário de Marketing Digital</h3>
-                <p class="mb-4">Descubra estratégias de marketing digital, desde SEO até redes sociais, com especialistas do mercado.</p>
+                <p class="mb-4">Descubra estratégias de marketing digital, desde SEO até redes sociais, com
+                    especialistas do mercado.</p>
                 <ul class="text-sm mb-4">
                     <li><strong>Data:</strong> 20 de dezembro de 2025</li>
                     <li><strong>Local:</strong> Online via Zoom</li>
                     <li><strong>Atividades:</strong> Palestras e estudos de caso práticos</li>
                 </ul>
-                <p class="text-sm italic"><strong>Persona:</strong> Liderado por Laura, especialista em marketing, que quer capacitar pequenos negócios. Ideal para Daniel, que busca promover seus serviços de nutrição.</p>
-                <a href="#inscricao" class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Inscrever-se</a>
+                <p class="text-sm italic"><strong>Persona:</strong> Liderado por Laura, especialista em marketing, que
+                    quer capacitar pequenos negócios. Ideal para Daniel, que busca promover seus serviços de nutrição.
+                </p>
+                <a href="#inscricao"
+                    class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Inscrever-se</a>
             </div>
         </div>
 
@@ -135,13 +173,17 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div class="highlight-card bg-blue-50 p-6 rounded-lg shadow-lg">
                 <h3 class="text-xl font-semibold text-blue-600 mb-2">Hackathon SkillSwap 2024</h3>
-                <p class="mb-4">Mais de 100 participantes colaboraram em projetos de tecnologia, criando soluções inovadoras em 48 horas!</p>
-                <p class="text-sm italic"><strong>Depoimento:</strong> "Foi incrível trabalhar em equipe e aprender com outros programadores!" - Carlos, desenvolvedor.</p>
+                <p class="mb-4">Mais de 100 participantes colaboraram em projetos de tecnologia, criando soluções
+                    inovadoras em 48 horas!</p>
+                <p class="text-sm italic"><strong>Depoimento:</strong> "Foi incrível trabalhar em equipe e aprender com
+                    outros programadores!" - Carlos, desenvolvedor.</p>
             </div>
             <div class="highlight-card bg-blue-50 p-6 rounded-lg shadow-lg">
                 <h3 class="text-xl font-semibold text-blue-600 mb-2">Oficina de Escrita Criativa</h3>
-                <p class="mb-4">Participantes exploraram técnicas de storytelling, resultando em histórias compartilhadas na comunidade.</p>
-                <p class="text-sm italic"><strong>Depoimento:</strong> "Aprendi a transformar ideias em narrativas envolventes!" - Maria, escritora.</p>
+                <p class="mb-4">Participantes exploraram técnicas de storytelling, resultando em histórias
+                    compartilhadas na comunidade.</p>
+                <p class="text-sm italic"><strong>Depoimento:</strong> "Aprendi a transformar ideias em narrativas
+                    envolventes!" - Maria, escritora.</p>
             </div>
         </div>
 
@@ -150,8 +192,10 @@
             <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg mx-auto">
                 <h2 class="text-2xl font-bold text-blue-600 mb-4">Inscreva-se em um Evento</h2>
                 <div action="#" class="space-y-4">
-                    <input type="text" placeholder="Nome" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <input type="email" placeholder="E-mail" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="text" placeholder="Nome"
+                        class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="email" placeholder="E-mail"
+                        class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                     <select class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                         <option value="" disabled selected>Selecione um evento</option>
                         <option value="networking">Semana de Networking</option>
@@ -161,7 +205,9 @@
                         <option value="culinaria">Masterclass de Culinária Sustentável</option>
                         <option value="marketing">Seminário de Marketing Digital</option>
                     </select>
-                    <button type="submit" class="w-full bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700 transition">Enviar Inscrição</button>
+                    <button type="submit"
+                        class="w-full bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700 transition">Enviar
+                        Inscrição</button>
                 </div>
             </div>
         </section>
@@ -200,4 +246,5 @@
         });
     </script>
 </body>
+
 </html>

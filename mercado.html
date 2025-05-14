@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,28 +10,36 @@
         nav {
             transition: background-color 0.3s ease;
         }
+
         nav.sticky {
             position: sticky;
             top: 0;
             background-color: rgba(51, 51, 51, 0.95);
             z-index: 1000;
         }
-        .card, .highlight-card {
+
+        .card,
+        .highlight-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .card:hover, .highlight-card:hover {
+
+        .card:hover,
+        .highlight-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
+
         header {
             background: linear-gradient(to right, #007bff, #00c4b4);
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
+
         .filter-button:hover {
             background-color: #2563eb;
         }
     </style>
 </head>
+
 <body class="bg-gray-100 text-gray-800 font-sans">
     <!-- Navigation Bar -->
     <nav id="navbar" class="bg-gray-800 text-white p-4">
@@ -39,14 +48,23 @@
                 <h1 class="text-2xl font-bold">SkillSwap</h1>
             </div>
             <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 mt-4 md:mt-0">
-                <li><a href="index.html#sobre" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Sobre</a></li>
-                <li><a href="comofunciona.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Como Funciona</a></li>
-                <li><a href="habilidade.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Habilidades em Destaque</a></li>
-                <li><a href="comunidade.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Participe da Comunidade</a></li>
-                <li><a href="mercado.html" class="block px-4 py-2 bg-gray-600 text-blue-300 rounded">Mercado de Trocas</a></li>
-                <li><a href="eventos.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Eventos e Oficinas</a></li>
-                <li><a href="perfil.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Perfil</a></li>
-                <li><a href="comentarios.html" class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Comentários</a></li>
+                <li><a href="comofunciona.html"
+                        class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Como
+                        Funciona</a></li>
+                <li><a href="habilidade.html"
+                        class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Habilidades em
+                        Destaque</a></li>
+                <li><a href="comunidade.html"
+                        class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Participe da
+                        Comunidade</a></li>
+                <li><a href="mercado.html" class="block px-4 py-2 bg-gray-600 text-blue-300 rounded">Mercado de
+                        Trocas</a></li>
+                <li><a href="eventos.html"
+                        class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Eventos e
+                        Oficinas</a></li>
+                <li><a href="perfil.html"
+                        class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Perfil</a></li>
+
             </ul>
         </div>
     </nav>
@@ -97,8 +115,11 @@
                     <option value="online">Online</option>
                     <option value="presencial">Presencial</option>
                 </select>
-                <input type="text" placeholder="Buscar por habilidade..." class="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 flex-1">
-                <button class="filter-button bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700 transition">Aplicar Filtros</button>
+                <input type="text" placeholder="Buscar por habilidade..."
+                    class="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 flex-1">
+                <button
+                    class="filter-button bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700 transition">Aplicar
+                    Filtros</button>
             </div>
         </div>
 
@@ -106,10 +127,16 @@
         <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
             <h2 class="text-2xl font-bold text-blue-600 mb-4">Crie uma Nova Oferta</h2>
             <div action="#" class="space-y-4">
-                <input type="text" placeholder="Habilidade que você oferece" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <input type="text" placeholder="Habilidade que você busca" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <textarea placeholder="Descreva sua oferta..." class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" rows="4"></textarea>
-                <button type="submit" class="bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700 transition">Publicar Oferta</button>
+                <input type="text" placeholder="Habilidade que você oferece"
+                    class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <input type="text" placeholder="Habilidade que você busca"
+                    class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <textarea placeholder="Descreva sua oferta..."
+                    class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    rows="4"></textarea>
+                <button type="submit"
+                    class="bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700 transition">Publicar
+                    Oferta</button>
             </div>
         </div>
 
@@ -119,7 +146,8 @@
             <div class="highlight-card bg-blue-50 p-6 rounded-lg shadow-lg">
                 <h3 class="text-lg font-semibold text-blue-600">Fotografia ↔ Marketing</h3>
                 <p>Mariana ensinou fotografia para Rafael, que compartilhou estratégias de marketing digital.</p>
-                <p class="text-sm italic mt-2">"Foi incrível aprender a tirar fotos melhores para meu negócio!" - Rafael</p>
+                <p class="text-sm italic mt-2">"Foi incrível aprender a tirar fotos melhores para meu negócio!" - Rafael
+                </p>
             </div>
             <div class="highlight-card bg-blue-50 p-6 rounded-lg shadow-lg">
                 <h3 class="text-lg font-semibold text-blue-600">Culinária ↔ Jardinagem</h3>
@@ -135,57 +163,73 @@
                 <h3 class="text-xl font-semibold text-blue-600">João Silva</h3>
                 <p><strong>Oferece:</strong> Aulas de Violão</p>
                 <p><strong>Busca:</strong> Prática de Espanhol</p>
-                <p class="text-sm mt-2">João é um músico apaixonado que dá aulas de violão há 5 anos. Quer melhorar seu espanhol para viajar pela América Latina.</p>
-                <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Entrar em Contato</button>
+                <p class="text-sm mt-2">João é um músico apaixonado que dá aulas de violão há 5 anos. Quer melhorar seu
+                    espanhol para viajar pela América Latina.</p>
+                <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Entrar em
+                    Contato</button>
             </div>
             <div class="card bg-white p-6 rounded-lg shadow-lg">
                 <h3 class="text-xl font-semibold text-blue-600">Ana Costa</h3>
                 <p><strong>Oferece:</strong> Noções de Desenvolvimento Web</p>
                 <p><strong>Busca:</strong> Aulas de Yoga</p>
-                <p class="text-sm mt-2">Ana é desenvolvedora front-end e ensina HTML e CSS. Busca yoga para relaxar e melhorar sua saúde.</p>
-                <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Entrar em Contato</button>
+                <p class="text-sm mt-2">Ana é desenvolvedora front-end e ensina HTML e CSS. Busca yoga para relaxar e
+                    melhorar sua saúde.</p>
+                <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Entrar em
+                    Contato</button>
             </div>
             <div class="card bg-white p-6 rounded-lg shadow-lg">
                 <h3 class="text-xl font-semibold text-blue-600">Emília Santos</h3>
                 <p><strong>Oferece:</strong> Técnicas de Pintura</p>
                 <p><strong>Busca:</strong> Aulas de Culinária</p>
-                <p class="text-sm mt-2">Emília é artista plástica e ama ensinar pintura a óleo. Quer aprender receitas para surpreender a família.</p>
-                <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Entrar em Contato</button>
+                <p class="text-sm mt-2">Emília é artista plástica e ama ensinar pintura a óleo. Quer aprender receitas
+                    para surpreender a família.</p>
+                <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Entrar em
+                    Contato</button>
             </div>
             <div class="card bg-white p-6 rounded-lg shadow-lg">
                 <h3 class="text-xl font-semibold text-blue-600">Lucas Mendes</h3>
                 <p><strong>Oferece:</strong> Aulas de Inglês Conversacional</p>
                 <p><strong>Busca:</strong> Edição de Vídeo</p>
-                <p class="text-sm mt-2">Lucas é professor de inglês e ajuda com fluência. Deseja aprender edição de vídeo para criar conteúdo online.</p>
-                <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Entrar em Contato</button>
+                <p class="text-sm mt-2">Lucas é professor de inglês e ajuda com fluência. Deseja aprender edição de
+                    vídeo para criar conteúdo online.</p>
+                <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Entrar em
+                    Contato</button>
             </div>
             <div class="card bg-white p-6 rounded-lg shadow-lg">
                 <h3 class="text-xl font-semibold text-blue-600">Sofia Almeida</h3>
                 <p><strong>Oferece:</strong> Jardinagem Básica</p>
                 <p><strong>Busca:</strong> Fotografia</p>
-                <p class="text-sm mt-2">Sofia cultiva um jardim caseiro e ensina técnicas de plantio. Quer aprender fotografia para registrar suas plantas.</p>
-                <button class="mt-4 bg-blue-600 text-white px-4 pyanoi-2 rounded-lg hover:bg-blue-700 transition">Entrar em Contato</button>
+                <p class="text-sm mt-2">Sofia cultiva um jardim caseiro e ensina técnicas de plantio. Quer aprender
+                    fotografia para registrar suas plantas.</p>
+                <button class="mt-4 bg-blue-600 text-white px-4 pyanoi-2 rounded-lg hover:bg-blue-700 transition">Entrar
+                    em Contato</button>
             </div>
             <div class="card bg-white p-6 rounded-lg shadow-lg">
                 <h3 class="text-xl font-semibold text-blue-600">Rafael Lima</h3>
                 <p><strong>Oferece:</strong> Marketing Digital</p>
                 <p><strong>Busca:</strong> Escrita Criativa</p>
-                <p class="text-sm mt-2">Rafael é especialista em SEO e redes sociais. Busca escrita criativa para melhorar suas campanhas.</p>
-                <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Entrar em Contato</button>
+                <p class="text-sm mt-2">Rafael é especialista em SEO e redes sociais. Busca escrita criativa para
+                    melhorar suas campanhas.</p>
+                <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Entrar em
+                    Contato</button>
             </div>
             <div class="card bg-white p-6 rounded-lg shadow-lg">
                 <h3 class="text-xl font-semibold text-blue-600">Clara Oliveira</h3>
                 <p><strong>Oferece:</strong> Nutrição Saudável</p>
                 <p><strong>Busca:</strong> Yoga</p>
-                <p class="text-sm mt-2">Clara é nutricionista e ensina planos alimentares. Quer aprender yoga para complementar seu estilo de vida.</p>
-                <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Entrar em Contato</button>
+                <p class="text-sm mt-2">Clara é nutricionista e ensina planos alimentares. Quer aprender yoga para
+                    complementar seu estilo de vida.</p>
+                <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Entrar em
+                    Contato</button>
             </div>
             <div class="card bg-white p-6 rounded-lg shadow-lg">
                 <h3 class="text-xl font-semibold text-blue-600">Miguel Ferreira</h3>
                 <p><strong>Oferece:</strong> Reparos Domésticos</p>
                 <p><strong>Busca:</strong> Aulas de Culinária</p>
-                <p class="text-sm mt-2">Miguel é habilidoso em consertos e oferece ajuda prática. Deseja aprender culinária para cozinhar para a família.</p>
-                <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Entrar em Contato</button>
+                <p class="text-sm mt-2">Miguel é habilidoso em consertos e oferece ajuda prática. Deseja aprender
+                    culinária para cozinhar para a família.</p>
+                <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Entrar em
+                    Contato</button>
             </div>
         </div>
     </main>
@@ -218,4 +262,5 @@
         });
     </script>
 </body>
+
 </html>
