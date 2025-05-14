@@ -1,114 +1,54 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkillSwap - Login</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>SkillSwap</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="login-page">
-    <div class="login-container">
-        <!-- Lado Esquerdo: Apresentação do SkillSwap -->
-        <div class="presentation">
-            <h1>Bem-vindo ao SkillSwap</h1>
-            <p>Troque habilidades, aprenda algo novo e conecte-se com a comunidade.</p>
-            <p>Ensine o que você sabe, aprenda o que quer, sem custo. Junte-se à economia colaborativa!</p>
-            <button class="cta-btn">Saiba Mais</button>
-        </div>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="comofunciona.html">Como Funciona</a></li>
+            <li><a href="habilidade.html">Habilidades em Destaque</a></li>
+            <li><a href="comunidade.html">Participe da Comunidade</a></li>
+            <li><a href="mercado.html">Mercado de Trocas</a></li>
+            <li><a href="eventos.html">Eventos e Oficinas</a></li>
+            <li><a href="perfil.html">Perfil</a></li>
+            <li><a href="comentarios.html">Comentários</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>SkillSwap</h1>
+    </header>
 
-        <!-- Lado Direito: Login e Cadastro -->
-        <div class="auth-form">
-            <div class="auth-tabs">
-                <button class="tab active" data-tab="login">Login</button>
-                <button class="tab" data-tab="signup">Cadastro</button>
+    <main>
+        <section id="sobre">
+            <h2>Bem-vindo ao SkillSwap</h2>
+            <p>O SkillSwap é uma plataforma inovadora de troca de habilidades, onde pessoas podem compartilhar seus
+                conhecimentos e aprender algo novo em troca. Nossa missão é criar uma comunidade colaborativa onde o
+                aprendizado mútuo é a moeda principal.</p>
+
+            <div class="beneficios">
+                <h3>Por que escolher o SkillSwap?</h3>
+                <ul>
+                    <li>Aprenda novas habilidades sem custos financeiros</li>
+                    <li>Compartilhe seus conhecimentos com outros</li>
+                    <li>Construa uma rede de contatos valiosa</li>
+                    <li>Desenvolva-se pessoal e profissionalmente</li>
+                </ul>
             </div>
 
-            <!-- Formulário de Login -->
-            <form id="login" class="auth-content active">
-                <h2>Acesse sua Conta</h2>
-                <div class="form-group">
-                    <label for="login-email">E-mail</label>
-                    <div class="input-wrapper">
-                        <svg class="input-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#205295"
-                            stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                            </path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                        <input type="email" id="login-email" placeholder="seuemail@exemplo.com" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="login-password">Senha</label>
-                    <div class="input-wrapper">
-                        <svg class="input-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#205295"
-                            stroke-width="2">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                        </svg>
-                        <input type="password" id="login-password" placeholder="Digite sua senha" required>
-                    </div>
-                </div>
-                <a href="#" class="forgot-password">Esqueceu a senha?</a>
-                <button type="submit" class="auth-btn">Entrar</button>
-            </form>
-
-            <!-- Formulário de Cadastro -->
-            <form id="signup" class="auth-content">
-                <h2>Crie sua Conta</h2>
-                <div class="form-group">
-                    <label for="signup-name">Nome</label>
-                    <div class="input-wrapper">
-                        <svg class="input-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#205295"
-                            stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                        <input type="text" id="signup-name" placeholder="Seu nome" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="signup-email">E-mail</label>
-                    <div class="input-wrapper">
-                        <svg class="input-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#205295"
-                            stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                            </path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                        <input type="email" id="signup-email" placeholder="seuemail@exemplo.com" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="signup-password">Senha</label>
-                    <div class="input-wrapper">
-                        <svg class="input-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#205295"
-                            stroke-width="2">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                        </svg>
-                        <input type="password" id="signup-password" placeholder="Crie uma senha" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="signup-confirm-password">Confirmar Senha</label>
-                    <div class="input-wrapper">
-                        <svg class="input-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#205295"
-                            stroke-width="2">
-                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-                        </svg>
-                        <input type="password" id="signup-confirm-password" placeholder="Confirme sua senha" required>
-                    </div>
-                </div>
-                <button type="submit" class="auth-btn">Criar Conta</button>
-            </form>
-        </div>
-    </div>
-    <script src="scripts.js"></script>
+            <div class="chamada-acao">
+                <h3>Comece Agora!</h3>
+                <p>Junte-se à nossa comunidade e comece a trocar experiências hoje mesmo.</p>
+                <a href="#cadastro" class="botao-cadastro">Cadastre-se Gratuitamente</a>
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>
