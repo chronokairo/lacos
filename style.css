@@ -1,13 +1,21 @@
 /* Variáveis CSS */
 :root {
-    --primary-color: #068EDD; /* Azul principal, vibrante e moderno */
-    --secondary-color: rgba(255, 255, 255, 0.15); /* Fundo translúcido para seções */
-    --accent-color: #00C4B4; /* Verde-azulado para destaques */
-    --text-color: #FFFFFF; /* Texto branco para legibilidade */
-    --hover-color: rgba(255, 255, 255, 0.25); /* Efeito hover sutil */
-    --shadow-color: rgba(0, 0, 0, 0.15); /* Sombra suave */
-    --transition: all 0.3s ease; /* Transição suave para animações */
-    --font-family: 'Inter', Arial, sans-serif; /* Fonte moderna */
+    --primary-color: #068EDD;
+    /* Azul principal, vibrante e moderno */
+    --secondary-color: rgba(255, 255, 255, 0.15);
+    /* Fundo translúcido para seções */
+    --accent-color: #00C4B4;
+    /* Verde-azulado para destaques */
+    --text-color: #FFFFFF;
+    /* Texto branco para legibilidade */
+    --hover-color: rgba(255, 255, 255, 0.25);
+    /* Efeito hover sutil */
+    --shadow-color: rgba(0, 0, 0, 0.15);
+    /* Sombra suave */
+    --transition: all 0.3s ease;
+    /* Transição suave para animações */
+    --font-family: 'Inter', Arial, sans-serif;
+    /* Fonte moderna */
 }
 
 /* Reset e Estilos Globais */
@@ -23,7 +31,8 @@ body {
     line-height: 1.6;
     position: relative;
     overflow-x: hidden;
-    background: var(--primary-color); /* Fallback para o background */
+    background: var(--primary-color);
+    /* Fallback para o background */
 }
 
 /* Background */
@@ -351,6 +360,7 @@ footer p {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
