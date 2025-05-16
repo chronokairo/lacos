@@ -20,19 +20,44 @@
         }
 
         .event-card,
-        .highlight-card {
+        .highlight-card,
+        .tip-card,
+        .gallery-item {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .event-card:hover,
-        .highlight-card:hover {
+        .highlight-card:hover,
+        .tip-card:hover,
+        .gallery-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
         }
 
         header {
-            background: linear-gradient(to right, #007bff, #00c4b4);
+            background: url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            background-blend-mode: overlay;
+            background-color: rgba(0, 123, 255, 0.7);
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .section-icon {
+            display: inline-block;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+
+        .btn-submit {
+            background: linear-gradient(to right, #007bff, #00c4b4);
+        }
+
+        .btn-submit:hover {
+            background: linear-gradient(to right, #0056b3, #009b8d);
+        }
+
+        .gallery-item img {
+            border: 2px solid #007bff;
+            border-radius: 0.5rem;
         }
     </style>
 </head>
@@ -59,31 +84,40 @@
                         Trocas</a></li>
                 <li><a href="eventos.html" class="block px-4 py-2 bg-gray-600 text-blue-300 rounded">Eventos e
                         Oficinas</a></li>
-                </li>
                 <li><a href="perfil.html"
-                        class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Perfil</a>
-                </li>
+                        class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Perfil</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Header -->
-    <header class="text-white py-16 text-center">
-        <div class="container mx-auto">
-            <h1 class="text-4xl md:text-5xl font-bold">Eventos e Oficinas Laços</h1>
-            <p class="text-lg md:text-xl mt-4">Participe de nossos eventos para aprender, conectar e crescer!</p>
+    <header class="text-white py-12 md:py-16 text-center">
+        <div class="container mx-auto px-2 md:px-4">
+            <h1 class="text-3xl md:text-5xl font-bold">Eventos e Oficinas Laços</h1>
+            <p class="text-base md:text-xl mt-4">Participe de nossos eventos para aprender, conectar e crescer!</p>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-12">
+    <main class="container mx-auto px-2 md:px-4 py-8 md:py-12">
         <!-- Upcoming Events -->
-        <h2 class="text-3xl font-bold text-blue-600 mb-6 text-center">Próximos Eventos</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="event-card bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600 mb-2">Semana de Networking</h3>
-                <p class="mb-4">Conecte-se com profissionais de diversas áreas, troque experiências e expanda sua rede
-                    de contatos em um ambiente colaborativo.</p>
+        <h2 class="text-2xl md:text-3xl font-bold text-blue-600 mb-6 text-center">
+            <span class="section-icon">
+                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" />
+                </svg>
+            </span>
+            Próximos Eventos
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="event-card bg-white p-4 md:p-6 rounded-lg shadow-lg">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=300&h=200&q=80"
+                    alt="Networking" class="w-full h-32 object-cover rounded-t-lg mb-4"
+                    onerror="this.src='https://via.placeholder.com/300x200.png?text=Networking';">
+                <h3 class="text-lg md:text-xl font-semibold text-blue-600 mb-2">Semana de Networking</h3>
+                <p class="mb-4 text-sm md:text-base">Conecte-se com profissionais de diversas áreas, troque experiências
+                    e expanda sua rede de contatos em um ambiente colaborativo.</p>
                 <ul class="text-sm mb-4">
                     <li><strong>Data:</strong> 20 a 24 de novembro de 2025</li>
                     <li><strong>Local:</strong> Centro de Convenções Laços, São Paulo</li>
@@ -95,10 +129,13 @@
                 <a href="#inscricao"
                     class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Inscrever-se</a>
             </div>
-            <div class="event-card bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600 mb-2">Workshop de Desenvolvimento Web</h3>
-                <p class="mb-4">Aprenda HTML, CSS e JavaScript com especialistas. Perfeito para iniciantes e
-                    profissionais que querem se atualizar.</p>
+            <div class="event-card bg-white p-4 md:p-6 rounded-lg shadow-lg">
+                <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=300&h=200&q=80"
+                    alt="Web Dev" class="w-full h-32 object-cover rounded-t-lg mb-4"
+                    onerror="this.src='https://via.placeholder.com/300x200.png?text=Web+Dev';">
+                <h3 class="text-lg md:text-xl font-semibold text-blue-600 mb-2">Workshop de Desenvolvimento Web</h3>
+                <p class="mb-4 text-sm md:text-base">Aprenda HTML, CSS e JavaScript com especialistas. Perfeito para
+                    iniciantes e profissionais que querem se atualizar.</p>
                 <ul class="text-sm mb-4">
                     <li><strong>Data:</strong> 27 de novembro de 2025</li>
                     <li><strong>Local:</strong> Sala 101, Laços Hub, Rio de Janeiro</li>
@@ -109,10 +146,13 @@
                 <a href="#inscricao"
                     class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Inscrever-se</a>
             </div>
-            <div class="event-card bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600 mb-2">Oficina de Fotografia Criativa</h3>
-                <p class="mb-4">Explore técnicas de fotografia com smartphones e câmeras. Aprenda composição e edição em
-                    um ambiente prático.</p>
+            <div class="event-card bg-white p-4 md:p-6 rounded-lg shadow-lg">
+                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=300&h=200&q=80"
+                    alt="Fotografia" class="w-full h-32 object-cover rounded-t-lg mb-4"
+                    onerror="this.src='https://via.placeholder.com/300x200.png?text=Fotografia';">
+                <h3 class="text-lg md:text-xl font-semibold text-blue-600 mb-2">Oficina de Fotografia Criativa</h3>
+                <p class="mb-4 text-sm md:text-base">Explore técnicas de fotografia com smartphones e câmeras. Aprenda
+                    composição e edição em um ambiente prático.</p>
                 <ul class="text-sm mb-4">
                     <li><strong>Data:</strong> 5 de dezembro de 2025</li>
                     <li><strong>Local:</strong> Online via Zoom</li>
@@ -123,10 +163,13 @@
                 <a href="#inscricao"
                     class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Inscrever-se</a>
             </div>
-            <div class="event-card bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600 mb-2">Feira de Trocas de Habilidades</h3>
-                <p class="mb-4">Um evento presencial para trocar habilidades ao vivo! Traga sua expertise e aprenda algo
-                    novo com outros membros.</p>
+            <div class="event-card bg-white p-4 md:p-6 rounded-lg shadow-lg">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=300&h=200&q=80"
+                    alt="Feira" class="w-full h-32 object-cover rounded-t-lg mb-4"
+                    onerror="this.src='https://via.placeholder.com/300x200.png?text=Feira';">
+                <h3 class="text-lg md:text-xl font-semibold text-blue-600 mb-2">Feira de Trocas de Habilidades</h3>
+                <p class="mb-4 text-sm md:text-base">Um evento presencial para trocar habilidades ao vivo! Traga sua
+                    expertise e aprenda algo novo com outros membros.</p>
                 <ul class="text-sm mb-4">
                     <li><strong>Data:</strong> 12 de dezembro de 2025</li>
                     <li><strong>Local:</strong> Parque Cultural Laços Belo Horizonte</li>
@@ -137,10 +180,14 @@
                 <a href="#inscricao"
                     class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Inscrever-se</a>
             </div>
-            <div class="event-card bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600 mb-2">Masterclass de Culinária Sustentável</h3>
-                <p class="mb-4">Aprenda a cozinhar pratos deliciosos com ingredientes sustentáveis. Inclui dicas de
-                    cultivo caseiro.</p>
+            <div class="event-card bg-white p-4 md:p-6 rounded-lg shadow-lg">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=300&h=200&q=80"
+                    alt="Culinária" class="w-full h-32 object-cover rounded-t-lg mb-4"
+                    onerror="this.src='https://via.placeholder.com/300x200.png?text=Culinária';">
+                <h3 class="text-lg md:text-xl font-semibold text-blue-600 mb-2">Masterclass de Culinária Sustentável
+                </h3>
+                <p class="mb-4 text-sm md:text-base">Aprenda a cozinhar pratos deliciosos com ingredientes sustentáveis.
+                    Inclui dicas de cultivo caseiro.</p>
                 <ul class="text-sm mb-4">
                     <li><strong>Data:</strong> 15 de dezembro de 2025</li>
                     <li><strong>Local:</strong> Cozinha Laços, Porto Alegre</li>
@@ -151,10 +198,13 @@
                 <a href="#inscricao"
                     class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Inscrever-se</a>
             </div>
-            <div class="event-card bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600 mb-2">Seminário de Marketing Digital</h3>
-                <p class="mb-4">Descubra estratégias de marketing digital, desde SEO até redes sociais, com
-                    especialistas do mercado.</p>
+            <div class="event-card bg-white p-4 md:p-6 rounded-lg shadow-lg">
+                <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=300&h=200&q=80"
+                    alt="Marketing" class="w-full h-32 object-cover rounded-t-lg mb-4"
+                    onerror="this.src='https://via.placeholder.com/300x200.png?text=Marketing';">
+                <h3 class="text-lg md:text-xl font-semibold text-blue-600 mb-2">Seminário de Marketing Digital</h3>
+                <p class="mb-4 text-sm md:text-base">Descubra estratégias de marketing digital, desde SEO até redes
+                    sociais, com especialistas do mercado.</p>
                 <ul class="text-sm mb-4">
                     <li><strong>Data:</strong> 20 de dezembro de 2025</li>
                     <li><strong>Local:</strong> Online via Zoom</li>
@@ -168,33 +218,147 @@
             </div>
         </div>
 
-        <!-- Past Events Highlights -->
-        <h2 class="text-3xl font-bold text-blue-600 mt-12 mb-6 text-center">Destaques de Eventos Passados</h2>
+        <!-- Dicas para Eventos -->
+        <h2 class="text-2xl md:text-3xl font-bold text-blue-600 mt-12 mb-6 text-center">
+            <span class="section-icon">
+                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg>
+            </span>
+            Dicas para Eventos
+        </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="highlight-card bg-blue-50 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600 mb-2">Hackathon Laços 2024</h3>
-                <p class="mb-4">Mais de 100 participantes colaboraram em projetos de tecnologia, criando soluções inovadoras em 48 horas!</p>
-                <p class="text-sm italic"><strong>Depoimento:</strong> "Foi incrível trabalhar em equipe e aprender com outros programadores!" - Carlos, desenvolvedor.</p>
+            <div class="tip-card bg-blue-50 p-4 md:p-6 rounded-lg shadow-lg">
+                <h3 class="text-lg md:text-xl font-semibold text-blue-600 mb-2">Prepare-se Antes</h3>
+                <p class="text-sm md:text-base">Revise o cronograma do evento, leve materiais necessários (como caderno
+                    ou laptop) e chegue com antecedência.</p>
             </div>
-            <div class="highlight-card bg-blue-50 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600 mb-2">Oficina de Escrita Criativa</h3>
-                <p class="mb-4">Participantes exploraram técnicas de storytelling, resultando em histórias
-                    compartilhadas na comunidade.</p>
+            <div class="tip-card bg-blue-50 p-4 md:p-6 rounded-lg shadow-lg">
+                <h3 class="text-lg md:text-xl font-semibold text-blue-600 mb-2">Interaja Ativamente</h3>
+                <p class="text-sm md:text-base">Participe de discussões, troque contatos e aproveite para fazer
+                    perguntas aos facilitadores.</p>
+            </div>
+            <div class="tip-card bg-blue-50 p-4 md:p-6 rounded-lg shadow-lg">
+                <h3 class="text-lg md:text-xl font-semibold text-blue-600 mb-2">Aproveite o Networking</h3>
+                <p class="text-sm md:text-base">Leve cartões de visita ou use a plataforma Laços para conectar-se com
+                    outros participantes.</p>
+            </div>
+            <div class="tip-card bg-blue-50 p-4 md:p-6 rounded-lg shadow-lg">
+                <h3 class="text-lg md:text-xl font-semibold text-blue-600 mb-2">Dê Feedback</h3>
+                <p class="text-sm md:text-base">Compartilhe sua experiência no evento para ajudar a melhorar edições
+                    futuras.</p>
+            </div>
+        </div>
+
+        <!-- Past Events Highlights -->
+        <h2 class="text-2xl md:text-3xl font-bold text-blue-600 mt-12 mb-6 text-center">
+            <span class="section-icon">
+                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2a10 10 0 0 1 10 10c0 5.52-4.48 10-10 10S2 17.52 2 12A10 10 0 0 1 12 2m1 15h-2v-2h2v2m0-4h-2V7h2v6z" />
+                </svg>
+            </span>
+            Destaques de Eventos Passados
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="highlight-card bg-blue-50 p-4 md:p-6 rounded-lg shadow-lg">
+                <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=300&h=200&q=80"
+                    alt="Hackathon" class="w-full h-32 object-cover rounded-t-lg mb-4"
+                    onerror="this.src='https://via.placeholder.com/300x200.png?text=Hackathon';">
+                <h3 class="text-lg md:text-xl font-semibold text-blue-600 mb-2">Hackathon Laços 2024</h3>
+                <p class="mb-4 text-sm md:text-base">Mais de 100 participantes colaboraram em projetos de tecnologia,
+                    criando soluções inovadoras em 48 horas!</p>
+                <p class="text-sm italic"><strong>Depoimento:</strong> "Foi incrível trabalhar em equipe e aprender com
+                    outros programadores!" - Carlos, desenvolvedor.</p>
+            </div>
+            <div class="highlight-card bg-blue-50 p-4 md:p-6 rounded-lg shadow-lg">
+                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=300&h=200&q=80"
+                    alt="Escrita" class="w-full h-32 object-cover rounded-t-lg mb-4"
+                    onerror="this.src='https://via.placeholder.com/300x200.png?text=Escrita';">
+                <h3 class="text-lg md:text-xl font-semibold text-blue-600 mb-2">Oficina de Escrita Criativa</h3>
+                <p class="mb-4 text-sm md:text-base">Participantes exploraram técnicas de storytelling, resultando em
+                    histórias compartilhadas na comunidade.</p>
                 <p class="text-sm italic"><strong>Depoimento:</strong> "Aprendi a transformar ideias em narrativas
                     envolventes!" - Maria, escritora.</p>
             </div>
         </div>
 
+        <!-- Gallery of Past Events -->
+        <h2 class="text-2xl md:text-3xl font-bold text-blue-600 mt-12 mb-6 text-center">
+            <span class="section-icon">
+                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M21 5v14c0 1.1-.9 2-2 2H5c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2h14c1.1 0 2 .9 2 2zm-4 8c0 1.1-.9 2-2 2h-2v2c0 1.1-.9 2-2 2h-2c-1.1 0-2-.9-2-2v-2H7c-1.1 0-2-.9-2-2v-2c0-1.1.9-2 2-2h2V7c0-1.1.9-2 2-2h2c1.1 0 2 .9 2 2v2h2c1.1 0 2 .9 2 2v2zm-6-4c0-.55-.45-1-1-1h-2c-.55 0-1 .45-1 1v2h4v-2zm2 4h-4v2h2c.55 0 1-.45 1-1v-1z" />
+                </svg>
+            </span>
+            Galeria de Eventos Passados
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <div class="gallery-item bg-white p-4 rounded-lg shadow-lg text-center">
+                <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=150&h=150&q=80"
+                    alt="Hackathon Foto" class="w-full h-32 object-cover rounded mb-2"
+                    onerror="this.src='https://via.placeholder.com/150x150.png?text=Hackathon';">
+                <p class="text-sm md:text-base font-semibold text-blue-600">Hackathon 2024</p>
+            </div>
+            <div class="gallery-item bg-white p-4 rounded-lg shadow-lg text-center">
+                <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=150&h=150&q=80"
+                    alt="Escrita Foto" class="w-full h-32 object-cover rounded mb-2"
+                    onerror="this.src='https://via.placeholder.com/150x150.png?text=Escrita';">
+                <p class="text-sm md:text-base font-semibold text-blue-600">Escrita Criativa 2024</p>
+            </div>
+            <div class="gallery-item bg-white p-4 rounded-lg shadow-lg text-center">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=150&h=150&q=80"
+                    alt="Feira Foto" class="w-full h-32 object-cover rounded mb-2"
+                    onerror="this.src='https://via.placeholder.com/150x150.png?text=Feira';">
+                <p class="text-sm md:text-base font-semibold text-blue-600">Feira de Trocas 2024</p>
+            </div>
+        </div>
+
+        <!-- Eventos Online vs Presenciais -->
+        <h2 class="text-2xl md:text-3xl font-bold text-blue-600 mt-12 mb-6 text-center">
+            <span class="section-icon">
+                <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                        d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V6h16v12zm-2-7H6v-2h12v2zm0 4H6v-2h12v2z" />
+                </svg>
+            </span>
+            Eventos Online vs Presenciais
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="bg-white p-4 md:p-6 rounded-lg shadow-lg">
+                <h3 class="text-lg md:text-xl font-semibold text-blue-600 mb-2">Eventos Online</h3>
+                <ul class="text-sm md:text-base list-disc pl-5">
+                    <li>Acessíveis de qualquer lugar com internet.</li>
+                    <li>Ideal para quem tem horários flexíveis.</li>
+                    <li>Inclui videochamadas e materiais digitais.</li>
+                </ul>
+            </div>
+            <div class="bg-white p-4 md:p-6 rounded-lg shadow-lg">
+                <h3 class="text-lg md:text-xl font-semibold text-blue-600 mb-2">Eventos Presenciais</h3>
+                <ul class="text-sm md:text-base list-disc pl-5">
+                    <li>Experiência mais interativa e networking ao vivo.</li>
+                    <li>Oferece materiais físicos e ambiente colaborativo.</li>
+                    <li>Localizações em grandes cidades do Brasil.</li>
+                </ul>
+            </div>
+        </div>
+
         <!-- Event Registration Form -->
         <section id="inscricao" class="mt-12">
-            <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg mx-auto">
-                <h2 class="text-2xl font-bold text-blue-600 mb-4">Inscreva-se em um Evento</h2>
-                <div action="#" class="space-y-4">
-                    <input type="text" placeholder="Nome"
+            <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg max-w-lg mx-auto">
+                <h2 class="text-xl md:text-2xl font-bold text-blue-600 mb-4">Inscreva-se em um Evento</h2>
+                <form action="#" class="space-y-4">
+                    <input type="text" placeholder="Nome" required
                         class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <input type="email" placeholder="E-mail"
+                    <input type="email" placeholder="E-mail" required
                         class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <select class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="tel" placeholder="Telefone (opcional)"
+                        class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <input type="date" placeholder="Data de Preferência"
+                        class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <select required
+                        class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                         <option value="" disabled selected>Selecione um evento</option>
                         <option value="networking">Semana de Networking</option>
                         <option value="web-dev">Workshop de Desenvolvimento Web</option>
@@ -204,9 +368,9 @@
                         <option value="marketing">Seminário de Marketing Digital</option>
                     </select>
                     <button type="submit"
-                        class="w-full bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700 transition">Enviar
+                        class="w-full btn-submit text-white p-3 rounded-lg font-semibold transition-all duration-300">Enviar
                         Inscrição</button>
-                </div>
+                </form>
             </div>
         </section>
     </main>
@@ -221,7 +385,7 @@
         <p>Novo tópico na comunidade! <a href="comunidade.html" class="underline">Ver agora</a></p>
     </div>
 
-    <!-- JavaScript for Sticky Navbar and Smooth Scroll -->
+    <!-- JavaScript for Sticky Navbar, Smooth Scroll, and Notification -->
     <script>
         // Sticky Navbar
         window.addEventListener('scroll', () => {
@@ -242,6 +406,13 @@
                 });
             });
         });
+
+        // Notification
+        const notification = document.getElementById('notification');
+        setTimeout(() => {
+            notification.classList.remove('hidden');
+            setTimeout(() => notification.classList.add('hidden'), 5000);
+        }, 2000);
     </script>
 </body>
 
