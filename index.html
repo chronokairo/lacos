@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Comunidade Laços - Conecte-se, troque habilidades e cresça com milhares de membros!">
+    <title>Laços - Página Inicial</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="https://via.placeholder.com/32">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">🌐 Laços</div>
+            <input type="text" placeholder="Pesquisar na Comunidade" class="search-bar" aria-label="Pesquisar">
+            <span id="timeDisplay">12:17 AM -04</span>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <nav>
+            <a href="index.html" class="nav-link"><span class="icon">🏠</span> Home</a>
+            <a href="#popular" class="nav-link"><span class="icon">🔥</span> Popular</a>
+            <a href="#explore" class="nav-link"><span class="icon">🔍</span> Explorar</a>
+            <button id="customFeedsBtn" class="nav-link"><span class="icon">📚</span> Custom Feeds</button>
+            <div class="communities">
+                <p>Comunidades</p>
+                <a href="#tviolao" class="nav-link"><span class="icon">🎸</span> tviolao</a>
+                <a href="#webdesign" class="nav-link"><span class="icon">🎨</span> webdesign</a>
+                <button id="createCommunityBtn" class="nav-link"><span class="icon">➕</span> Criar Comunidade</button>
+            </div>
+            <a href="login.html" class="nav-link login-btn"><span class="icon">🔑</span> Login</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Welcome Banner -->
+        <section class="welcome-banner">
+            <div class="banner-overlay"></div>
+            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+                alt="Banner Comunidade Laços" class="banner-image" style="max-height:180px; min-height:120px;">
+            <div class="banner-content">
+                <h1>Bem-vindo à Comunidade Laços</h1>
+                <p>Conecte-se, troque habilidades e cresça com milhares de membros!</p>
+                <a href="#join" class="join-btn">Junte-se Agora</a>
+            </div>
+        </section>
+
+        <!-- Featured Events -->
+        <section class="featured-events">
+            <h2>Eventos em Destaque</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80"
+                        alt="Workshop de Violão" loading="lazy">
+                    <h3>Workshop de Violão - 22/05/2025</h3>
+                    <p>Às 18h, online. Inscreva-se agora!</p>
+                    <a href="#event" class="event-link">Saiba Mais</a>
+                </div>
+                <div class="event-card">
+                    <img src="https://images.unsplash.com/photo-1501854149802-7e112b7e63a4?auto=format&fit=crop&w=400&q=80"
+                        alt="Feira de Trocas" loading="lazy">
+                    <h3>Feira de Trocas - 28/05/2025</h3>
+                    <p>Evento presencial em São Paulo.</p>
+                    <a href="#event" class="event-link">Saiba Mais</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Post Feed -->
+        <div class="post-container" id="postContainer">
+            <div class="post">
+                <div class="post-votes">
+                    <button class="upvote-btn" aria-label="Upvote">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span data-votes="23">23</span>
+                    </button>
+                </div>
+                <div class="post-body">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=40&q=80"
+                        alt="João" class="post-avatar" loading="lazy">
+                    <h3 class="post-title">[Dicas] João: Como melhorar minhas habilidades em programação?</h3>
+                    <p class="post-text">Olá, comunidade! Estou aprendendo Python há 3 meses e quero dicas para avançar. Alguma sugestão?</p>
+                    <button class="comment-toggle" aria-label="Toggle comments">Comentários (4)</button>
+                    <div class="comment-section hidden">
+                        <div class="comment">
+                            <p><strong>Maria:</strong> Pratique com projetos reais, como um aplicativo de lista de tarefas.</p>
+                        </div>
+                        <div class="comment">
+                            <p><strong>Carlos:</strong> Tente desafios no HackerRank, funciona bem!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="post">
+                <div class="post-votes">
+                    <button class="upvote-btn" aria-label="Upvote">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span data-votes="15">15</span>
+                    </button>
+                </div>
+                <div class="post-body">
+                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=40&q=80"
+                        alt="Ana" class="post-avatar" loading="lazy">
+                    <h3 class="post-title">[Trocas] Ana: Ofereço aulas de inglês por design gráfico</h3>
+                    <p class="post-text">Procuro alguém para trocar aulas de inglês por design. Interessados?</p>
+                    <button class="comment-toggle" aria-label="Toggle comments">Comentários (2)</button>
+                    <div class="comment-section hidden">
+                        <div class="comment">
+                            <p><strong>Lucas:</strong> Interessado! Podemos conversar?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="post">
+                <div class="post-votes">
+                    <button class="upvote-btn" aria-label="Upvote">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span data-votes="10">10</span>
+                    </button>
+                </div>
+                <div class="post-body">
+                    <img src="https://images.unsplash.com/photo-1517245386807-9f79f2e2b2d5?auto=format&fit=crop&w=40&q=80"
+                        alt="Pedro" class="post-avatar" loading="lazy">
+                    <h3 class="post-title">[Eventos] Pedro: Concerto de Violão ao Vivo</h3>
+                    <p class="post-text">Acontece em 23/05 às 20h. Participe online!</p>
+                    <button class="comment-toggle" aria-label="Toggle comments">Comentários (1)</button>
+                    <div class="comment-section hidden">
+                        <div class="comment">
+                            <p><strong>Sofia:</strong> Adoraria assistir! Link disponível?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Popular Communities -->
+        <section class="popular-communities">
+            <h2>Comunidades Populares</h2>
+            <div class="communities-grid">
+                <div class="community-card">
+                    <img src="https://images.unsplash.com/photo-1519985176271-adb1088fa94c?auto=format&fit=crop&w=40&q=80"
+                        alt="tviolao" loading="lazy" onerror="this.src='https://via.placeholder.com/40?text=🎸';">
+                    <p>tviolao</p>
+                    <span>1.2K Membros</span>
+                </div>
+                <div class="community-card">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=40&q=80"
+                        alt="webdesign" loading="lazy" onerror="this.src='https://via.placeholder.com/40?text=🎨';">
+                    <p>webdesign</p>
+                    <span>3.5K Membros</span>
+                </div>
+                <div class="community-card">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1b1b18f0a8c8?auto=format&fit=crop&w=40&q=80"
+                        alt="fotografia" loading="lazy" onerror="this.src='https://via.placeholder.com/40?text=📷';">
+                    <p>fotografia</p>
+                    <span>2.8K Membros</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Laços. Todos os direitos reservados. | <span id="currentDate">Quarta-feira, 21/05/2025</span></p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="#about">Sobre</a>
+            <a href="#contact">Contato</a>
+            <a href="#privacy">Privacidade</a>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div class="notification hidden" id="notification">
+        <p>Bem-vindo à Comunidade Laços! Explore os tópicos e junte-se às discussões.</p>
+    </div>
+
+    <script>
+        // Real-Time Clock and Date
+        function updateTime() {
+            const now = new Date();
+            const timeOptions = { hour: '2-digit', minute: '2-digit', hour12: true };
+            const dateOptions = { weekday: 'long', day: '2-digit', month: '2-digit', year: 'numeric' };
+            document.getElementById('timeDisplay').textContent = now.toLocaleTimeString('en-US', timeOptions).replace('PM', 'PM -04').replace('AM', 'AM -04');
+            document.getElementById('currentDate').textContent = now.toLocaleDateString('pt-BR', dateOptions).replace(' de ', '/').replace(' de ', '/');
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // Toggle Comments
+        document.querySelectorAll('.comment-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const section = button.nextElementSibling;
+                section.classList.toggle('hidden');
+                button.textContent = section.classList.contains('hidden') ? `Comentários (${section.children.length})` : 'Ocultar Comentários';
+                button.setAttribute('aria-expanded', !section.classList.contains('hidden'));
+            });
+        });
+
+        // Dynamic Upvotes with Local Storage
+        document.querySelectorAll('.upvote-btn').forEach(button => {
+            const voteSpan = button.querySelector('span');
+            let votes = parseInt(voteSpan.dataset.votes) || parseInt(voteSpan.textContent);
+            voteSpan.textContent = votes;
+
+            button.addEventListener('click', () => {
+                votes++;
+                voteSpan.textContent = votes;
+                voteSpan.dataset.votes = votes;
+                button.classList.add('active');
+                localStorage.setItem(`votes_${voteSpan.parentElement.parentElement.querySelector('.post-title').textContent}`, votes);
+            });
+
+            const savedVotes = localStorage.getItem(`votes_${voteSpan.parentElement.parentElement.querySelector('.post-title').textContent}`);
+            if (savedVotes) {
+                voteSpan.textContent = savedVotes;
+                voteSpan.dataset.votes = savedVotes;
+                button.classList.add('active');
+            }
+        });
+
+        // Custom Feeds and Create Community (Placeholder)
+        document.getElementById('customFeedsBtn').addEventListener('click', () => alert('Funcionalidade de Custom Feeds em desenvolvimento!'));
+        document.getElementById('createCommunityBtn').addEventListener('click', () => alert('Funcionalidade de Criar Comunidade em desenvolvimento!'));
+
+        // Notification System
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.querySelector('p').textContent = message;
+            notification.classList.remove('hidden');
+            setTimeout(() => notification.classList.add('hidden'), 5000);
+        }
+        setTimeout(() => showNotification('Bem-vindo à Comunidade Laços! Explore os tópicos e junte-se às discussões.'), 2000);
+    </script>
+</body>
+
+</html>
