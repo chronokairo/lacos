@@ -6,60 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eventos - Laços</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-    <style>
-        nav {
-            transition: background-color 0.3s ease;
-        }
-
-        nav.sticky {
-            position: sticky;
-            top: 0;
-            background-color: rgba(51, 51, 51, 0.95);
-            z-index: 1000;
-        }
-
-        .event-card,
-        .highlight-card,
-        .tip-card,
-        .gallery-item {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .event-card:hover,
-        .highlight-card:hover,
-        .tip-card:hover,
-        .gallery-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        header {
-            background: url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
-            background-blend-mode: overlay;
-            background-color: rgba(0, 123, 255, 0.7);
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-        }
-
-        .section-icon {
-            display: inline-block;
-            margin-right: 0.5rem;
-            vertical-align: middle;
-        }
-
-        .btn-submit {
-            background: linear-gradient(to right, #007bff, #00c4b4);
-        }
-
-        .btn-submit:hover {
-            background: linear-gradient(to right, #0056b3, #009b8d);
-        }
-
-        .gallery-item img {
-            border: 2px solid #007bff;
-            border-radius: 0.5rem;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-gray-100 text-gray-800 font-sans">
@@ -70,7 +17,7 @@
                 <h1 class="text-2xl font-bold">Laços</h1>
             </div>
             <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 mt-4 md:mt-0">
-                
+
                 <li><a href="habilidade.html"
                         class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Habilidades em
                         Destaque</a></li>

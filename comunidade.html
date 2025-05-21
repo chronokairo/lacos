@@ -4,141 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Comunidade Laços - Conecte-se, troque habilidades e cresça com milhares de membros!">
+    <meta name="description"
+        content="Comunidade Laços - Conecte-se, troque habilidades e cresça com milhares de membros!">
     <title>Comunidade Laços - Troque Habilidades, Transforme Vidas</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="https://via.placeholder.com/32" />
-    <style>
-        body {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: #e5e7eb;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            overflow-x: hidden;
-        }
-        nav {
-            background-color: #1a1a1a;
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
-        }
-        nav.sticky {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-        }
-        .sidebar {
-            background: linear-gradient(0deg, #252525 0%, #333333 100%);
-            width: 250px;
-            height: 100vh;
-            position: fixed;
-            padding: 20px 0;
-            transition: transform 0.3s ease;
-        }
-        .sidebar a, .sidebar button {
-            color: #b0b0b0;
-            padding: 10px 16px;
-            display: block;
-            width: 100%;
-            text-align: left;
-            border-radius: 6px;
-            transition: background-color 0.2s, color 0.2s, transform 0.2s;
-        }
-        .sidebar a:hover, .sidebar button:hover {
-            background-color: #444;
-            color: #ffffff;
-            transform: translateX(5px);
-        }
-        .content {
-            margin-left: 270px;
-            padding: 20px 40px;
-            transition: margin-left 0.3s ease;
-        }
-        .post, .highlight, .member-card {
-            background: linear-gradient(135deg, #2d2d2d 0%, #3a3a3a 100%);
-            border: 1px solid #444;
-            border-radius: 8px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .post:hover, .highlight:hover, .member-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-        }
-        .comment {
-            background-color: #3a3a3a;
-            border-left: 6px solid #4CAF50;
-            border-radius: 4px;
-            margin-left: 30px;
-            padding: 12px;
-        }
-        .upvote-btn {
-            transition: color 0.2s ease, transform 0.2s ease;
-        }
-        .upvote-btn:hover svg {
-            fill: #2563eb;
-            transform: scale(1.1);
-        }
-        .upvote-btn.active svg {
-            fill: #2563eb;
-        }
-        header {
-            background: linear-gradient(90deg, #007bff, #00c4b4, #0056b3);
-            clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-            padding: 60px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        .header-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 1;
-        }
-        .filter-button {
-            background: linear-gradient(90deg, #2563eb, #1d4ed8);
-            transition: background 0.2s, transform 0.2s;
-        }
-        .filter-button:hover {
-            background: linear-gradient(90deg, #1d4ed8, #1e40af);
-            transform: translateY(-2px);
-        }
-        .carousel {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 20px;
-            padding: 10px 0;
-            scrollbar-width: none;
-        }
-        .carousel::-webkit-scrollbar {
-            display: none;
-        }
-        .carousel-item {
-            flex: 0 0 auto;
-            scroll-snap-align: start;
-            min-width: 250px;
-        }
-        @media (max-width: 768px) {
-            .sidebar {
-                transform: translateX(-250px);
-            }
-            .content {
-                margin-left: 0;
-                padding: 10px;
-            }
-            .sidebar.active {
-                transform: translateX(0);
-            }
-            header {
-                padding: 40px 0;
-                clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
-            }
-            .post, .member-card {
-                margin-bottom: 15px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-gray-900 text-gray-200 font-sans">
@@ -148,7 +19,9 @@
             <h1 class="text-xl font-bold text-white mb-6 flex items-center">
                 <span class="mr-2">🌐</span> Laços
             </h1>
-            <input type="text" placeholder="Pesquisar na Comunidade" class="w-full p-2 mb-6 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" id="searchInput">
+            <input type="text" placeholder="Pesquisar na Comunidade"
+                class="w-full p-2 mb-6 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                id="searchInput" aria-label="Pesquisar na Comunidade">
             <a href="index.html" class="hover:bg-gray-700">Home</a>
             <a href="#popular" class="hover:bg-gray-700">Popular</a>
             <a href="#explore" class="hover:bg-gray-700">Explorar</a>
@@ -163,19 +36,24 @@
     </div>
 
     <!-- Navigation Bar -->
-    <nav id="navbar" class="bg-gray-800 text-white p-4 hidden md:block">
+    <nav id="navbar" class="bg-gray-800 text-white p-4">
         <div class="container mx-auto flex justify-between items-center">
-            <button class="md:hidden text-white p-2" id="menuToggle">
+            <button class="md:hidden text-white p-2" id="menuToggle" aria-label="Toggle menu" aria-expanded="false"
+                aria-controls="sidebar">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
             </button>
-            <ul class="flex space-x-4">
-                <li><a href="habilidade.html" class="px-4 py-2 hover:bg-gray-700 hover:text-blue-300 rounded transition">Habilidades</a></li>
+            <ul class="hidden md:flex space-x-4">
+                <li><a href="habilidade.html"
+                        class="px-4 py-2 hover:bg-gray-700 hover:text-blue-300 rounded transition">Habilidades</a></li>
                 <li><a href="comunidade.html" class="px-4 py-2 bg-gray-700 text-blue-300 rounded">Comunidade</a></li>
-                <li><a href="mercado.html" class="px-4 py-2 hover:bg-gray-700 hover:text-blue-300 rounded transition">Mercado</a></li>
-                <li><a href="eventos.html" class="px-4 py-2 hover:bg-gray-700 hover:text-blue-300 rounded transition">Eventos</a></li>
-                <li><a href="perfil.html" class="px-4 py-2 hover:bg-gray-700 hover:text-blue-300 rounded transition">Perfil</a></li>
+                <li><a href="mercado.html"
+                        class="px-4 py-2 hover:bg-gray-700 hover:text-blue-300 rounded transition">Mercado</a></li>
+                <li><a href="eventos.html"
+                        class="px-4 py-2 hover:bg-gray-700 hover:text-blue-300 rounded transition">Eventos</a></li>
+                <li><a href="perfil.html"
+                        class="px-4 py-2 hover:bg-gray-700 hover:text-blue-300 rounded transition">Perfil</a></li>
             </ul>
         </div>
     </nav>
@@ -183,10 +61,15 @@
     <!-- Header -->
     <header class="relative text-white py-16 text-center">
         <div class="header-overlay"></div>
-        <div class="container mx-auto relative z-10">
+        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1920&q=80"
+            alt="Comunidade Laços Header" class="header-image">
+        <div class="container mx-auto relative z-10 header-content">
             <h1 class="text-5xl md:text-6xl font-bold mb-4 animate-fadeIn">Comunidade Laços</h1>
-            <p class="text-xl md:text-2xl mt-4 mb-6">Conecte-se, colabore e cresça - <span id="timeDisplay">11:18 PM -04</span></p>
-            <a href="#posts" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-semibold text-lg hover:bg-blue-100 transition animate-fadeIn delay-1">Participe Agora</a>
+            <p class="text-xl md:text-2xl mt-4 mb-6">Conecte-se, colabore e cresça - <span id="timeDisplay">11:34 PM
+                    -04</span></p>
+            <a href="#posts"
+                class="inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-semibold text-lg hover:bg-blue-100 transition animate-fadeIn delay-1">Participe
+                Agora</a>
         </div>
     </header>
 
@@ -196,23 +79,38 @@
         <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-10 text-center animate-fadeIn">
             <h2 class="text-2xl font-bold text-blue-400 mb-5">Nossa Comunidade</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div><p class="text-4xl font-semibold text-blue-400">15.8K</p><p class="text-lg">Membros</p></div>
-                <div><p class="text-4xl font-semibold text-blue-400">2.4K</p><p class="text-lg">Tópicos/Mês</p></div>
-                <div><p class="text-4xl font-semibold text-blue-400">12.1K</p><p class="text-lg">Comentários</p></div>
+                <div>
+                    <p class="text-4xl font-semibold text-blue-400">15.8K</p>
+                    <p class="text-lg">Membros</p>
+                </div>
+                <div>
+                    <p class="text-4xl font-semibold text-blue-400">2.4K</p>
+                    <p class="text-lg">Tópicos/Mês</p>
+                </div>
+                <div>
+                    <p class="text-4xl font-semibold text-blue-400">12.1K</p>
+                    <p class="text-lg">Comentários</p>
+                </div>
             </div>
         </div>
 
-        <!-- Featured Posts -->
+        <!-- Visual Highlights -->
         <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-10 animate-fadeIn">
-            <h2 class="text-2xl font-bold text-blue-400 mb-5">Destaques da Comunidade</h2>
+            <h2 class="text-2xl font-bold text-blue-400 mb-5">Destaques Visuais</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="highlight p-4 rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=600&q=80"
+                        alt="Workshop de Design" class="w-full h-40 object-cover rounded-t-lg mb-2">
                     <h3 class="text-lg font-semibold text-blue-400">[Evento] Workshop de Design Gráfico</h3>
                     <p class="text-gray-300 mb-2">Participe no dia 25/05 às 19h - vagas limitadas!</p>
+                    <a href="#eventos" class="text-blue-400 hover:underline">Saiba mais</a>
                 </div>
                 <div class="highlight p-4 rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1506784925126-8e5a2ef92d5f?auto=format&fit=crop&w=600&q=80"
+                        alt="Aprenda Idiomas" class="w-full h-40 object-cover rounded-t-lg mb-2">
                     <h3 class="text-lg font-semibold text-blue-400">[Dica] 5 Apps para Aprender Idiomas</h3>
                     <p class="text-gray-300 mb-2">Recomendações da comunidade para iniciantes.</p>
+                    <a href="#dicas" class="text-blue-400 hover:underline">Veja as dicas</a>
                 </div>
             </div>
         </div>
@@ -221,8 +119,12 @@
         <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-10 animate-fadeIn">
             <h2 class="text-2xl font-bold text-blue-400 mb-5">Novo Tópico</h2>
             <form id="newPostForm" class="space-y-4">
-                <input type="text" placeholder="Título" required class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <select required class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <input type="text" placeholder="Título" required
+                    class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    aria-label="Título do Tópico">
+                <select required
+                    class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    aria-label="Selecionar Categoria">
                     <option value="">Categoria</option>
                     <option value="trocas">Trocas</option>
                     <option value="dicas">Dicas</option>
@@ -230,8 +132,12 @@
                     <option value="suporte">Suporte</option>
                     <option value="outros">Outros</option>
                 </select>
-                <textarea placeholder="Mensagem" required class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" rows="5"></textarea>
-                <button type="submit" class="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition w-full">Publicar Tópico</button>
+                <textarea placeholder="Mensagem" required
+                    class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    rows="5" aria-label="Mensagem do Tópico"></textarea>
+                <button type="submit"
+                    class="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition w-full">Publicar
+                    Tópico</button>
             </form>
         </div>
 
@@ -239,7 +145,9 @@
         <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-10 animate-fadeIn">
             <h2 class="text-2xl font-bold text-blue-400 mb-5">Filtros</h2>
             <div class="flex flex-col md:flex-row gap-4">
-                <select id="categoryFilter" class="p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <select id="categoryFilter"
+                    class="p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    aria-label="Filtrar por Categoria">
                     <option value="">Todas Categorias</option>
                     <option value="trocas">Trocas</option>
                     <option value="dicas">Dicas</option>
@@ -247,8 +155,11 @@
                     <option value="suporte">Suporte</option>
                     <option value="outros">Outros</option>
                 </select>
-                <input type="text" id="searchFilter" placeholder="Buscar..." class="p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 flex-1">
-                <button id="applyFilter" class="filter-button p-3 rounded-lg transition">Aplicar</button>
+                <input type="text" id="searchFilter" placeholder="Buscar..."
+                    class="p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 flex-1"
+                    aria-label="Buscar Tópicos">
+                <button id="applyFilter" class="filter-button p-3 rounded-lg transition"
+                    aria-label="Aplicar Filtros">Aplicar</button>
             </div>
         </div>
 
@@ -257,10 +168,14 @@
             <h2 class="text-2xl font-bold text-blue-400 mb-5">Eventos Próximos</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="highlight p-4 rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80"
+                        alt="Workshop de Violão" class="w-full h-40 object-cover rounded-t-lg mb-2">
                     <h3 class="text-lg font-semibold text-blue-400">Workshop de Violão - 22/05/2025</h3>
                     <p class="text-gray-300">Às 18h, online. Inscreva-se agora!</p>
                 </div>
                 <div class="highlight p-4 rounded-lg">
+                    <img src="https://images.unsplash.com/photo-1501854149802-7e112b7e63a4?auto=format&fit=crop&w=600&q=80"
+                        alt="Feira de Trocas" class="w-full h-40 object-cover rounded-t-lg mb-2">
                     <h3 class="text-lg font-semibold text-blue-400">Feira de Trocas - 28/05/2025</h3>
                     <p class="text-gray-300">Evento presencial em São Paulo.</p>
                 </div>
@@ -274,17 +189,23 @@
                 <div class="flex items-start">
                     <button class="upvote-btn text-gray-400 p-2 mr-4 focus:outline-none" aria-label="Upvote">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
                         </svg>
                         <span class="block mt-1" data-votes="23">23</span>
                     </button>
                     <div>
-                        <h3 class="text-lg font-semibold text-blue-400">[Dicas] João: Como melhorar minhas habilidades em programação?</h3>
-                        <p class="text-gray-300 mb-2">Olá, comunidade! Estou aprendendo Python há 3 meses e quero dicas para avançar. Alguma sugestão?</p>
-                        <button class="text-blue-400 hover:underline mb-2" aria-label="Toggle comments">Ver Comentários (4)</button>
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80"
+                            alt="Programação" class="w-16 h-16 rounded-full mb-2">
+                        <h3 class="text-lg font-semibold text-blue-400">[Dicas] João: Como melhorar minhas habilidades
+                            em programação?</h3>
+                        <p class="text-gray-300 mb-2">Olá, comunidade! Estou aprendendo Python há 3 meses e quero dicas
+                            para avançar. Alguma sugestão?</p>
+                        <button class="text-blue-400 hover:underline mb-2" aria-label="Toggle comments">Ver Comentários
+                            (4)</button>
                         <div class="comment-section hidden space-y-2 mt-2">
                             <div class="comment p-3 rounded">
-                                <p><strong>Maria:</strong> Pratique com projetos reais, como um aplicativo de lista...</p>
+                                <p><strong>Maria:</strong> Pratique com projetos reais, como um aplicativo de lista...
+                                </p>
                             </div>
                             <div class="comment p-3 rounded">
                                 <p><strong>Carlos:</strong> Tente desafios no HackerRank, funciona bem!</p>
@@ -297,14 +218,19 @@
                 <div class="flex items-start">
                     <button class="upvote-btn text-gray-400 p-2 mr-4 focus:outline-none" aria-label="Upvote">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
                         </svg>
                         <span class="block mt-1" data-votes="15">15</span>
                     </button>
                     <div>
-                        <h3 class="text-lg font-semibold text-blue-400">[Trocas] Ana: Ofereço aulas de inglês por design gráfico</h3>
-                        <p class="text-gray-300 mb-2">Procuro alguém para trocar aulas de inglês por design. Interessados?</p>
-                        <button class="text-blue-400 hover:underline mb-2" aria-label="Toggle comments">Ver Comentários (2)</button>
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=300&q=80"
+                            alt="Design Gráfico" class="w-16 h-16 rounded-full mb-2">
+                        <h3 class="text-lg font-semibold text-blue-400">[Trocas] Ana: Ofereço aulas de inglês por design
+                            gráfico</h3>
+                        <p class="text-gray-300 mb-2">Procuro alguém para trocar aulas de inglês por design.
+                            Interessados?</p>
+                        <button class="text-blue-400 hover:underline mb-2" aria-label="Toggle comments">Ver Comentários
+                            (2)</button>
                         <div class="comment-section hidden space-y-2 mt-2">
                             <div class="comment p-3 rounded">
                                 <p><strong>Lucas:</strong> Interessado! Podemos conversar?</p>
@@ -313,29 +239,56 @@
                     </div>
                 </div>
             </div>
-            <!-- Adicione mais posts conforme necessário -->
+            <div class="post p-4 rounded-lg" data-category="eventos">
+                <div class="flex items-start">
+                    <button class="upvote-btn text-gray-400 p-2 mr-4 focus:outline-none" aria-label="Upvote">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+                        </svg>
+                        <span class="block mt-1" data-votes="10">10</span>
+                    </button>
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1517245386807-9f79f2e2b2d5?auto=format&fit=crop&w=300&q=80"
+                            alt="Evento Musical" class="w-16 h-16 rounded-full mb-2">
+                        <h3 class="text-lg font-semibold text-blue-400">[Eventos] Pedro: Concerto de Violão ao Vivo</h3>
+                        <p class="text-gray-300 mb-2">Acontece em 23/05 às 20h. Participe online!</p>
+                        <button class="text-blue-400 hover:underline mb-2" aria-label="Toggle comments">Ver Comentários
+                            (1)</button>
+                        <div class="comment-section hidden space-y-2 mt-2">
+                            <div class="comment p-3 rounded">
+                                <p><strong>Sofia:</strong> Adoraria assistir! Link disponível?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Active Members -->
-        <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-10 mt-10 animate-fadeIn">
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-10 mt-10 animate-fadeIn relative">
             <h2 class="text-2xl font-bold text-blue-400 mb-5">Membros Ativos</h2>
-            <div class="carousel">
+            <div class="carousel" id="memberCarousel">
                 <div class="carousel-item member-card p-4 rounded-lg text-center">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=60&q=80" alt="Maria" class="mx-auto mb-2 rounded-full">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=60&q=80"
+                        alt="Maria" class="mx-auto mb-2 rounded-full">
                     <p class="font-semibold">Maria</p>
                     <p class="text-sm">Desenvolvedora</p>
                 </div>
                 <div class="carousel-item member-card p-4 rounded-lg text-center">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=60&q=80" alt="João" class="mx-auto mb-2 rounded-full">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=60&q=80"
+                        alt="João" class="mx-auto mb-2 rounded-full">
                     <p class="font-semibold">João</p>
                     <p class="text-sm">Músico</p>
                 </div>
                 <div class="carousel-item member-card p-4 rounded-lg text-center">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=60&q=80" alt="Carlos" class="mx-auto mb-2 rounded-full">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=60&q=80"
+                        alt="Carlos" class="mx-auto mb-2 rounded-full">
                     <p class="font-semibold">Carlos</p>
                     <p class="text-sm">Designer</p>
                 </div>
             </div>
+            <button class="carousel-btn prev" id="prevBtn" aria-label="Previous Member">&lt;</button>
+            <button class="carousel-btn next" id="nextBtn" aria-label="Next Member">&gt;</button>
         </div>
     </main>
 
@@ -352,8 +305,9 @@
     </footer>
 
     <!-- Notification -->
-    <div class="fixed bottom-4 right-4 bg-blue-600 text-white p-4 rounded-lg shadow-lg hidden animate-slideUp" id="notification">
-        <p>Novo tópico! <a href="#" class="underline">Ver agora</a></p>
+    <div class="fixed bottom-4 right-4 bg-blue-600 text-white p-4 rounded-lg shadow-lg hidden animate-slideUp"
+        id="notification">
+        <p id="notificationText">Novo tópico! <a href="#" class="underline">Ver agora</a></p>
     </div>
 
     <script>
@@ -366,15 +320,19 @@
 
         // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
 
         // Toggle Sidebar (Mobile)
-        document.getElementById('menuToggle').addEventListener('click', () => {
-            document.getElementById('sidebar').classList.toggle('active');
+        const menuToggle = document.getElementById('menuToggle');
+        menuToggle.addEventListener('click', () => {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('active');
+            const isExpanded = sidebar.classList.contains('active');
+            menuToggle.setAttribute('aria-expanded', isExpanded);
         });
 
         // Toggle Comments
@@ -397,10 +355,10 @@
                 voteSpan.textContent = votes;
                 voteSpan.dataset.votes = votes;
                 button.classList.add('active');
-                localStorage.setItem(`votes_${voteSpan.parentElement.parentElement.nextElementSibling.querySelector('h3').textContent}`, votes);
+                localStorage.setItem(`votes_${voteSpan.parentElement.parentElement.querySelector('h3').textContent}`, votes);
             });
 
-            const savedVotes = localStorage.getItem(`votes_${voteSpan.parentElement.parentElement.nextElementSibling.querySelector('h3').textContent}`);
+            const savedVotes = localStorage.getItem(`votes_${voteSpan.parentElement.parentElement.querySelector('h3').textContent}`);
             if (savedVotes) {
                 voteSpan.textContent = savedVotes;
                 voteSpan.dataset.votes = savedVotes;
@@ -444,6 +402,7 @@
                             <span class="block mt-1" data-votes="0">0</span>
                         </button>
                         <div>
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="${title}" class="w-16 h-16 rounded-full mb-2">
                             <h3 class="text-lg font-semibold text-blue-400">[${category}] ${title}</h3>
                             <p class="text-gray-300 mb-2">${message}</p>
                             <button class="text-blue-400 hover:underline mb-2" aria-label="Toggle comments">Ver Comentários (0)</button>
@@ -461,13 +420,33 @@
         document.getElementById('customFeedsBtn').addEventListener('click', () => alert('Funcionalidade de Custom Feeds em desenvolvimento!'));
         document.getElementById('createCommunityBtn').addEventListener('click', () => alert('Funcionalidade de Criar Comunidade em desenvolvimento!'));
 
+        // Carousel Navigation
+        const carousel = document.getElementById('memberCarousel');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        let scrollPosition = 0;
+        const itemWidth = 270; // Largura do item + margem
+
+        prevBtn.addEventListener('click', () => {
+            scrollPosition += itemWidth;
+            if (scrollPosition > 0) scrollPosition = 0;
+            carousel.style.transform = `translateX(${scrollPosition}px)`;
+        });
+
+        nextBtn.addEventListener('click', () => {
+            const maxScroll = -(carousel.scrollWidth - carousel.clientWidth);
+            scrollPosition -= itemWidth;
+            if (scrollPosition < maxScroll) scrollPosition = maxScroll;
+            carousel.style.transform = `translateX(${scrollPosition}px)`;
+        });
+
         // Real-Time Clock and Date
         function updateTime() {
             const now = new Date();
             const timeOptions = { hour: '2-digit', minute: '2-digit', timeZoneName: 'short', hour12: true };
-            const dateOptions = { day: '2-digit', month: '2-digit', year: 'numeric' };
+            const dateOptions = { weekday: 'long', day: '2-digit', month: '2-digit', year: 'numeric' };
             document.getElementById('timeDisplay').textContent = now.toLocaleTimeString('en-US', timeOptions).replace('PM', 'PM -04').replace('AM', 'AM -04');
-            document.getElementById('currentDate').textContent = now.toLocaleDateString('pt-BR', dateOptions);
+            document.getElementById('currentDate').textContent = now.toLocaleDateString('pt-BR', dateOptions).replace(' de ', '/').replace(' de ', '/');
         }
         setInterval(updateTime, 1000);
         updateTime();
@@ -475,7 +454,8 @@
         // Notification System
         function showNotification(message) {
             const notification = document.getElementById('notification');
-            notification.querySelector('p').textContent = message;
+            const notificationText = document.getElementById('notificationText');
+            notificationText.textContent = message;
             notification.classList.remove('hidden');
             setTimeout(() => notification.classList.add('hidden'), 5000);
         }
@@ -488,8 +468,7 @@
         document.querySelectorAll('.animate-slideUp').forEach(element => {
             setTimeout(() => element.classList.add('translate-y-0'), 100);
         });
-    </style>
-</script>
+    </script>
 </body>
 
 </html>

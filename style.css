@@ -141,7 +141,7 @@ nav a:focus {
 header {
     text-align: center;
     padding: 100px 20px;
-    position: relative;
+
 }
 
 header h1 {
@@ -364,5 +364,320 @@ footer p {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+nav {
+    transition: background-color 0.3s ease;
+}
+
+nav.sticky {
+    position: sticky;
+    top: 0;
+    background-color: rgba(51, 51, 51, 0.95);
+    z-index: 1000;
+}
+
+.event-card,
+.highlight-card,
+.tip-card,
+.gallery-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover,
+.highlight-card:hover,
+.tip-card:hover,
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    background: url('https://images.unsplash.com/photo-1516321497487-e288fb19713f?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 123, 255, 0.7);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.section-icon {
+    display: inline-block;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+}
+
+.btn-submit {
+    background: linear-gradient(to right, #007bff, #00c4b4);
+}
+
+.btn-submit:hover {
+    background: linear-gradient(to right, #0056b3, #009b8d);
+}
+
+.gallery-item img {
+    border: 2px solid #007bff;
+    border-radius: 0.5rem;
+}
+
+nav {
+    transition: background-color 0.3s ease;
+}
+
+nav.sticky {
+    position: sticky;
+    top: 0;
+    background-color: rgba(51, 51, 51, 0.95);
+    z-index: 1000;
+}
+
+.card,
+.highlight-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover,
+.highlight-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    background: linear-gradient(to right, #007bff, #00c4b4);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.filter-button:hover {
+    background-color: #2563eb;
+}
+
+formate para css body {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: #e5e7eb;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+nav {
+    background-color: #1a1a1a;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1100;
+}
+
+nav.sticky {
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.sidebar {
+    background: linear-gradient(0deg, #252525 0%, #333333 100%);
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px 0;
+    transition: transform 0.3s ease;
+    z-index: 1200;
+}
+
+.sidebar a,
+.sidebar button {
+    color: #b0b0b0;
+    padding: 10px 16px;
+    display: block;
+    width: 100%;
+    text-align: left;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+}
+
+.sidebar a:hover,
+.sidebar button:hover {
+    background-color: #444;
+    color: #ffffff;
+    transform: translateX(5px);
+}
+
+.content {
+    margin-left: 270px;
+    padding: 20px 40px;
+    transition: margin-left 0.3s ease;
+    position: relative;
+    z-index: 600;
+}
+
+.post,
+.highlight,
+.member-card {
+    background: linear-gradient(135deg, #2d2d2d 0%, #3a3a3a 100%);
+    border: 1px solid #444;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.post:hover,
+.highlight:hover,
+.member-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.comment {
+    background-color: #3a3a3a;
+    border-left: 6px solid #4CAF50;
+    border-radius: 4px;
+    margin-left: 30px;
+    padding: 12px;
+}
+
+.upvote-btn {
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.upvote-btn:hover svg {
+    fill: #2563eb;
+    transform: scale(1.1);
+}
+
+.upvote-btn.active svg {
+    fill: #2563eb;
+}
+
+header {
+    background: linear-gradient(90deg, #007bff, #00c4b4, #0056b3);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    padding: 60px 0;
+    position: relative;
+    overflow: hidden;
+    z-index: 500;
+}
+
+.header-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+.header-content {
+    margin-left: 270px;
+    transition: margin-left 0.3s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.header-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.filter-button {
+    background: linear-gradient(90deg, #2563eb, #1d4ed8);
+    transition: background 0.2s, transform 0.2s;
+}
+
+.filter-button:hover {
+    background: linear-gradient(90deg, #1d4ed8, #1e40af);
+    transform: translateY(-2px);
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 0;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-item {
+    flex: 0 0 auto;
+    scroll-snap-align: start;
+    min-width: 250px;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+.animate-fadeIn {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.animate-fadeIn.opacity-100 {
+    opacity: 1;
+}
+
+.animate-slideUp {
+    transform: translateY(20px);
+    transition: transform 0.5s ease;
+}
+
+.animate-slideUp.translate-y-0 {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-250px);
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .header-content {
+        margin-left: 0;
+    }
+
+    header {
+        padding: 40px 0;
+        clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    }
+
+    .post,
+    .member-card {
+        margin-bottom: 15px;
+    }
+
+    .carousel-btn {
+        display: none;
     }
 }
