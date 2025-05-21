@@ -4,815 +4,492 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Comunidade Laços</title>
+    <meta name="description" content="Comunidade Laços - Conecte-se, troque habilidades e cresça com milhares de membros!">
+    <title>Comunidade Laços - Troque Habilidades, Transforme Vidas</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="https://via.placeholder.com/32" />
     <style>
-        nav {
-            transition: background-color 0.3s ease;
+        body {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #e5e7eb;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            overflow-x: hidden;
         }
-
+        nav {
+            background-color: #1a1a1a;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
         nav.sticky {
             position: sticky;
             top: 0;
-            background-color: rgba(51, 51, 51, 0.95);
             z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
-
-        .post,
-        .highlight,
-        .member-card {
+        .sidebar {
+            background: linear-gradient(0deg, #252525 0%, #333333 100%);
+            width: 250px;
+            height: 100vh;
+            position: fixed;
+            padding: 20px 0;
+            transition: transform 0.3s ease;
+        }
+        .sidebar a, .sidebar button {
+            color: #b0b0b0;
+            padding: 10px 16px;
+            display: block;
+            width: 100%;
+            text-align: left;
+            border-radius: 6px;
+            transition: background-color 0.2s, color 0.2s, transform 0.2s;
+        }
+        .sidebar a:hover, .sidebar button:hover {
+            background-color: #444;
+            color: #ffffff;
+            transform: translateX(5px);
+        }
+        .content {
+            margin-left: 270px;
+            padding: 20px 40px;
+            transition: margin-left 0.3s ease;
+        }
+        .post, .highlight, .member-card {
+            background: linear-gradient(135deg, #2d2d2d 0%, #3a3a3a 100%);
+            border: 1px solid #444;
+            border-radius: 8px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        .post:hover,
-        .highlight:hover,
-        .member-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        .post:hover, .highlight:hover, .member-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
         }
-
-        header {
-            background: linear-gradient(to right, #007bff, #00c4b4);
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
-        }
-
         .comment {
-            border-left: 3px solid #4CAF50;
+            background-color: #3a3a3a;
+            border-left: 6px solid #4CAF50;
+            border-radius: 4px;
+            margin-left: 30px;
+            padding: 12px;
         }
-
+        .upvote-btn {
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        .upvote-btn:hover svg {
+            fill: #2563eb;
+            transform: scale(1.1);
+        }
+        .upvote-btn.active svg {
+            fill: #2563eb;
+        }
+        header {
+            background: linear-gradient(90deg, #007bff, #00c4b4, #0056b3);
+            clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+        .filter-button {
+            background: linear-gradient(90deg, #2563eb, #1d4ed8);
+            transition: background 0.2s, transform 0.2s;
+        }
         .filter-button:hover {
-            background-color: #2563eb;
+            background: linear-gradient(90deg, #1d4ed8, #1e40af);
+            transform: translateY(-2px);
         }
-
-        .like-button:hover {
-            color: #2563eb;
+        .carousel {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+            padding: 10px 0;
+            scrollbar-width: none;
+        }
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+        .carousel-item {
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+            min-width: 250px;
+        }
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-250px);
+            }
+            .content {
+                margin-left: 0;
+                padding: 10px;
+            }
+            .sidebar.active {
+                transform: translateX(0);
+            }
+            header {
+                padding: 40px 0;
+                clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            }
+            .post, .member-card {
+                margin-bottom: 15px;
+            }
         }
     </style>
 </head>
 
-<body class="bg-gray-100 text-gray-800 font-sans">
-    <!-- Navigation Bar -->
-    <nav id="navbar" class="bg-gray-800 text-white p-4">
-        <div class="container mx-auto flex flex-wrap justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <h1 class="text-2xl font-bold">Laços</h1>
+<body class="bg-gray-900 text-gray-200 font-sans">
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="px-4">
+            <h1 class="text-xl font-bold text-white mb-6 flex items-center">
+                <span class="mr-2">🌐</span> Laços
+            </h1>
+            <input type="text" placeholder="Pesquisar na Comunidade" class="w-full p-2 mb-6 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" id="searchInput">
+            <a href="index.html" class="hover:bg-gray-700">Home</a>
+            <a href="#popular" class="hover:bg-gray-700">Popular</a>
+            <a href="#explore" class="hover:bg-gray-700">Explorar</a>
+            <button class="hover:bg-gray-700" id="customFeedsBtn">Custom Feeds</button>
+            <div class="mt-6">
+                <p class="text-sm text-gray-400 mb-3">Comunidades</p>
+                <a href="#tviolao" class="hover:bg-gray-700 pl-4">tviolao</a>
+                <a href="#webdesign" class="hover:bg-gray-700 pl-4">webdesign</a>
+                <button class="hover:bg-gray-700 pl-4 mt-3" id="createCommunityBtn">Criar Comunidade</button>
             </div>
-            <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 mt-4 md:mt-0">
-            
-                <li><a href="habilidade.html"
-                        class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Habilidades em
-                        Destaque</a></li>
-                <li><a href="comunidade.html" class="block px-4 py-2 bg-gray-600 text-blue-300 rounded">Participe da
-                        Comunidade</a></li>
-                <li><a href="mercado.html"
-                        class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Mercado de
-                        Trocas</a></li>
-                <li><a href="eventos.html"
-                        class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Eventos e
-                        Oficinas</a></li>
-                <li><a href="perfil.html"
-                        class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Perfil</a>
-                </li>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="bg-gray-800 text-white p-4 hidden md:block">
+        <div class="container mx-auto flex justify-between items-center">
+            <button class="md:hidden text-white p-2" id="menuToggle">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                </svg>
+            </button>
+            <ul class="flex space-x-4">
+                <li><a href="habilidade.html" class="px-4 py-2 hover:bg-gray-700 hover:text-blue-300 rounded transition">Habilidades</a></li>
+                <li><a href="comunidade.html" class="px-4 py-2 bg-gray-700 text-blue-300 rounded">Comunidade</a></li>
+                <li><a href="mercado.html" class="px-4 py-2 hover:bg-gray-700 hover:text-blue-300 rounded transition">Mercado</a></li>
+                <li><a href="eventos.html" class="px-4 py-2 hover:bg-gray-700 hover:text-blue-300 rounded transition">Eventos</a></li>
+                <li><a href="perfil.html" class="px-4 py-2 hover:bg-gray-700 hover:text-blue-300 rounded transition">Perfil</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Header -->
-    <header class="text-white py-16 text-center">
-        <div class="container mx-auto">
-            <h1 class="text-4xl md:text-5xl font-bold">Comunidade Laços</h1>
-            <p class="text-lg md:text-xl mt-4">Conecte-se, colabore e cresça com milhares de membros compartilhando conhecimentos!</p>
+    <header class="relative text-white py-16 text-center">
+        <div class="header-overlay"></div>
+        <div class="container mx-auto relative z-10">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 animate-fadeIn">Comunidade Laços</h1>
+            <p class="text-xl md:text-2xl mt-4 mb-6">Conecte-se, colabore e cresça - <span id="timeDisplay">11:18 PM -04</span></p>
+            <a href="#posts" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-full font-semibold text-lg hover:bg-blue-100 transition animate-fadeIn delay-1">Participe Agora</a>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="container mx-auto px-4 py-12">
+    <main class="content">
         <!-- Community Stats -->
-        <div class="bg-blue-50 p-6 rounded-lg shadow-lg mb-8 text-center">
-            <h2 class="text-2xl font-bold text-blue-600 mb-4">Nossa Comunidade em Números</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div>
-                    <p class="text-3xl font-semibold text-blue-600">15.832</p>
-                    <p>Membros Ativos</p>
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-10 text-center animate-fadeIn">
+            <h2 class="text-2xl font-bold text-blue-400 mb-5">Nossa Comunidade</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div><p class="text-4xl font-semibold text-blue-400">15.8K</p><p class="text-lg">Membros</p></div>
+                <div><p class="text-4xl font-semibold text-blue-400">2.4K</p><p class="text-lg">Tópicos/Mês</p></div>
+                <div><p class="text-4xl font-semibold text-blue-400">12.1K</p><p class="text-lg">Comentários</p></div>
+            </div>
+        </div>
+
+        <!-- Featured Posts -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-10 animate-fadeIn">
+            <h2 class="text-2xl font-bold text-blue-400 mb-5">Destaques da Comunidade</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="highlight p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold text-blue-400">[Evento] Workshop de Design Gráfico</h3>
+                    <p class="text-gray-300 mb-2">Participe no dia 25/05 às 19h - vagas limitadas!</p>
                 </div>
-                <div>
-                    <p class="text-3xl font-semibold text-blue-600">2.415</p>
-                    <p>Novos Tópicos este Mês</p>
-                </div>
-                <div>
-                    <p class="text-3xl font-semibold text-blue-600">12.109</p>
-                    <p>Comentários Postados</p>
+                <div class="highlight p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold text-blue-400">[Dica] 5 Apps para Aprender Idiomas</h3>
+                    <p class="text-gray-300 mb-2">Recomendações da comunidade para iniciantes.</p>
                 </div>
             </div>
         </div>
 
         <!-- New Post Form -->
-        <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
-            <h2 class="text-2xl font-bold text-blue-600 mb-4">Crie um Novo Tópico</h2>
-            <div action="#" class="space-y-4">
-                <input type="text" placeholder="Título do Tópico"
-                    class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <select class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <option value="">Selecione uma Categoria</option>
-                    <option value="trocas">Trocas e Parcerias</option>
-                    <option value="dicas">Dicas de Habilidades</option>
-                    <option value="eventos">Eventos e Oficinas</option>
-                    <option value="suporte">Suporte e Dúvidas</option>
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-10 animate-fadeIn">
+            <h2 class="text-2xl font-bold text-blue-400 mb-5">Novo Tópico</h2>
+            <form id="newPostForm" class="space-y-4">
+                <input type="text" placeholder="Título" required class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <select required class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="">Categoria</option>
+                    <option value="trocas">Trocas</option>
+                    <option value="dicas">Dicas</option>
+                    <option value="eventos">Eventos</option>
+                    <option value="suporte">Suporte</option>
                     <option value="outros">Outros</option>
                 </select>
-                <textarea placeholder="Escreva sua mensagem..."
-                    class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    rows="6"></textarea>
-                <button type="submit"
-                    class="bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700 transition">Publicar
-                    Tópico</button>
-            </div>
+                <textarea placeholder="Mensagem" required class="w-full p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" rows="5"></textarea>
+                <button type="submit" class="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition w-full">Publicar Tópico</button>
+            </form>
         </div>
 
         <!-- Topic Filters -->
-        <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
-            <h2 class="text-2xl font-bold text-blue-600 mb-4">Filtrar Tópicos</h2>
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-10 animate-fadeIn">
+            <h2 class="text-2xl font-bold text-blue-400 mb-5">Filtros</h2>
             <div class="flex flex-col md:flex-row gap-4">
-                <select class="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <option value="">Categoria</option>
-                    <option value="trocas">Trocas e Parcerias</option>
-                    <option value="dicas">Dicas de Habilidades</option>
-                    <option value="eventos">Eventos e Oficinas</option>
-                    <option value="suporte">Suporte e Dúvidas</option>
+                <select id="categoryFilter" class="p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <option value="">Todas Categorias</option>
+                    <option value="trocas">Trocas</option>
+                    <option value="dicas">Dicas</option>
+                    <option value="eventos">Eventos</option>
+                    <option value="suporte">Suporte</option>
                     <option value="outros">Outros</option>
                 </select>
-                <input type="text" placeholder="Buscar por palavra-chave..."
-                    class="p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 flex-1">
-                <button
-                    class="filter-button bg-blue-600 text-white p-3 rounded-lg font-semibold hover:bg-blue-700 transition">Aplicar
-                    Filtros</button>
+                <input type="text" id="searchFilter" placeholder="Buscar..." class="p-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 flex-1">
+                <button id="applyFilter" class="filter-button p-3 rounded-lg transition">Aplicar</button>
             </div>
         </div>
 
-        <!-- Community Highlights -->
-        <div class="bg-blue-50 p-6 rounded-lg shadow-lg mb-8">
-            <h2 class="text-2xl font-bold text-blue-600 mb-4">Destaques da Comunidade</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="highlight bg-white p-4 rounded-lg">
-                    <h3 class="text-lg font-semibold">Troca de Sucesso!</h3>
-                    <p>Clara e Miguel trocaram aulas de culinária e jardinagem, criando um jardim de ervas e pratos
-                        incríveis juntos!</p>
-                    <a href="mercado.html" class="text-blue-600 hover:underline">Ver Mercado</a>
+        <!-- Upcoming Events -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-10 animate-fadeIn">
+            <h2 class="text-2xl font-bold text-blue-400 mb-5">Eventos Próximos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="highlight p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold text-blue-400">Workshop de Violão - 22/05/2025</h3>
+                    <p class="text-gray-300">Às 18h, online. Inscreva-se agora!</p>
                 </div>
-                <div class="highlight bg-white p-4 rounded-lg">
-                    <h3 class="text-lg font-semibold">Evento Comunitário</h3>
-                    <p>Junte-se à Oficina de Fotografia Criativa online, dia 20 de maio! Inscreva-se em <a
-                            href="eventos.html" class="text-blue-600 hover:underline">Eventos</a>.</p>
-                </div>
-                <div class="highlight bg-white p-4 rounded-lg">
-                    <h3 class="text-lg font-semibold">Conquista da Comunidade</h3>
-                    <p>Nossa comunidade atingiu 15.000 trocas realizadas! Parabéns a todos os membros!</p>
-                    <a href="index.html" class="text-blue-600 hover:underline">Saiba Mais</a>
-                </div>
-                <div class="highlight bg-white p-4 rounded-lg">
-                    <h3 class="text-lg font-semibold">Membro do Mês</h3>
-                    <p>Parabéns à Mariana, que realizou 10 trocas incríveis e recebeu 5 estrelas em todas!</p>
-                    <a href="perfil.html" class="text-blue-600 hover:underline">Ver Perfil</a>
-                </div>
-                <div class="highlight bg-white p-4 rounded-lg">
-                    <h3 class="text-lg font-semibold">Novo Recurso!</h3>
-                    <p>Agora você pode curtir tópicos e comentários para mostrar apoio à comunidade!</p>
-                    <a href="servicos.html" class="text-blue-600 hover:underline">Explorar Serviços</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Active Members -->
-        <div class="bg-white p-6 rounded-lg shadow-lg mb-8">
-            <h2 class="text-2xl font-bold text-blue-600 mb-4">Membros Ativos</h2>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div class="member-card bg-blue-50 p-4 rounded-lg text-center">
-                    <img src="https://via.placeholder.com/60" alt="Mariana" class="w-16 h-16 rounded-full mx-auto mb-2">
-                    <p class="font-semibold">Mariana</p>
-                    <p class="text-sm">Fotógrafa</p>
-                    <a href="perfil.html" class="text-blue-600 hover:underline">Ver Perfil</a>
-                </div>
-                <div class="member-card bg-blue-50 p-4 rounded-lg text-center">
-                    <img src="https://via.placeholder.com/60" alt="João" class="w-16 h-16 rounded-full mx-auto mb-2">
-                    <p class="font-semibold">João</p>
-                    <p class="text-sm">Músico</p>
-                    <a href="perfil.html" class="text-blue-600 hover:underline">Ver Perfil</a>
-                </div>
-                <div class="member-card bg-blue-50 p-4 rounded-lg text-center">
-                    <img src="https://via.placeholder.com/60" alt="Clara" class="w-16 h-16 rounded-full mx-auto mb-2">
-                    <p class="font-semibold">Clara</p>
-                    <p class="text-sm">Nutricionista</p>
-                    <a href="perfil.html" class="text-blue-600 hover:underline">Ver Perfil</a>
-                </div>
-                <div class="member-card bg-blue-50 p-4 rounded-lg text-center">
-                    <img src="https://via.placeholder.com/60" alt="Lucas" class="w-16 h-16 rounded-full mx-auto mb-2">
-                    <p class="font-semibold">Lucas</p>
-                    <p class="text-sm">Professor de Inglês</p>
-                    <a href="perfil.html" class="text-blue-600 hover:underline">Ver Perfil</a>
+                <div class="highlight p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold text-blue-400">Feira de Trocas - 28/05/2025</h3>
+                    <p class="text-gray-300">Evento presencial em São Paulo.</p>
                 </div>
             </div>
         </div>
 
         <!-- Community Posts -->
-        <h2 class="text-2xl font-bold text-blue-600 mb-6">Tópicos da Comunidade</h2>
-        <div class="space-y-6">
-            <!-- Topic 1 -->
-            <div class="post bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600">[Dicas] João: Como melhorar minhas habilidades em
-                    programação?</h3>
-                <p class="mb-4">Olá, comunidade! Estou aprendendo Python há 3 meses e quero dicas para avançar. Como
-                    organizo meu estudo e quais projetos práticos posso fazer?</p>
-                <div class="flex items-center mb-4">
-                    <button class="like-button text-gray-600 hover:text-blue-600 mr-4">
-                        <svg class="w-5 h-5 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg> 23
+        <h2 class="text-2xl font-bold text-blue-400 mb-6 animate-fadeIn">Tópicos Recentes</h2>
+        <div class="space-y-6" id="postContainer">
+            <div class="post p-4 rounded-lg" data-category="dicas">
+                <div class="flex items-start">
+                    <button class="upvote-btn text-gray-400 p-2 mr-4 focus:outline-none" aria-label="Upvote">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+                        </svg>
+                        <span class="block mt-1" data-votes="23">23</span>
                     </button>
-                    <button class="text-blue-600 hover:underline">Responder</button>
+                    <div>
+                        <h3 class="text-lg font-semibold text-blue-400">[Dicas] João: Como melhorar minhas habilidades em programação?</h3>
+                        <p class="text-gray-300 mb-2">Olá, comunidade! Estou aprendendo Python há 3 meses e quero dicas para avançar. Alguma sugestão?</p>
+                        <button class="text-blue-400 hover:underline mb-2" aria-label="Toggle comments">Ver Comentários (4)</button>
+                        <div class="comment-section hidden space-y-2 mt-2">
+                            <div class="comment p-3 rounded">
+                                <p><strong>Maria:</strong> Pratique com projetos reais, como um aplicativo de lista...</p>
+                            </div>
+                            <div class="comment p-3 rounded">
+                                <p><strong>Carlos:</strong> Tente desafios no HackerRank, funciona bem!</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="comment p-4 mt-4">
-                    <p><strong>Maria:</strong> Oi João! Pratique com projetos reais, como um aplicativo de lista de
-                        tarefas. Também recomendo o curso gratuito da FreeCodeCamp!</p>
+            </div>
+            <div class="post p-4 rounded-lg" data-category="trocas">
+                <div class="flex items-start">
+                    <button class="upvote-btn text-gray-400 p-2 mr-4 focus:outline-none" aria-label="Upvote">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+                        </svg>
+                        <span class="block mt-1" data-votes="15">15</span>
+                    </button>
+                    <div>
+                        <h3 class="text-lg font-semibold text-blue-400">[Trocas] Ana: Ofereço aulas de inglês por design gráfico</h3>
+                        <p class="text-gray-300 mb-2">Procuro alguém para trocar aulas de inglês por design. Interessados?</p>
+                        <button class="text-blue-400 hover:underline mb-2" aria-label="Toggle comments">Ver Comentários (2)</button>
+                        <div class="comment-section hidden space-y-2 mt-2">
+                            <div class="comment p-3 rounded">
+                                <p><strong>Lucas:</strong> Interessado! Podemos conversar?</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Carlos:</strong> Resolver desafios no HackerRank é ótimo. Tente também contribuir em
-                        projetos open-source no GitHub.</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Beatriz:</strong> João, troquei aulas de Python por design no Laços e aprendi muito com um mentor. Tente encontrar alguém no Mercado!</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Pedro:</strong> Organizo meu estudo com a técnica Pomodoro: 25 minutos de foco e 5 de
-                        pausa. Funciona bem para projetos longos.</p>
-                </div>
+            </div>
+            <!-- Adicione mais posts conforme necessário -->
+        </div>
 
-                <!-- Área para adicionar uma nova resposta -->
-                <div class="mt-4">
-                    <textarea class="w-full p-3 border rounded-lg" placeholder="Escreva sua resposta..."
-                        rows="3"></textarea>
-                    <button class="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Enviar</button>
-                </div>
-            </div>
-            <!-- Topic 2 -->
-            <div class="post bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600">[Trocas] Ana: Alguém para trocar design gráfico por
-                    inglês?</h3>
-                <p class="mb-4">Sou designer há 5 anos e posso ensinar Photoshop e Illustrator. Quero melhorar meu
-                    inglês conversacional para reuniões internacionais. Quem se interessa?</p>
-                <div class="flex items-center mb-4">
-                    <button class="like-button text-gray-600 hover:text-blue-600 mr-4"><svg class="w-5 h-5 inline"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg> 18</button>
-                    <button class="text-blue-600 hover:underline">Responder</button>
-                </div>
-                <div class="comment p-4 mt-4">
-                    <p><strong>Lucas:</strong> Oi Ana! Sou professor de inglês e quero aprender design para criar
-                        materiais didáticos. Vamos combinar uma troca?</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Sofia:</strong> Ana, já encontrou alguém? Também sou designer, mas posso te indicar um
-                        amigo que ensina inglês!</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Juliana:</strong> Adoraria aprender design! Posso oferecer aulas de espanhol, se te
-                        interessar.</p>
-                </div>
-            </div>
-            <!-- Topic 3 -->
-            <div class="post bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600">[Dicas] Fernanda: Dicas para ensinar yoga online</h3>
-                <p class="mb-4">Quero oferecer aulas de yoga no Laços, mas nunca ensinei online. Como criar aulas envolventes? Que ferramentas e técnicas vocês recomendam?</p>
-                <div class="flex items-center mb-4">
-                    <button class="like-button text-gray-600 hover:text-blue-600 mr-4"><svg class="w-5 h-5 inline"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg> 15</button>
-                    <button class="text-blue-600 hover:underline">Responder</button>
-                </div>
-                <div class="comment p-4 mt-4">
-                    <p><strong>Daniel:</strong> Use Zoom com uma boa câmera e crie playlists relaxantes no Spotify.
-                        Explicar os movimentos com clareza é essencial!</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Clara:</strong> Compartilhar a tela com guias visuais ajuda muito. Também recomendo
-                        gravar as sessões para os alunos revisarem.</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Larissa:</strong> Tento criar um ambiente virtual acolhedor com velas e iluminação suave.
-                        Os alunos adoram!</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Eduardo:</strong> Use o Google Meet para sessões menores. É leve e fácil de configurar.
-                    </p>
-                </div>
-            </div>
-            <!-- Topic 4 -->
-            <div class="post bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600">[Trocas] Rafael: Troca de marketing digital por
-                    fotografia</h3>
-                <p class="mb-4">Sou especialista em SEO e redes sociais e quero aprender fotografia para melhorar minhas
-                    campanhas. Alguém topa essa troca?</p>
-                <div class="flex items-center mb-4">
-                    <button class="like-button text-gray-600 hover:text-blue-600 mr-4"><svg class="w-5 h-5 inline"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg> 12</button>
-                    <button class="text-blue-600 hover:underline">Responder</button>
-                </div>
-                <div class="comment p-4 mt-4">
-                    <p><strong>Mariana:</strong> Oi Rafael! Sou fotógrafa e preciso de ajuda com marketing para meu
-                        portfólio. Vamos conversar?</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Thiago:</strong> Tenho interesse em marketing! Posso oferecer aulas de edição de vídeo,
-                        se quiser diversificar.</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Camila:</strong> Rafael, já fechou a troca? Sou fotógrafa amadora e adoraria aprender
-                        SEO!</p>
-                </div>
-            </div>
-            <!-- Topic 5 -->
-            <div class="post bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600">[Suporte] Beatriz: Como organizar meu tempo para trocas?</h3>
-                <p class="mb-4">Adoro o Laços mas minha rotina é corrida. Como vocês encaixam as trocas no dia a dia? Alguma dica de organização?</p>
-                <div class="flex items-center mb-4">
-                    <button class="like-button text-gray-600 hover:text-blue-600 mr-4"><svg class="w-5 h-5 inline"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg> 20</button>
-                    <button class="text-blue-600 hover:underline">Responder</button>
-                </div>
-                <div class="comment p-4 mt-4">
-                    <p><strong>João:</strong> Reservo 1-2 horas por semana, como se fosse uma aula. Um calendário
-                        digital ajuda a lembrar!</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Lucas:</strong> Comecei com trocas curtas, de 30 minutos. Isso me ajudou a criar o hábito
-                        sem sobrecarregar.</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Isabela:</strong> Uso o Trello para organizar minhas trocas e priorizo fins de semana,
-                        quando estou mais livre.</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Gabriel:</strong> Tento combinar trocas com hobbies. Por exemplo, aprendo culinária
-                        enquanto cozinho com um parceiro!</p>
-                </div>
-            </div>
-            <!-- Topic 6 -->
-            <div class="post bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600">[Dicas] Clara: Como criar um portfólio de design?</h3>
-                <p class="mb-4">Quero montar um portfólio para atrair trocas de design gráfico no Laços. Quais ferramentas e dicas vocês sugerem?</p>
-                <div class="flex items-center mb-4">
-                    <button class="like-button text-gray-600 hover:text-blue-600 mr-4"><svg class="w-5 h-5 inline"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg> 14</button>
-                    <button class="text-blue-600 hover:underline">Responder</button>
-                </div>
-                <div class="comment p-4 mt-4">
-                    <p><strong>Ana:</strong> Uso o Behance para exibir meus projetos. É gratuito e tem uma comunidade
-                        ativa de designers.</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Lucas:</strong> Recomendo criar um site simples com o Wix ou Squarespace. Mostra
-                        profissionalismo!</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Mariana:</strong> Inclua 3-5 projetos variados e explique o processo criativo de cada um.
-                        Isso atrai atenção!</p>
-                </div>
-            </div>
-            <!-- Topic 7 -->
-            <div class="post bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600">[Trocas] Miguel: Troca de reparos domésticos por
-                    culinária</h3>
-                <p class="mb-4">Sou bom com consertos em casa (elétrica, encanamento) e quero aprender a cozinhar pratos
-                    caseiros. Alguém interessado?</p>
-                <div class="flex items-center mb-4">
-                    <button class="like-button text-gray-600 hover:text-blue-600 mr-4"><svg class="w-5 h-5 inline"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg> 10</button>
-                    <button class="text-blue-600 hover:underline">Responder</button>
-                </div>
-                <div class="comment p-4 mt-4">
-                    <p><strong>Clara:</strong> Oi Miguel! Posso ensinar receitas caseiras. Preciso de ajuda com um
-                        vazamento na cozinha!</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Renata:</strong> Adoro cozinhar! Posso ensinar sobremesas em troca de consertos na minha
-                        casa.</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Bruno:</strong> Miguel, já fechou? Sou cozinheiro amador e preciso de ajuda com elétrica.
-                    </p>
-                </div>
-            </div>
-            <!-- Topic 8 -->
-            <div class="post bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600">[Eventos] Sofia: Quem vai na Feira de Trocas em BH?</h3>
-                <p class="mb-4">Vi que terá uma Feira de Trocas em Belo Horizonte em dezembro. Alguém vai? Quero trocar
-                    jardinagem por fotografia!</p>
-                <div class="flex items-center mb-4">
-                    <button class="like-button text-gray-600 hover:text-blue-600 mr-4"><svg class="w-5 h-5 inline"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg> 16</button>
-                    <button class="text-blue-600 hover:underline">Responder</button>
-                </div>
-                <div class="comment p-4 mt-4">
-                    <p><strong>Mariana:</strong> Estarei lá! Posso oferecer fotografia. Vamos combinar a troca?</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Thiago:</strong> Também vou! Quero aprender jardinagem. Alguém mais estará por lá?</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Laura:</strong> Animada para a feira! Vou levar minhas habilidades de costura para
-                        trocar.</p>
-                </div>
-            </div>
-            <!-- Topic 9 -->
-            <div class="post bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600">[Suporte] Gabriel: Como garantir trocas seguras?</h3>
-                <p class="mb-4">Sou novo no Laços e quero garantir que minhas trocas sejam confiáveis. Alguma dica para escolher parceiros?</p>
-                <div class="flex items-center mb-4">
-                    <button class="like-button text-gray-600 hover:text-blue-600 mr-4"><svg class="w-5 h-5 inline"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg> 22</button>
-                    <button class="text-blue-600 hover:underline">Responder</button>
-                </div>
-                <div class="comment p-4 mt-4">
-                    <p><strong>Beatriz:</strong> Verifique as avaliações no perfil do parceiro. Comece com trocas curtas
-                        para testar!</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>João:</strong> Conversar bastante antes da troca ajuda a alinhar expectativas. Use o chat do Laços!</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Maria:</strong> Sempre marco uma chamada inicial para conhecer o parceiro. Até agora,
-                        todas as trocas foram ótimas!</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Eduardo:</strong> Leia o guia de segurança na seção Como Funciona. Tem dicas úteis!</p>
-                </div>
-            </div>
-            <!-- Topic 10 -->
-            <div class="post bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600">[Dicas] Larissa: Melhores plataformas para trocas online
-                </h3>
-                <p class="mb-4">Quero fazer trocas online, mas não sei qual plataforma usar. Vocês preferem Zoom, Meet
-                    ou outra? Alguma dica?</p>
-                <div class="flex items-center mb-4">
-                    <button class="like-button text-gray-600 hover:text-blue-600 mr-4"><svg class="w-5 h-5 inline"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg> 13</button>
-                    <button class="text-blue-600 hover:underline">Responder</button>
-                </div>
-                <div class="comment p-4 mt-4">
-                    <p><strong>Clara:</strong> Zoom é ótimo para compartilhar tela e gravar sessões. Uso para minhas
-                        aulas de nutrição!</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Daniel:</strong> Prefiro Google Meet por ser leve e não exigir instalação. Ideal para
-                        trocas rápidas.</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Fernanda:</strong> Testei o Microsoft Teams e gostei da integração com anotações. Depende
-                        da troca!</p>
-                </div>
-            </div>
-            <!-- Topic 11 -->
-            <div class="post bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600">[Trocas] Thiago: Troca de edição de vídeo por escrita
-                    criativa</h3>
-                <p class="mb-4">Edito vídeos no Premiere e quero melhorar minha escrita para roteiros. Alguém para
-                    trocar essas habilidades?</p>
-                <div class="flex items-center mb-4">
-                    <button class="like-button text-gray-600 hover:text-blue-600 mr-4"><svg class="w-5 h-5 inline"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg> 11</button>
-                    <button class="text-blue-600 hover:underline">Responder</button>
-                </div>
-                <div class="comment p-4 mt-4">
-                    <p><strong>Rafael:</strong> Oi Thiago! Sou escritor e quero aprender edição de vídeo. Vamos
-                        combinar?</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Camila:</strong> Também escrevo! Posso ensinar narrativa em troca de edição básica.</p>
-                </div>
-            </div>
-            <!-- Topic 12 -->
-            <div class="post bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600">[Eventos] Laura: Oficina de Costura Online</h3>
-                <p class="mb-4">Alguém participou da última oficina de costura online? Quero saber como foi e se vale a
-                    pena me inscrever na próxima!</p>
-                <div class="flex items-center mb-4">
-                    <button class="like-button text-gray-600 hover:text-blue-600 mr-4"><svg class="w-5 h-5 inline"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg> 9</button>
-                    <button class="text-blue-600 hover:underline">Responder</button>
-                </div>
-                <div class="comment p-4 mt-4">
-                    <p><strong>Sofia:</strong> Participei e adorei! A instrutora ensinou técnicas básicas e avançadas.
-                        Super recomendo!</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Beatriz:</strong> Também fui! Aprendi a fazer bainhas perfeitas. Inscreva-se, Laura!</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Renata:</strong> Estou na próxima! Alguém sabe se terá parte prática?</p>
-                </div>
-            </div>
-            <!-- Topic 13 -->
-            <div class="post bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600">[Dicas] Eduardo: Como ensinar idiomas de forma divertida?</h3>
-                <p class="mb-4">Quero oferecer aulas de espanhol no Laços, mas quero que sejam envolventes. Alguma ideia para tornar as aulas mais dinâmicas?</p>
-                <div class="flex items-center mb-4">
-                    <button class="like-button text-gray-600 hover:text-blue-600 mr-4"><svg class="w-5 h-5 inline"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg> 17</button>
-                    <button class="text-blue-600 hover:underline">Responder</button>
-                </div>
-                <div class="comment p-4 mt-4">
-                    <p><strong>Lucas:</strong> Uso jogos de vocabulário e vídeos curtos. Meus alunos adoram!</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Juliana:</strong> Tento incluir cultura, como receitas ou músicas em espanhol. Torna as
-                        aulas mais ricas!</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Maria:</strong> Role-playing é ótimo! Simule situações reais, como pedir comida em um
-                        restaurante.</p>
-                </div>
-            </div>
-            <!-- Topic 14 -->
-            <div class="post bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600">[Suporte] Juliana: Problemas com notificações</h3>
-                <p class="mb-4">Não estou recebendo notificações de novas mensagens no Laços. Alguém teve esse problema? Como resolver?</p>
-                <div class="flex items-center mb-4">
-                    <button class="like-button text-gray-600 hover:text-blue-600 mr-4"><svg class="w-5 h-5 inline"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg> 8</button>
-                    <button class="text-blue-600 hover:underline">Responder</button>
-                </div>
-                <div class="comment p-4 mt-4">
-                    <p><strong>Carlos:</strong> Verifique as configurações do seu perfil. Às vezes, as notificações
-                        estão desativadas.</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Beatriz:</strong> Tive isso! Limpei o cache do navegador e voltou ao normal.</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Pedro:</strong> Contate o suporte na seção Comentários. Eles são rápidos!</p>
-                </div>
-            </div>
-            <!-- Topic 15 -->
-            <div class="post bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600">[Trocas] Camila: Troca de fotografia por nutrição</h3>
-                <p class="mb-4">Sou fotógrafa amadora e quero aprender sobre nutrição saudável. Alguém para trocar essas
-                    habilidades?</p>
-                <div class="flex items-center mb-4">
-                    <button class="like-button text-gray-600 hover:text-blue-600 mr-4"><svg class="w-5 h-5 inline"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg> 14</button>
-                    <button class="text-blue-600 hover:underline">Responder</button>
-                </div>
-                <div class="comment p-4 mt-4">
-                    <p><strong>Clara:</strong> Oi Camila! Sou nutricionista e adoraria aprender fotografia. Vamos
-                        combinar?</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Isabela:</strong> Também sou nutricionista! Posso ensinar em troca de dicas de fotografia
-                        de alimentos.</p>
-                </div>
-            </div>
-            <!-- Topic 16 -->
-            <div class="post bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600">[Dicas] Bruno: Como aprender violão mais rápido?</h3>
-                <p class="mb-4">Comecei a tocar violão, mas acho que estou progredindo devagar. Alguma dica para
-                    acelerar meu aprendizado?</p>
-                <div class="flex items-center mb-4">
-                    <button class="like-button text-gray-600 hover:text-blue-600 mr-4"><svg class="w-5 h-5 inline"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg> 19</button>
-                    <button class="text-blue-600 hover:underline">Responder</button>
-                </div>
-                <div class="comment p-4 mt-4">
-                    <p><strong>João:</strong> Pratique 15 minutos por dia com exercícios de escalas. Consistência é
-                        tudo!</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Mariana:</strong> Tente aprender músicas que você ama. Isso torna o aprendizado mais
-                        divertido!</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Thiago:</strong> Troquei aulas de violão por edição de vídeo e aprendi rápido com um
-                        mentor. Tente isso!</p>
-                </div>
-            </div>
-            <!-- Topic 17 -->
-            <div class="post bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600">[Outros] Renata: Ideias para trocas em grupo</h3>
-                <p class="mb-4">Pensei em organizar trocas em grupo no Laços, como uma oficina colaborativa. Alguém já fez algo assim? Quais ideias funcionam?</p>
-                <div class="flex items-center mb-4">
-                    <button class="like-button text-gray-600 hover:text-blue-600 mr-4"><svg class="w-5 h-5 inline"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg> 12</button>
-                    <button class="text-blue-600 hover:underline">Responder</button>
-                </div>
-                <div class="comment p-4 mt-4">
-                    <p><strong>Sofia:</strong> Organizei um grupo de fotografia onde cada um ensinava uma técnica. Foi
-                        incrível!</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Laura:</strong> Um grupo de culinária com receitas compartilhadas funciona bem. Cada um
-                        traz algo!</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Clara:</strong> Tente um tema amplo, como bem-estar, e inclua yoga, nutrição e meditação.
-                    </p>
-                </div>
-            </div>
-            <!-- Topic 18 -->
-            <div class="post bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600">[Suporte] Pedro: Como adicionar novas habilidades ao
-                    perfil?</h3>
-                <p class="mb-4">Quero incluir mais habilidades no meu perfil, mas não encontro a opção. Alguém pode
-                    explicar o passo a passo?</p>
-                <div class="flex items-center mb-4">
-                    <button class="like-button text-gray-600 hover:text-blue-600 mr-4"><svg class="w-5 h-5 inline"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg> 10</button>
-                    <button class="text-blue-600 hover:underline">Responder</button>
-                </div>
-                <div class="comment p-4 mt-4">
-                    <p><strong>Carlos:</strong> Vá até a seção Perfil, clique em "Gerenciar Habilidades" e use o campo
-                        "Adicionar nova habilidade".</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Maria:</strong> Certifique-se de salvar as alterações depois! Tive esse problema no
-                        início.</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Beatriz:</strong> Se não funcionar, tente outro navegador. Às vezes é um bug temporário.
-                    </p>
-                </div>
-            </div>
-            <!-- Topic 19 -->
-            <div class="post bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600">[Dicas] Isabela: Como melhorar minhas aulas de culinária?</h3>
-                <p class="mb-4">Ofereço aulas de culinária no Laços, mas quero torná-las mais interativas. Alguma sugestão para engajar os alunos?</p>
-                <div class="flex items-center mb-4">
-                    <button class="like-button text-gray-600 hover:text-blue-600 mr-4"><svg class="w-5 h-5 inline"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg> 16</button>
-                    <button class="text-blue-600 hover:underline">Responder</button>
-                </div>
-                <div class="comment p-4 mt-4">
-                    <p><strong>Clara:</strong> Inclua desafios, como criar uma receita com ingredientes limitados. Meus
-                        alunos adoram!</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Miguel:</strong> Uso vídeos curtos para demonstrar técnicas. Também peço feedback após
-                        cada aula.</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Renata:</strong> Tente ensinar receitas culturais e contar histórias por trás delas.
-                        Engaja muito!</p>
-                </div>
-            </div>
-            <!-- Topic 20 -->
-            <div class="post bg-white p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold text-blue-600">[Outros] Maria: Ideias para eventos comunitários</h3>
-                <p class="mb-4">Quero organizar um evento comunitário Laços, como uma maratona de trocas. Quais ideias vocês têm para eventos presenciais ou online?</p>
-                <div class="flex items-center mb-4">
-                    <button class="like-button text-gray-600 hover:text-blue-600 mr-4"><svg class="w-5 h-5 inline"
-                            fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z">
-                            </path>
-                        </svg> 15</button>
-                    <button class="text-blue-600 hover:underline">Responder</button>
-                </div>
-                <div class="comment p-4 mt-4">
-                    <p><strong>Sofia:</strong> Um hackathon de habilidades seria incrível! Cada grupo troca uma
-                        habilidade e cria algo juntos.</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>João:</strong> Que tal uma feira virtual onde cada membro apresenta sua habilidade em 5
-                        minutos?</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Clara:</strong> Um evento de troca de livros e habilidades seria legal. Cada um traz um
-                        livro e ensina algo!</p>
-                </div>
-                <div class="comment p-4 mt-2">
-                    <p><strong>Lucas:</strong> Já pensou em um evento de bem-estar? Yoga, nutrição e meditação em um
-                        dia!</p>
+        <!-- Active Members -->
+        <div class="bg-gray-800 p-6 rounded-lg shadow-lg mb-10 mt-10 animate-fadeIn">
+            <h2 class="text-2xl font-bold text-blue-400 mb-5">Membros Ativos</h2>
+            <div class="carousel">
+                <div class="carousel-item member-card p-4 rounded-lg text-center">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=60&q=80" alt="Maria" class="mx-auto mb-2 rounded-full">
+                    <p class="font-semibold">Maria</p>
+                    <p class="text-sm">Desenvolvedora</p>
+                </div>
+                <div class="carousel-item member-card p-4 rounded-lg text-center">
+                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=60&q=80" alt="João" class="mx-auto mb-2 rounded-full">
+                    <p class="font-semibold">João</p>
+                    <p class="text-sm">Músico</p>
+                </div>
+                <div class="carousel-item member-card p-4 rounded-lg text-center">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=60&q=80" alt="Carlos" class="mx-auto mb-2 rounded-full">
+                    <p class="font-semibold">Carlos</p>
+                    <p class="text-sm">Designer</p>
                 </div>
             </div>
         </div>
-
-        <!-- Call to Action -->
-        <section class="text-center py-12">
-            <h2 class="text-3xl font-bold text-blue-600 mb-4">Junte-se à Nossa Comunidade!</h2>
-            <p class="text-lg mb-6 max-w-2xl mx-auto">Participe de discussões, compartilhe suas habilidades e conecte-se
-                com milhares de membros apaixonados por aprendizado colaborativo.</p>
-            <a href="perfil.html"
-                class="inline-block bg-blue-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-700 transition">Crie
-                seu Perfil</a>
-        </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-lg mb-4">© 2025 Laços. Todos os direitos reservados.</p>
+    <footer class="bg-gray-800 text-gray-400 py-6 mt-10">
+        <div class="container mx-auto text-center">
+            <p class="mb-2">© 2025 Laços. Todos os direitos reservados. | <span id="currentDate">20/05/2025</span></p>
             <div class="flex justify-center gap-4">
-                
-                <a href="comunidade.html" class="hover:text-blue-300 transition">Comunidade</a>
-                <a href="eventos.html" class="hover:text-blue-300 transition">Eventos</a>
-                <a href="mercado.html" class="hover:text-blue-300 transition">Mercado</a>
-                <a href="servicos.html" class="hover:text-blue-300 transition">Serviços</a>
+                <a href="comunidade.html" class="hover:text-blue-400">Comunidade</a>
+                <a href="eventos.html" class="hover:text-blue-400">Eventos</a>
+                <a href="mercado.html" class="hover:text-blue-400">Mercado</a>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript for Sticky Navbar and Smooth Scroll -->
+    <!-- Notification -->
+    <div class="fixed bottom-4 right-4 bg-blue-600 text-white p-4 rounded-lg shadow-lg hidden animate-slideUp" id="notification">
+        <p>Novo tópico! <a href="#" class="underline">Ver agora</a></p>
+    </div>
+
     <script>
         // Sticky Navbar
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('sticky');
-            } else {
-                navbar.classList.remove('sticky');
-            }
+            if (window.scrollY > 50) navbar.classList.add('sticky');
+            else navbar.classList.remove('sticky');
         });
 
         // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+            anchor.addEventListener('click', function(e) {
                 e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
             });
         });
-    </script>
+
+        // Toggle Sidebar (Mobile)
+        document.getElementById('menuToggle').addEventListener('click', () => {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+
+        // Toggle Comments
+        document.querySelectorAll('.post button[aria-label="Toggle comments"]').forEach(button => {
+            button.addEventListener('click', () => {
+                const section = button.nextElementSibling;
+                section.classList.toggle('hidden');
+                button.textContent = section.classList.contains('hidden') ? `Ver Comentários (${section.children.length})` : 'Ocultar Comentários';
+            });
+        });
+
+        // Dynamic Upvotes with Local Storage
+        document.querySelectorAll('.upvote-btn').forEach(button => {
+            const voteSpan = button.querySelector('span');
+            let votes = parseInt(voteSpan.dataset.votes) || parseInt(voteSpan.textContent);
+            voteSpan.textContent = votes;
+
+            button.addEventListener('click', () => {
+                votes++;
+                voteSpan.textContent = votes;
+                voteSpan.dataset.votes = votes;
+                button.classList.add('active');
+                localStorage.setItem(`votes_${voteSpan.parentElement.parentElement.nextElementSibling.querySelector('h3').textContent}`, votes);
+            });
+
+            const savedVotes = localStorage.getItem(`votes_${voteSpan.parentElement.parentElement.nextElementSibling.querySelector('h3').textContent}`);
+            if (savedVotes) {
+                voteSpan.textContent = savedVotes;
+                voteSpan.dataset.votes = savedVotes;
+                button.classList.add('active');
+            }
+        });
+
+        // Filter Posts
+        document.getElementById('applyFilter').addEventListener('click', () => {
+            const category = document.getElementById('categoryFilter').value;
+            const search = document.getElementById('searchFilter').value.toLowerCase();
+            const posts = document.querySelectorAll('.post');
+
+            posts.forEach(post => {
+                const postCategory = post.dataset.category;
+                const postText = post.textContent.toLowerCase();
+                const matchesCategory = !category || category === postCategory;
+                const matchesSearch = !search || postText.includes(search);
+                post.style.display = matchesCategory && matchesSearch ? 'block' : 'none';
+            });
+        });
+
+        // New Post Form Submission
+        document.getElementById('newPostForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const title = e.target.querySelector('input').value;
+            const category = e.target.querySelector('select').value;
+            const message = e.target.querySelector('textarea').value;
+
+            if (title && category && message) {
+                const postContainer = document.getElementById('postContainer');
+                const newPost = document.createElement('div');
+                newPost.className = 'post p-4 rounded-lg';
+                newPost.dataset.category = category;
+                newPost.innerHTML = `
+                    <div class="flex items-start">
+                        <button class="upvote-btn text-gray-400 p-2 mr-4 focus:outline-none" aria-label="Upvote">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"/>
+                            </svg>
+                            <span class="block mt-1" data-votes="0">0</span>
+                        </button>
+                        <div>
+                            <h3 class="text-lg font-semibold text-blue-400">[${category}] ${title}</h3>
+                            <p class="text-gray-300 mb-2">${message}</p>
+                            <button class="text-blue-400 hover:underline mb-2" aria-label="Toggle comments">Ver Comentários (0)</button>
+                            <div class="comment-section hidden space-y-2 mt-2"></div>
+                        </div>
+                    </div>
+                `;
+                postContainer.prepend(newPost);
+                e.target.reset();
+                showNotification(`Novo tópico "${title}" criado!`);
+            }
+        });
+
+        // Custom Feeds and Create Community (Placeholder)
+        document.getElementById('customFeedsBtn').addEventListener('click', () => alert('Funcionalidade de Custom Feeds em desenvolvimento!'));
+        document.getElementById('createCommunityBtn').addEventListener('click', () => alert('Funcionalidade de Criar Comunidade em desenvolvimento!'));
+
+        // Real-Time Clock and Date
+        function updateTime() {
+            const now = new Date();
+            const timeOptions = { hour: '2-digit', minute: '2-digit', timeZoneName: 'short', hour12: true };
+            const dateOptions = { day: '2-digit', month: '2-digit', year: 'numeric' };
+            document.getElementById('timeDisplay').textContent = now.toLocaleTimeString('en-US', timeOptions).replace('PM', 'PM -04').replace('AM', 'AM -04');
+            document.getElementById('currentDate').textContent = now.toLocaleDateString('pt-BR', dateOptions);
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+
+        // Notification System
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.querySelector('p').textContent = message;
+            notification.classList.remove('hidden');
+            setTimeout(() => notification.classList.add('hidden'), 5000);
+        }
+        setTimeout(() => showNotification('Bem-vindo à Comunidade Laços! Explore os tópicos.'), 2000);
+
+        // Animations
+        document.querySelectorAll('.animate-fadeIn').forEach(element => {
+            setTimeout(() => element.classList.add('opacity-100'), 100);
+        });
+        document.querySelectorAll('.animate-slideUp').forEach(element => {
+            setTimeout(() => element.classList.add('translate-y-0'), 100);
+        });
+    </style>
+</script>
 </body>
 
 </html>
