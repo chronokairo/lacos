@@ -595,6 +595,53 @@ footer {
 }
 
 /* =========================
+   Modal Login
+   ========================= */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(24,28,35,0.82);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  transition: opacity 0.18s;
+}
+.modal-overlay.hidden {
+  display: none;
+}
+.modal-content {
+  background: var(--card-bg, #232a34);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+  padding: 36px 32px 28px 32px;
+  min-width: 320px;
+  max-width: 90vw;
+  position: relative;
+  animation: modalIn 0.18s;
+}
+@keyframes modalIn {
+  from { transform: translateY(-40px) scale(0.98); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  background: none;
+  border: none;
+  color: var(--text-secondary, #a3adc2);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.18s;
+}
+.modal-close:hover,
+.modal-close:focus {
+  color: var(--accent-color, #00b4d8);
+  outline: none;
+}
+
+/* =========================
    Utilitários
    ========================= */
 .hidden {
@@ -702,4 +749,44 @@ footer {
     padding: 12px 10px;
     font-size: 0.97rem;
   }
+}
+
+/* =========================
+   Login Button Header
+   ========================= */
+.login-btn-header {
+  background: var(--accent-color);
+  color: #fff !important;
+  padding: 8px 22px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0,180,216,0.10);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--transition-duration), box-shadow var(--transition-duration);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.login-btn-header:hover,
+.login-btn-header:focus {
+  background: var(--accent-hover);
+  box-shadow: 0 4px 16px rgba(0,180,216,0.18);
+  outline: none;
+}
+
+/* Remove color from all hyperlinks unless styled specifically */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.18s;
+}
+
+a:hover,
+a:focus {
+  color: var(--accent-hover);
+  text-decoration: underline;
 }

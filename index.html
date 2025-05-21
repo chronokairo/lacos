@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 
 <head>
+    <link rel="icon" type="image/ico" href="favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Comunidade Laços - Conecte-se, troque habilidades e cresça com milhares de membros!">
@@ -17,23 +18,77 @@
             <div class="logo">🌐 Laços</div>
             <input type="text" placeholder="Pesquisar na Comunidade" class="search-bar" aria-label="Pesquisar">
             <span id="timeDisplay">12:17 AM -04</span>
+            <div class="header-actions">
+                <a href="#" class="login-btn-header" id="openLoginModal" title="Entrar">
+                    <span class="icon">
+                        <!-- W3C SVG Login Icon -->
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="8" r="4"/>
+                            <path d="M21 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/>
+                        </svg>
+                    </span> Login
+                </a>
+            </div>
         </div>
     </header>
 
     <!-- Sidebar -->
     <aside class="sidebar">
         <nav>
-            <a href="index.html" class="nav-link"><span class="icon">🏠</span> Home</a>
-            <a href="#popular" class="nav-link"><span class="icon">🔥</span> Popular</a>
-            <a href="#explore" class="nav-link"><span class="icon">🔍</span> Explorar</a>
-            <button id="customFeedsBtn" class="nav-link"><span class="icon">📚</span> Custom Feeds</button>
+            <a href="index.html" class="nav-link">
+                <span class="icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2L2 12h3v8h14v-8h3L12 2zm0 3.5L18 12v6h-4v-4h-4v4H6v-6l6-6.5z"/>
+                    </svg>
+                </span> Home
+            </a>
+            <a href="#popular" class="nav-link">
+                <span class="icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
+                    </svg>
+                </span> Popular
+            </a>
+            <a href="#explore" class="nav-link">
+                <span class="icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <circle cx="12" cy="12" r="8"/>
+                        <path d="M12 2a10 10 0 0 0-3.16 19.49l1.41-1.41A8 8 0 0 1 12 4a8 8 0 0 1 5.66 2.34l1.41-1.41A10 10 0 0 0 12 2zm4.95 12.95l-4.24-4.24a2 2 0 0 0-2.83 0l-1.41 1.41a2 2 0 0 0 0 2.83l4.24 4.24a2 2 0 0 0 2.83 0l1.41-1.41a2 2 0 0 0 0-2.83z"/>
+                    </svg>
+                </span> Explorar
+            </a>
+            <button id="customFeedsBtn" class="nav-link">
+                <span class="icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M4 4v16h16V4H4zm2 2h12v12H6V6zm2 2v8h8V8H8zm2 2h4v4h-4v-4z"/>
+                    </svg>
+                </span> Custom Feeds
+            </button>
             <div class="communities">
                 <p>Comunidades</p>
-                <a href="#tviolao" class="nav-link"><span class="icon">🎸</span> tviolao</a>
-                <a href="#webdesign" class="nav-link"><span class="icon">🎨</span> webdesign</a>
-                <button id="createCommunityBtn" class="nav-link"><span class="icon">➕</span> Criar Comunidade</button>
+                <a href="#tviolao" class="nav-link">
+                    <span class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M20 3l-1.414 1.414L15 8h-3v2h3l3.586 3.586L20 15l-1.414 1.414L15 20l-1.414-1.414L10 15v-3H8l-3.586-3.586L3 7l1.414-1.414L8 8h3V6H8l-3.586-3.586L3 1l1.414-1.414L8 3h3v2h3l3.586 3.586L20 3z"/>
+                        </svg>
+                    </span> tviolao
+                </a>
+                <a href="#webdesign" class="nav-link">
+                    <span class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z"/>
+                        </svg>
+                    </span> webdesign
+                </a>
+                <button id="createCommunityBtn" class="nav-link">
+                    <span class="icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+                        </svg>
+                    </span> Criar Comunidade
+                </button>
             </div>
-            <a href="login.html" class="nav-link login-btn"><span class="icon">🔑</span> Login</a>
         </nav>
     </aside>
 
@@ -187,63 +242,31 @@
         <p>Bem-vindo à Comunidade Laços! Explore os tópicos e junte-se às discussões.</p>
     </div>
 
-    <script>
-        // Real-Time Clock and Date
-        function updateTime() {
-            const now = new Date();
-            const timeOptions = { hour: '2-digit', minute: '2-digit', hour12: true };
-            const dateOptions = { weekday: 'long', day: '2-digit', month: '2-digit', year: 'numeric' };
-            document.getElementById('timeDisplay').textContent = now.toLocaleTimeString('en-US', timeOptions).replace('PM', 'PM -04').replace('AM', 'AM -04');
-            document.getElementById('currentDate').textContent = now.toLocaleDateString('pt-BR', dateOptions).replace(' de ', '/').replace(' de ', '/');
-        }
-        setInterval(updateTime, 1000);
-        updateTime();
-
-        // Toggle Comments
-        document.querySelectorAll('.comment-toggle').forEach(button => {
-            button.addEventListener('click', () => {
-                const section = button.nextElementSibling;
-                section.classList.toggle('hidden');
-                button.textContent = section.classList.contains('hidden') ? `Comentários (${section.children.length})` : 'Ocultar Comentários';
-                button.setAttribute('aria-expanded', !section.classList.contains('hidden'));
-            });
-        });
-
-        // Dynamic Upvotes with Local Storage
-        document.querySelectorAll('.upvote-btn').forEach(button => {
-            const voteSpan = button.querySelector('span');
-            let votes = parseInt(voteSpan.dataset.votes) || parseInt(voteSpan.textContent);
-            voteSpan.textContent = votes;
-
-            button.addEventListener('click', () => {
-                votes++;
-                voteSpan.textContent = votes;
-                voteSpan.dataset.votes = votes;
-                button.classList.add('active');
-                localStorage.setItem(`votes_${voteSpan.parentElement.parentElement.querySelector('.post-title').textContent}`, votes);
-            });
-
-            const savedVotes = localStorage.getItem(`votes_${voteSpan.parentElement.parentElement.querySelector('.post-title').textContent}`);
-            if (savedVotes) {
-                voteSpan.textContent = savedVotes;
-                voteSpan.dataset.votes = savedVotes;
-                button.classList.add('active');
-            }
-        });
-
-        // Custom Feeds and Create Community (Placeholder)
-        document.getElementById('customFeedsBtn').addEventListener('click', () => alert('Funcionalidade de Custom Feeds em desenvolvimento!'));
-        document.getElementById('createCommunityBtn').addEventListener('click', () => alert('Funcionalidade de Criar Comunidade em desenvolvimento!'));
-
-        // Notification System
-        function showNotification(message) {
-            const notification = document.getElementById('notification');
-            notification.querySelector('p').textContent = message;
-            notification.classList.remove('hidden');
-            setTimeout(() => notification.classList.add('hidden'), 5000);
-        }
-        setTimeout(() => showNotification('Bem-vindo à Comunidade Laços! Explore os tópicos e junte-se às discussões.'), 2000);
-    </script>
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="modal-close" id="closeLoginModal" aria-label="Fechar">&times;</button>
+            <div class="login-container" style="box-shadow:none;padding:0;">
+                <div class="logo" style="margin-bottom:10px;">🌐 Laços</div>
+                <h1 style="margin-bottom:18px;">Entrar</h1>
+                <form id="loginForm" autocomplete="on">
+                    <div>
+                        <label for="modal-email">E-mail</label>
+                        <input type="email" id="modal-email" name="email" placeholder="seu@email.com" required autocomplete="username">
+                    </div>
+                    <div>
+                        <label for="modal-password">Senha</label>
+                        <input type="password" id="modal-password" name="password" placeholder="Sua senha" required autocomplete="current-password">
+                    </div>
+                    <button type="submit" class="login-btn">Entrar</button>
+                </form>
+                <div class="links" style="margin-top:18px;">
+                    <a href="#" id="forgotPassword">Esqueci a senha</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
