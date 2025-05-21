@@ -110,6 +110,12 @@ header {
   letter-spacing: 0.04em;
 }
 
+.header-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
 /* =========================
    Sidebar
    ========================= */
