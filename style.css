@@ -1,9 +1,9 @@
 /* Variáveis CSS para consistência */
 :root {
-    --primary-color: #4A7C59; /* Verde médio da logo */
-    --secondary-color: #3A5E44; /* Tom mais escuro para hover */
-    --accent-color: #4A7C59; /* Verde para botões */
-    --background-color: #D1E7DD; /* Verde claro da logo */
+    --primary-color: #1E3A8A; /* Azul escuro */
+    --secondary-color: #3B82F6; /* Azul claro */
+    --accent-color: #10B981; /* Verde para botões */
+    --background-color: #F9FAFB; /* Cinza claro */
     --text-color: #1F2937; /* Cinza escuro */
     --muted-color: #6B7280; /* Cinza médio */
     --card-bg: #FFFFFF;
@@ -31,7 +31,7 @@ body {
     font-size: var(--font-size-base);
     line-height: 1.5;
     color: var(--text-color);
-    background-color: #000; /* Fundo preto */
+    background-color: var(--background-color);
 }
 
 a {
@@ -59,7 +59,7 @@ button:hover {
 }
 
 button:focus, input:focus, select:focus, a:focus {
-    outline: 2px solid var(--primary-color);
+    outline: 2px solid var(--secondary-color);
     outline-offset: 2px;
 }
 
@@ -105,7 +105,7 @@ header {
 }
 
 .nav-link:hover, .nav-link.active {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--card-bg);
 }
 
@@ -121,18 +121,11 @@ header {
     align-items: center;
     gap: var(--spacing-sm);
     font-weight: 600;
-    background-color: var(--primary-color);
-    color: var(--card-bg);
-    padding: var(--spacing-sm) var(--spacing-md);
-    border-radius: var(--border-radius);
-}
-
-.login-btn-header:hover {
-    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .login-btn-header svg {
-    stroke: var(--card-bg);
+    stroke: var(--primary-color);
 }
 
 /* Sidebar */
@@ -152,7 +145,6 @@ header {
     font-size: var(--font-size-lg);
     font-weight: 600;
     margin-bottom: var(--spacing-md);
-    color: var(--primary-color);
 }
 
 .sidebar .nav-link {
@@ -162,12 +154,10 @@ header {
     padding: var(--spacing-sm);
     margin-bottom: var(--spacing-sm);
     border-radius: var(--border-radius);
-    color: var(--text-color);
 }
 
 .sidebar .nav-link:hover {
     background-color: var(--background-color);
-    color: var(--primary-color);
 }
 
 .sidebar .nav-link svg {
@@ -199,7 +189,7 @@ h3 {
     margin-bottom: var(--spacing-sm);
 }
 
-/* Welcome Banner */
+/* Welcome Banner (index.html) */
 .welcome-banner {
     position: relative;
     height: 400px;
@@ -245,7 +235,7 @@ h3 {
 }
 
 .join-btn {
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: var(--card-bg);
     padding: var(--spacing-sm) var(--spacing-lg);
     border-radius: var(--border-radius);
@@ -253,10 +243,10 @@ h3 {
 }
 
 .join-btn:hover {
-    background-color: var(--secondary-color);
+    background-color: #059669;
 }
 
-/* Intro Section */
+/* Intro Section (index.html) */
 .intro-section {
     text-align: center;
     margin-bottom: var(--spacing-xl);
@@ -287,7 +277,7 @@ h3 {
     color: var(--primary-color);
 }
 
-/* How It Works */
+/* How It Works (index.html) */
 .how-it-works {
     margin-bottom: var(--spacing-xl);
 }
@@ -314,7 +304,7 @@ h3 {
     margin-bottom: var(--spacing-md);
 }
 
-/* Why Laços */
+/* Why Laços (index.html) */
 .why-lacos {
     margin-bottom: var(--spacing-xl);
 }
@@ -333,7 +323,7 @@ h3 {
     text-align: center;
 }
 
-/* Skills Highlights */
+/* Skills Highlights (index.html) */
 .skills-highlights {
     margin-bottom: var(--spacing-xl);
 }
@@ -352,12 +342,12 @@ h3 {
     text-align: center;
 }
 
-/* Featured Events */
-.featured-events {
+/* Featured Events (index.html, explore.html) */
+.featured-events, .recommended-events {
     margin-bottom: var(--spacing-xl);
 }
 
-.events-carousel {
+.events-carousel, .events-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-lg);
@@ -380,7 +370,7 @@ h3 {
 
 .event-link {
     display: inline-block;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--card-bg);
     padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--border-radius);
@@ -388,7 +378,7 @@ h3 {
 }
 
 .event-link:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
 }
 
 .carousel-controls {
@@ -399,7 +389,7 @@ h3 {
 }
 
 .carousel-prev, .carousel-next {
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
     color: var(--card-bg);
     border: none;
     padding: var(--spacing-sm);
@@ -408,7 +398,145 @@ h3 {
 }
 
 .carousel-prev:hover, .carousel-next:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
+
+/* Popular Posts (popular.html) */
+.popular-posts {
+    margin-bottom: var(--spacing-xl);
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.post-card {
+    background-color: var(--card-bg);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.post-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-md);
+}
+
+.post-card span {
+    font-size: 14px;
+    color: var(--muted-color);
+}
+
+/* Popular People (popular.html) */
+.popular-people {
+    margin-bottom: var(--spacing-xl);
+}
+
+.people-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.person-card {
+    background-color: var(--card-bg);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.person-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Popular Events (popular.html) */
+.popular-events {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Explore Filter (explore.html) */
+.explore-filter {
+    margin-bottom: var(--spacing-xl);
+}
+
+.filter-options {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.filter-options input, .filter-options select {
+    padding: var(--spacing-sm);
+    border: 1px solid var(--muted-color);
+    border-radius: var(--border-radius);
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-btn {
+    background-color: var(--accent-color);
+    color: var(--card-bg);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: var(--border-radius);
+}
+
+.filter-btn:hover {
+    background-color: #059669;
+}
+
+/* Communities (explore.html) */
+.communities {
+    margin-bottom: var(--spacing-xl);
+}
+
+.communities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.community-card {
+    background-color: var(--card-bg);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+}
+
+.community-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--border-radius);
+    object-fit: cover;
+}
+
+.community-card p {
+    font-size: 14px;
+    color: var(--muted-color);
+}
+
+/* Skills Explore (explore.html) */
+.skills-explore {
+    margin-bottom: var(--spacing-xl);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
 }
 
 /* Footer */
@@ -439,7 +567,7 @@ footer {
     position: fixed;
     bottom: var(--spacing-lg);
     right: var(--spacing-lg);
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: var(--card-bg);
     padding: var(--spacing-md);
     border-radius: var(--border-radius);
@@ -534,7 +662,7 @@ footer {
 }
 
 .login-btn {
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
     color: var(--card-bg);
     width: 100%;
     padding: var(--spacing-sm);
@@ -544,7 +672,7 @@ footer {
 }
 
 .login-btn:hover {
-    background-color: var(--secondary-color);
+    background-color: #059669;
 }
 
 .links {
@@ -554,14 +682,14 @@ footer {
 }
 
 .links a {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-size: 14px;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
     .sidebar {
-        display: none;
+        display: none; /* Oculta sidebar em telas pequenas */
     }
 
     .main-content {
@@ -594,7 +722,7 @@ footer {
         font-size: var(--font-size-base);
     }
 
-    .steps-grid, .benefits-grid, .skills-grid, .events-carousel {
+    .steps-grid, .benefits-grid, .skills-grid, .posts-grid, .people-grid, .events-grid, .communities-grid {
         grid-template-columns: 1fr;
     }
 }
