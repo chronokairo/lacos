@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personalize seu feed na Laços para ver conteúdos das suas áreas de interesse!">
+    <meta name="keywords" content="comunidade, troca de habilidades, permuta, Laços, custom feeds">
+    <meta name="author" content="Comunidade Laços">
+    <title>Laços - Custom Feeds</title>
+    <link rel="icon" type="image/png" href="https://via.placeholder.com/32">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">🌐 Laços</div>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="popular.html" class="nav-link">Popular</a>
+                <a href="explore.html" class="nav-link">Explorar</a>
+                <a href="custom-feeds.html" class="nav-link active">Custom Feeds</a>
+                <input type="text" placeholder="Pesquisar na Comunidade" class="search-bar" aria-label="Pesquisar na comunidade">
+                <a href="javascript:void(0);" class="login-btn-header" id="openLoginModal" title="Entrar">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Ícone de login">
+                        <title>Ícone de login</title>
+                        <circle cx="12" cy="8" r="4"/>
+                        <path d="M21 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/>
+                    </svg>
+                    Entrar
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside class="sidebar" aria-label="Navegação lateral">
+        <nav>
+            <div class="communities">
+                <p>Comunidades</p>
+                <a href="#tviolao" class="nav-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-label="Ícone de tviolao">
+                        <title>Ícone de tviolao</title>
+                        <path d="M20 3l-1.414 1.414L15 8h-3v2h3l3.586 3.586L20 15l-1.414 1.414L15 20l-1.414-1.414L10 15v-3H8l-3.586-3.586L3 7l1.414-1.414L8 8h3V6H8l-3.586-3.586L3 1l1.414-1.414L8 3h3v2h3l3.586 3.586L20 3z"/>
+                    </svg>
+                    tviolao
+                </a>
+                <a href="#webdesign" class="nav-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-label="Ícone de webdesign">
+                        <title>Ícone de webdesign</title>
+                        <path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z"/>
+                    </svg>
+                    webdesign
+                </a>
+                <a href="#culinaria" class="nav-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-label="Ícone de culinaria">
+                        <title>Ícone de culinaria</title>
+                        <path d="M6 2h12v2H6V2zm0 4h12v2H6V6zm0 4h12v2H6v-2zm0 4h12v2H6v-2zm0 4h12v2H6v-2z"/>
+                    </svg>
+                    culinaria
+                </a>
+                <a href="#yoga" class="nav-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-label="Ícone de yoga">
+                        <title>Ícone de yoga</title>
+                        <path d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"/>
+                    </svg>
+                    yoga
+                </a>
+                <a href="#idiomas" class="nav-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-label="Ícone de idiomas">
+                        <title>Ícone de idiomas</title>
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-14h2v6h-2zm0 8h2v2h-2z"/>
+                    </svg>
+                    idiomas
+                </a>
+                <a href="#fotografia" class="nav-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-label="Ícone de fotografia">
+                        <title>Ícone de fotografia</title>
+                        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                    </svg>
+                    fotografia
+                </a>
+                <a href="#programacao" class="nav-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-label="Ícone de programacao">
+                        <title>Ícone de programacao</title>
+                        <path d="M7.5 7l-3 3 3 3M16.5 7l3 3-3 3M9 6v12M15 6v12"/>
+                    </svg>
+                    programacao
+                </a>
+                <a href="#artesanato" class="nav-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-label="Ícone de artesanato">
+                        <title>Ícone de artesanato</title>
+                        <path d="M4 4h16v16H4V4zm2 2v12h12V6H6zm4 4h4v4h-4v-4z"/>
+                    </svg>
+                    artesanato
+                </a>
+                <a href="create-community.html" class="nav-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-label="Ícone de Criar Comunidade">
+                        <title>Ícone de Criar Comunidade</title>
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+                    </svg>
+                    Criar Comunidade
+                </a>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <h1>Custom Feeds</h1>
+        <p>Crie um feed sob medida com conteúdos que você ama!</p>
+
+        <!-- Personalizar Feed -->
+        <section class="customize-feed">
+            <h2>Personalize seu Feed</h2>
+            <form id="customFeedForm">
+                <div class="form-group">
+                    <label>Selecione suas Categorias de Interesse</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="category" value="musica"> Música</label>
+                        <label><input type="checkbox" name="category" value="design"> Design</label>
+                        <label><input type="checkbox" name="category" value="idiomas"> Idiomas</label>
+                        <label><input type="checkbox" name="category" value="culinaria"> Culinária</label>
+                        <label><input type="checkbox" name="category" value="yoga"> Yoga</label>
+                        <label><input type="checkbox" name="category" value="programacao"> Programação</label>
+                        <label><input type="checkbox" name="category" value="fotografia"> Fotografia</label>
+                        <label><input type="checkbox" name="category" value="artesanato"> Artesanato</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="location">Localização</label>
+                    <select id="location" name="location">
+                        <option value="">Todas as Localizações</option>
+                        <option value="online">Online</option>
+                        <option value="sao-paulo">São Paulo</option>
+                        <option value="rio">Rio de Janeiro</option>
+                        <option value="belo-horizonte">Belo Horizonte</option>
+                        <option value="recife">Recife</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="experience">Nível de Experiência</label>
+                    <select id="experience" name="experience">
+                        <option value="">Todos os Níveis</option>
+                        <option value="iniciante">Iniciante</option>
+                        <option value="intermediario">Intermediário</option>
+                        <option value="avancado">Avançado</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="frequency">Frequência de Atualização</label>
+                    <select id="frequency" name="frequency">
+                        <option value="daily">Diária</option>
+                        <option value="weekly">Semanal</option>
+                        <option value="monthly">Mensal</option>
+                    </select>
+                </div>
+                <button type="submit" class="create-community-btn">Salvar Preferências</button>
+            </form>
+        </section>
+
+        <!-- Dicas para Personalização -->
+        <section class="customization-tips">
+            <h2>Dicas para Personalizar seu Feed</h2>
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <h3>Escolha Categorias Relevantes</h3>
+                    <p>Selecione apenas as áreas que você realmente quer explorar para um feed mais focado.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Atualize Regularmente</h3>
+                    <p>Revise suas preferências mensalmente para refletir seus novos interesses.</p>
+                </div>
+                <div class="tip-card">
+                    <h3>Combine Localização e Nível</h3>
+                    <p>Filtre por localização e nível de experiência para encontrar trocas mais adequadas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recomendações Personalizadas -->
+        <section class="personalized-recommendations">
+            <h2>Recomendações Personalizadas</h2>
+            <div class="recommendations-grid">
+                <div class="recommendation-card">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1519985176271-adb1088fa94c?auto=format&fit=crop&w=400&q=80&fm=webp" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1519985176271-adb1088fa94c?auto=format&fit=crop&w=400&q=80" alt="Comunidade tviolao" loading="lazy" onerror="this.src='https://via.placeholder.com/400x120?text=tviolao';">
+                    </picture>
+                    <h3>Comunidade: tviolao</h3>
+                    <p>Junte-se a músicos apaixonados por violão!</p>
+                    <a href="#tviolao" class="recommendation-link">Explorar</a>
+                </div>
+                <div class="recommendation-card">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=400&q=80&fm=webp" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=400&q=80" alt="Habilidade Culinária" loading="lazy" onerror="this.src='https://via.placeholder.com/400x120?text=Culinária';">
+                    </picture>
+                    <h3>Habilidade: Culinária</h3>
+                    <p>Aprenda receitas veganas com chefs experientes.</p>
+                    <a href="#culinaria" class="recommendation-link">Explorar</a>
+                </div>
+                <div class="recommendation-card">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80&fm=webp" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="Comunidade webdesign" loading="lazy" onerror="this.src='https://via.placeholder.com/400x120?text=webdesign';">
+                    </picture>
+                    <h3>Comunidade: webdesign</h3>
+                    <p>Participe de discussões sobre UI/UX e design gráfico.</p>
+                    <a href="#webdesign" class="recommendation-link">Explorar</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Atividade Recente -->
+        <section class="recent-activity">
+            <h2>Atividade Recente</h2>
+            <div class="activity-grid">
+                <div class="activity-card">
+                    <p>Você curtiu o post de João sobre programação.</p>
+                    <span>22/05/2025 às 10h</span>
+                </div>
+                <div class="activity-card">
+                    <p>Você se juntou à comunidade tviolao.</p>
+                    <span>21/05/2025 às 15h</span>
+                </div>
+                <div class="activity-card">
+                    <p>Você comentou no evento de culinária de Sofia.</p>
+                    <span>20/05/2025 às 18h</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Feed Personalizado -->
+        <section class="post-container" id="postContainer">
+            <h2>Seu Feed Personalizado</h2>
+            <article class="post">
+                <div class="post-votes">
+                    <button class="upvote-btn" aria-label="Votar a favor do post de Maria">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-label="Ícone de upvote">
+                            <title>Ícone de upvote</title>
+                            <path d="M12 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span data-votes="18">18</span>
+                    </button>
+                </div>
+                <div class="post-body">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=40&q=80&fm=webp" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=40&q=80" alt="Avatar de Maria" class="post-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/40?text=Maria';">
+                    </picture>
+                    <h3 class="post-title">[Trocas] Maria: Ofereço aulas de yoga por fotografia</h3>
+                    <p class="post-text">Sou instrutora de yoga e quero aprender fotografia. Alguém interessado?</p>
+                    <button class="comment-toggle" aria-label="Alternar comentários" aria-expanded="false">Comentários (1)</button>
+                    <div class="comment-section hidden">
+                        <div class="comment">
+                            <p><strong>Lucas:</strong> Eu posso ensinar fotografia! Vamos conversar?</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="post">
+                <div class="post-votes">
+                    <button class="upvote-btn" aria-label="Votar a favor do post de Pedro">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-label="Ícone de upvote">
+                            <title>Ícone de upvote</title>
+                            <path d="M12 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span data-votes="25">25</span>
+                    </button>
+                </div>
+                <div class="post-body">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=40&q=80&fm=webp" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=40&q=80" alt="Avatar de Pedro" class="post-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/40?text=Pedro';">
+                    </picture>
+                    <h3 class="post-title">[Dicas] Pedro: Melhores práticas para design de interfaces</h3>
+                    <p class="post-text">Compartilhando algumas dicas que aprendi em projetos de UI/UX!</p>
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80&fm=webp" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="Imagem de design de interfaces" class="post-image" loading="lazy" onerror="this.src='https://via.placeholder.com/400x120?text=Design';">
+                    </picture>
+                    <button class="comment-toggle" aria-label="Alternar comentários" aria-expanded="false">Comentários (2)</button>
+                    <div class="comment-section hidden">
+                        <div class="comment">
+                            <p><strong>João:</strong> Ótimas dicas! Você usa Figma ou Adobe XD?</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Laços. Todos os direitos reservados. | <span id="currentDate"></span></p>
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="#about">Sobre</a>
+            <a href="#contact">Contato</a>
+            <a href="#privacy">Privacidade</a>
+            <a href="#terms">Termos de Uso</a>
+        </div>
+    </footer>
+
+    <!-- Notification -->
+    <div class="notification hidden" id="notification">
+        <p></p>
+    </div>
+
+    <!-- Modal de Login -->
+    <div id="loginModal" class="modal-overlay hidden" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" id="closeLoginModal" aria-label="Fechar modal">×</button>
+            <div class="login-container">
+                <div class="logo">🌐 Laços</div>
+                <h1>Entrar</h1>
+                <form id="loginForm" autocomplete="on">
+                    <div class="form-group">
+                        <label for="modal-email">E-mail</label>
+                        <input type="email" id="modal-email" name="email" placeholder="seu@email.com" required autocomplete="username" aria-describedby="email-error">
+                        <span id="email-error" class="error hidden">Por favor, insira um e-mail válido.</span>
+                    </div>
+                    <div class="form-group">
+                        <label for="modal-password">Senha</label>
+                        <input type="password" id="modal-password" name="password" placeholder="Sua senha" required autocomplete="current-password" aria-describedby="password-error">
+                        <span id="password-error" class="error hidden">A senha deve ter pelo menos 8 caracteres.</span>
+                    </div>
+                    <button type="submit" class="login-btn">Entrar</button>
+                </form>
+                <div class="links">
+                    <a href="javascript:void(0);" id="forgotPassword">Esqueci a senha</a>
+                    <a href="javascript:void(0);" id="signUp">Criar conta</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js" defer></script>
+</body>
+</html>

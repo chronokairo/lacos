@@ -1,93 +1,107 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <link rel="icon" type="image/ico" href="favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Comunidade Laços - Conecte-se, troque habilidades e cresça com milhares de membros!">
+    <meta name="description" content="Comunidade Laços - Plataforma de troca de habilidades para conectar pessoas e promover aprendizado colaborativo!">
+    <meta name="keywords" content="comunidade, troca de habilidades, permuta, eventos, Laços, aprendizado colaborativo">
+    <meta name="author" content="Comunidade Laços">
     <title>Laços - Página Inicial</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="https://via.placeholder.com/32">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
     <!-- Header -->
     <header>
         <div class="header-content">
             <div class="logo">🌐 Laços</div>
-            <input type="text" placeholder="Pesquisar na Comunidade" class="search-bar" aria-label="Pesquisar">
-            <span id="timeDisplay">12:17 AM -04</span>
-            <div class="header-actions">
-                <a href="#" class="login-btn-header" id="openLoginModal" title="Entrar">
-                    <span class="icon">
-                        <!-- W3C SVG Login Icon -->
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="8" r="4"/>
-                            <path d="M21 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/>
-                        </svg>
-                    </span> Login
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="popular.html" class="nav-link">Popular</a>
+                <input type="text" placeholder="Pesquisar na Comunidade" class="search-bar" aria-label="Pesquisar na comunidade">
+                <a href="javascript:void(0);" class="login-btn-header" id="openLoginModal" title="Entrar">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Ícone de login">
+                        <title>Ícone de login</title>
+                        <circle cx="12" cy="8" r="4"/>
+                        <path d="M21 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/>
+                    </svg>
+                    Entrar
                 </a>
-            </div>
+            </nav>
         </div>
     </header>
 
     <!-- Sidebar -->
-    <aside class="sidebar">
+    <aside class="sidebar" aria-label="Navegação lateral">
         <nav>
-            <a href="index.html" class="nav-link">
-                <span class="icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2L2 12h3v8h14v-8h3L12 2zm0 3.5L18 12v6h-4v-4h-4v4H6v-6l6-6.5z"/>
-                    </svg>
-                </span> Home
-            </a>
-            <a href="#popular" class="nav-link">
-                <span class="icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/>
-                    </svg>
-                </span> Popular
-            </a>
-            <a href="#explore" class="nav-link">
-                <span class="icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <circle cx="12" cy="12" r="8"/>
-                        <path d="M12 2a10 10 0 0 0-3.16 19.49l1.41-1.41A8 8 0 0 1 12 4a8 8 0 0 1 5.66 2.34l1.41-1.41A10 10 0 0 0 12 2zm4.95 12.95l-4.24-4.24a2 2 0 0 0-2.83 0l-1.41 1.41a2 2 0 0 0 0 2.83l4.24 4.24a2 2 0 0 0 2.83 0l1.41-1.41a2 2 0 0 0 0-2.83z"/>
-                    </svg>
-                </span> Explorar
-            </a>
-            <button id="customFeedsBtn" class="nav-link">
-                <span class="icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M4 4v16h16V4H4zm2 2h12v12H6V6zm2 2v8h8V8H8zm2 2h4v4h-4v-4z"/>
-                    </svg>
-                </span> Custom Feeds
-            </button>
             <div class="communities">
                 <p>Comunidades</p>
+                <a href="create-community.html" class="nav-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-label="Ícone de Criar Comunidade">
+                        <title>Ícone de Criar Comunidade</title>
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
+                    </svg>
+                    Criar Comunidade
+                </a>
                 <a href="#tviolao" class="nav-link">
-                    <span class="icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M20 3l-1.414 1.414L15 8h-3v2h3l3.586 3.586L20 15l-1.414 1.414L15 20l-1.414-1.414L10 15v-3H8l-3.586-3.586L3 7l1.414-1.414L8 8h3V6H8l-3.586-3.586L3 1l1.414-1.414L8 3h3v2h3l3.586 3.586L20 3z"/>
-                        </svg>
-                    </span> tviolao
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-label="Ícone de tviolao">
+                        <title>Ícone de tviolao</title>
+                        <path d="M20 3l-1.414 1.414L15 8h-3v2h3l3.586 3.586L20 15l-1.414 1.414L15 20l-1.414-1.414L10 15v-3H8l-3.586-3.586L3 7l1.414-1.414L8 8h3V6H8l-3.586-3.586L3 1l1.414-1.414L8 3h3v2h3l3.586 3.586L20 3z"/>
+                    </svg>
+                    tviolao
                 </a>
                 <a href="#webdesign" class="nav-link">
-                    <span class="icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z"/>
-                        </svg>
-                    </span> webdesign
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-label="Ícone de webdesign">
+                        <title>Ícone de webdesign</title>
+                        <path d="M3 3v18h18V3H3zm16 16H5V5h14v14zM7 7h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z"/>
+                    </svg>
+                    webdesign
                 </a>
-                <button id="createCommunityBtn" class="nav-link">
-                    <span class="icon">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
-                        </svg>
-                    </span> Criar Comunidade
-                </button>
+                <a href="#culinaria" class="nav-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-label="Ícone de culinaria">
+                        <title>Ícone de culinaria</title>
+                        <path d="M6 2h12v2H6V2zm0 4h12v2H6V6zm0 4h12v2H6v-2zm0 4h12v2H6v-2zm0 4h12v2H6v-2z"/>
+                    </svg>
+                    culinaria
+                </a>
+                <a href="#yoga" class="nav-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-label="Ícone de yoga">
+                        <title>Ícone de yoga</title>
+                        <path d="M12 2c-5.52 0-10 4.48-10 10s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6z"/>
+                    </svg>
+                    yoga
+                </a>
+                <a href="#idiomas" class="nav-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-label="Ícone de idiomas">
+                        <title>Ícone de idiomas</title>
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-14h2v6h-2zm0 8h2v2h-2z"/>
+                    </svg>
+                    idiomas
+                </a>
+                <a href="#fotografia" class="nav-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-label="Ícone de fotografia">
+                        <title>Ícone de fotografia</title>
+                        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                    </svg>
+                    fotografia
+                </a>
+                <a href="#programacao" class="nav-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-label="Ícone de programacao">
+                        <title>Ícone de programacao</title>
+                        <path d="M7.5 7l-3 3 3 3M16.5 7l3 3-3 3M9 6v12M15 6v12"/>
+                    </svg>
+                    programacao
+                </a>
+                <a href="#artesanato" class="nav-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-label="Ícone de artesanato">
+                        <title>Ícone de artesanato</title>
+                        <path d="M4 4h16v16H4V4zm2 2v12h12V6H6zm4 4h4v4h-4v-4z"/>
+                    </svg>
+                    artesanato
+                </a>
             </div>
         </nav>
     </aside>
@@ -97,176 +111,201 @@
         <!-- Welcome Banner -->
         <section class="welcome-banner">
             <div class="banner-overlay"></div>
-            <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
-                alt="Banner Comunidade Laços" class="banner-image" style="max-height:180px; min-height:120px;">
+            <picture>
+                <source srcset="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80&fm=webp" type="image/webp">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Banner da Comunidade Laços, mostrando pessoas colaborando" class="banner-image" loading="lazy" onerror="this.src='https://via.placeholder.com/1200x220?text=Banner+Laços';">
+            </picture>
             <div class="banner-content">
                 <h1>Bem-vindo à Comunidade Laços</h1>
-                <p>Conecte-se, troque habilidades e cresça com milhares de membros!</p>
-                <a href="#join" class="join-btn">Junte-se Agora</a>
+                <p>Conecte-se, troque habilidades e aprenda com uma comunidade global por meio da permuta!</p>
+                <a href="javascript:void(0);" class="join-btn">Junte-se Agora</a>
             </div>
         </section>
 
-        <!-- Featured Events -->
+        <!-- Introdução à Proposta -->
+        <section class="intro-section">
+            <h2>Descubra a Laços</h2>
+            <p>A Laços é uma plataforma inovadora que conecta pessoas para trocar habilidades sem dinheiro. Aqui, você pode ensinar o que sabe e aprender o que deseja, criando laços de aprendizado e colaboração. Seja culinária, programação, música ou yoga, nossa comunidade está pronta para transformar conhecimento em conexões!</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>50K+</h3>
+                    <p>Membros Ativos</p>
+                </div>
+                <div class="stat-card">
+                    <h3>10K+</h3>
+                    <p>Trocas Realizadas</p>
+                </div>
+                <div class="stat-card">
+                    <h3>500+</h3>
+                    <p>Eventos Mensais</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Como Funciona -->
+        <section class="how-it-works">
+            <h2>Como Funciona</h2>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=400&q=80&fm=webp" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=400&q=80" alt="Pessoa criando perfil" loading="lazy" onerror="this.src='https://via.placeholder.com/400x200?text=Cadastro';">
+                    </picture>
+                    <h3>1. Cadastre-se</h3>
+                    <p>Crie sua conta gratuita e liste suas habilidades e interesses.</p>
+                </div>
+                <div class="step-card">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1519085360753-afccb5ee5962?auto=format&fit=crop&w=400&q=80&fm=webp" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1519085360753-afccb5ee5962?auto=format&fit=crop&w=400&q=80" alt="Pessoas conectando-se" loading="lazy" onerror="this.src='https://via.placeholder.com/400x200?text=Conexão';">
+                    </picture>
+                    <h3>2. Conecte-se</h3>
+                    <p>Encontre membros com habilidades complementares para trocar.</p>
+                </div>
+                <div class="step-card">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80&fm=webp" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80" alt="Pessoas aprendendo" loading="lazy" onerror="this.src='https://via.placeholder.com/400x200?text=Aprendizado';">
+                    </picture>
+                    <h3>3. Troque e Cresça</h3>
+                    <p>Ensine, aprenda e participe de eventos para crescer na comunidade!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Por Que Laços? -->
+        <section class="why-lacos">
+            <h2>Por Que Escolher a Laços?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Aprendizado Colaborativo</h3>
+                    <p>Conecte-se com pessoas que compartilham seus interesses e aprenda de forma prática.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Economia de Permuta</h3>
+                    <p>Troque habilidades sem gastar dinheiro, valorizando seu conhecimento.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Comunidade Global</h3>
+                    <p>Participe de eventos e conheça membros de todo o mundo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Habilidades em Destaque -->
+        <section class="skills-highlights">
+            <h2>Habilidades em Destaque</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Idiomas</h3>
+                    <p>Aprenda inglês, espanhol ou japonês com a comunidade.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Design Gráfico</h3>
+                    <p>Crie logos e banners incríveis.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Música</h3>
+                    <p>Domine violão, piano ou produção musical.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Culinária</h3>
+                    <p>Explore sabores globais com chefs.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Yoga</h3>
+                    <p>Pratique bem-estar com instrutores.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Programação</h3>
+                    <p>Aprenda Python, JavaScript ou web.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Eventos em Destaque -->
         <section class="featured-events">
             <h2>Eventos em Destaque</h2>
-            <div class="events-grid">
+            <div class="events-carousel">
                 <div class="event-card">
-                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80"
-                        alt="Workshop de Violão" loading="lazy">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80&fm=webp" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80" alt="Workshop de Violão" loading="lazy" onerror="this.src='https://via.placeholder.com/400x120?text=Workshop+Violão';">
+                    </picture>
                     <h3>Workshop de Violão - 22/05/2025</h3>
-                    <p>Às 18h, online. Inscreva-se agora!</p>
-                    <a href="#event" class="event-link">Saiba Mais</a>
+                    <p>Às 18h, online. Aprenda acordes!</p>
+                    <a href="javascript:void(0);" class="event-link">Inscreva-se</a>
                 </div>
                 <div class="event-card">
-                    <img src="https://images.unsplash.com/photo-1501854149802-7e112b7e63a4?auto=format&fit=crop&w=400&q=80"
-                        alt="Feira de Trocas" loading="lazy">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=400&q=80&fm=webp" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=400&q=80" alt="Feira de Trocas" loading="lazy" onerror="this.src='https://via.placeholder.com/400x120?text=Feira+Trocas';">
+                    </picture>
                     <h3>Feira de Trocas - 28/05/2025</h3>
-                    <p>Evento presencial em São Paulo.</p>
-                    <a href="#event" class="event-link">Saiba Mais</a>
+                    <p>Presencial em São Paulo.</p>
+                    <a href="javascript:void(0);" class="event-link">Saiba Mais</a>
+                </div>
+                <div class="event-card">
+                    <picture>
+                        <source srcset="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=80&fm=webp" type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=80" alt="Aula de Yoga" loading="lazy" onerror="this.src='https://via.placeholder.com/400x120?text=Aula+Yoga';">
+                    </picture>
+                    <h3>Aula de Yoga - 30/05/2025</h3>
+                    <p>Às 10h, online. Relaxe!</p>
+                    <a href="javascript:void(0);" class="event-link">Participar</a>
                 </div>
             </div>
-        </section>
-
-        <!-- Post Feed -->
-        <div class="post-container" id="postContainer">
-            <div class="post">
-                <div class="post-votes">
-                    <button class="upvote-btn" aria-label="Upvote">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M12 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span data-votes="23">23</span>
-                    </button>
-                </div>
-                <div class="post-body">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=40&q=80"
-                        alt="João" class="post-avatar" loading="lazy">
-                    <h3 class="post-title">[Dicas] João: Como melhorar minhas habilidades em programação?</h3>
-                    <p class="post-text">Olá, comunidade! Estou aprendendo Python há 3 meses e quero dicas para avançar. Alguma sugestão?</p>
-                    <button class="comment-toggle" aria-label="Toggle comments">Comentários (4)</button>
-                    <div class="comment-section hidden">
-                        <div class="comment">
-                            <p><strong>Maria:</strong> Pratique com projetos reais, como um aplicativo de lista de tarefas.</p>
-                        </div>
-                        <div class="comment">
-                            <p><strong>Carlos:</strong> Tente desafios no HackerRank, funciona bem!</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="post">
-                <div class="post-votes">
-                    <button class="upvote-btn" aria-label="Upvote">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M12 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span data-votes="15">15</span>
-                    </button>
-                </div>
-                <div class="post-body">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=40&q=80"
-                        alt="Ana" class="post-avatar" loading="lazy">
-                    <h3 class="post-title">[Trocas] Ana: Ofereço aulas de inglês por design gráfico</h3>
-                    <p class="post-text">Procuro alguém para trocar aulas de inglês por design. Interessados?</p>
-                    <button class="comment-toggle" aria-label="Toggle comments">Comentários (2)</button>
-                    <div class="comment-section hidden">
-                        <div class="comment">
-                            <p><strong>Lucas:</strong> Interessado! Podemos conversar?</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="post">
-                <div class="post-votes">
-                    <button class="upvote-btn" aria-label="Upvote">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                            <path d="M12 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span data-votes="10">10</span>
-                    </button>
-                </div>
-                <div class="post-body">
-                    <img src="https://images.unsplash.com/photo-1517245386807-9f79f2e2b2d5?auto=format&fit=crop&w=40&q=80"
-                        alt="Pedro" class="post-avatar" loading="lazy">
-                    <h3 class="post-title">[Eventos] Pedro: Concerto de Violão ao Vivo</h3>
-                    <p class="post-text">Acontece em 23/05 às 20h. Participe online!</p>
-                    <button class="comment-toggle" aria-label="Toggle comments">Comentários (1)</button>
-                    <div class="comment-section hidden">
-                        <div class="comment">
-                            <p><strong>Sofia:</strong> Adoraria assistir! Link disponível?</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Popular Communities -->
-        <section class="popular-communities">
-            <h2>Comunidades Populares</h2>
-            <div class="communities-grid">
-                <div class="community-card">
-                    <img src="https://images.unsplash.com/photo-1519985176271-adb1088fa94c?auto=format&fit=crop&w=40&q=80"
-                        alt="tviolao" loading="lazy" onerror="this.src='https://via.placeholder.com/40?text=🎸';">
-                    <p>tviolao</p>
-                    <span>1.2K Membros</span>
-                </div>
-                <div class="community-card">
-                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=40&q=80"
-                        alt="webdesign" loading="lazy" onerror="this.src='https://via.placeholder.com/40?text=🎨';">
-                    <p>webdesign</p>
-                    <span>3.5K Membros</span>
-                </div>
-                <div class="community-card">
-                    <img src="https://images.unsplash.com/photo-1503676260728-1b1b18f0a8c8?auto=format&fit=crop&w=40&q=80"
-                        alt="fotografia" loading="lazy" onerror="this.src='https://via.placeholder.com/40?text=📷';">
-                    <p>fotografia</p>
-                    <span>2.8K Membros</span>
-                </div>
+            <div class="carousel-controls">
+                <button class="carousel-prev" aria-label="Evento anterior">◄</button>
+                <button class="carousel-next" aria-label="Próximo evento">►</button>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 Laços. Todos os direitos reservados. | <span id="currentDate">Quarta-feira, 21/05/2025</span></p>
+        <p>© 2025 Laços. Todos os direitos reservados.</p>
         <div class="footer-links">
             <a href="index.html">Home</a>
             <a href="#about">Sobre</a>
             <a href="#contact">Contato</a>
             <a href="#privacy">Privacidade</a>
+            <a href="#terms">Termos de Uso</a>
         </div>
     </footer>
 
     <!-- Notification -->
     <div class="notification hidden" id="notification">
-        <p>Bem-vindo à Comunidade Laços! Explore os tópicos e junte-se às discussões.</p>
+        <p></p>
     </div>
 
     <!-- Modal de Login -->
-    <div id="loginModal" class="modal-overlay hidden">
+    <div id="loginModal" class="modal-overlay hidden" aria-hidden="true">
         <div class="modal-content">
-            <button class="modal-close" id="closeLoginModal" aria-label="Fechar">&times;</button>
-            <div class="login-container" style="box-shadow:none;padding:0;">
-                <div class="logo" style="margin-bottom:10px;">🌐 Laços</div>
-                <h1 style="margin-bottom:18px;">Entrar</h1>
+            <button class="modal-close" id="closeLoginModal" aria-label="Fechar modal">×</button>
+            <div class="login-container">
+                <div class="logo">🌐 Laços</div>
+                <h1>Entrar</h1>
                 <form id="loginForm" autocomplete="on">
-                    <div>
+                    <div class="form-group">
                         <label for="modal-email">E-mail</label>
-                        <input type="email" id="modal-email" name="email" placeholder="seu@email.com" required autocomplete="username">
+                        <input type="email" id="modal-email" name="email" placeholder="seu@email.com" required autocomplete="username" aria-describedby="email-error">
+                        <span id="email-error" class="error hidden">Por favor, insira um e-mail válido.</span>
                     </div>
-                    <div>
+                    <div class="form-group">
                         <label for="modal-password">Senha</label>
-                        <input type="password" id="modal-password" name="password" placeholder="Sua senha" required autocomplete="current-password">
+                        <input type="password" id="modal-password" name="password" placeholder="Sua senha" required autocomplete="current-password" aria-describedby="password-error">
+                        <span id="password-error" class="error hidden">A senha deve ter pelo menos 8 caracteres.</span>
                     </div>
                     <button type="submit" class="login-btn">Entrar</button>
                 </form>
-                <div class="links" style="margin-top:18px;">
-                    <a href="#" id="forgotPassword">Esqueci a senha</a>
+                <div class="links">
+                    <a href="javascript:void(0);" id="forgotPassword">Esqueci a senha</a>
+                    <a href="javascript:void(0);" id="signUp">Criar conta</a>
                 </div>
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
-
 </html>
