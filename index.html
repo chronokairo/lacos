@@ -3,440 +3,106 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <meta name="description"
-        content="Comunidade Laços - Plataforma de troca de habilidades para conectar pessoas e promover aprendizado colaborativo!">
-    <meta name="keywords" content="comunidade, troca de habilidades, permuta, eventos, Laços, aprendizado colaborativo">
-    <meta name="author" content="Comunidade Laços">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#4A7C59">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Laços - Página Inicial</title>
-    <link rel="icon" type="image/png" href="https://via.placeholder.com/32" sizes="32x32">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="preload" href="main.js" as="script">
-    <link rel="preload" href="style.css" as="style">
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laços - Troca de Habilidades</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <a href="index.html" class="logo" aria-label="Página inicial da Comunidade Laços">
-                <span aria-hidden="true">🌐</span> Laços
-            </a>
-            <button id="toggleSidebar" class="lg:hidden text-white p-2" aria-label="Abrir menu lateral">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </button>
-            <nav class="main-nav hidden lg:flex items-center space-x-6" aria-label="Navegação principal">
-                <a href="index.html" class="nav-link active text-white hover:text-gray-200 transition"
-                    aria-current="page">Home</a>
-                <a href="popular.html" class="nav-link text-white hover:text-gray-200 transition">Popular</a>
-                <input type="text" placeholder="Pesquisar na Comunidade"
-                    class="search-bar p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400"
-                    aria-label="Pesquisar na comunidade" id="search-bar">
-                <button id="openLoginModal"
-                    class="login-btn-header flex items-center bg-green-600 hover:bg-green-700 text-white p-2 rounded-lg transition"
-                    aria-label="Abrir modal de login">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                        <circle cx="12" cy="8" r="4" />
-                        <path d="M21 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" />
-                    </svg>
-                    <span class="ml-2">Entrar</span>
-                </button>
-            </nav>
+    <!-- Menu Lateral Esquerdo -->
+    <aside class="sidebar" aria-label="Navegação Lateral">
+        <div class="logo">
+            <h1>Laços</h1>
         </div>
-    </header>
-
-    <!-- Sidebar -->
-    <aside id="sidebar"
-        class="sidebar w-64 bg-white p-6 fixed h-full shadow-lg transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-40"
-        aria-label="Navegação lateral">
-        <nav>
-            <div class="communities">
-                <p id="communities-label" class="text-lg font-semibold mb-4">Comunidades</p>
-                <ul aria-labelledby="communities-label" class="space-y-2">
-                    <li>
-                        <a href="create-community.html"
-                            class="nav-link flex items-center text-green-600 hover:text-green-800 transition">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
-                            </svg>
-                            <span class="ml-2">Criar Comunidade</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#mercado-trocas"
-                            class="nav-link flex items-center text-green-600 hover:text-green-800 transition">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path
-                                    d="M3 3h18v18H3V3zm2 2v14h14V5H5zm4 4h4v4H9V9zm0 6h4v2H9v-2zm6-6h2v4h-2V9zm0 6h2v2h-2v-2z" />
-                            </svg>
-                            <span class="ml-2">Mercado de Trocas</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#habilidades-destaque"
-                            class="nav-link flex items-center text-green-600 hover:text-green-800 transition">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path
-                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2v-2z" />
-                            </svg>
-                            <span class="ml-2">Habilidades em Destaque</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#eventos-oficinas"
-                            class="nav-link flex items-center text-green-600 hover:text-green-800 transition">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                <path
-                                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 16H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1zm-4-9h-4v-2h4v2zm0 4h-4v-2h4v2zm0 4h-4v-2h4v2z" />
-                            </svg>
-                            <span class="ml-2">Eventos e Oficinas</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pages/communities.html">Comunidades</a></li>
+                <li><a href="pages/explore.html">Explorar</a></li>
+                <li><a href="pages/profile.html">Meu Perfil</a></li>
+                <li><a href="pages/about.html">Sobre</a></li>
+            </ul>
         </nav>
+        <div class="custom-feeds">
+            <h3>Feeds Personalizados</h3>
+            <a href="#criar-feed">+ Criar um Feed Personalizado</a>
+        </div>
+        <div class="communities">
+            <h3>Comunidades</h3>
+            <ul>
+                <li><a href="pages/communities.html#violao">t/violao</a></li>
+                <li><a href="pages/communities.html#webdesign">t/webdesign</a></li>
+            </ul>
+            <a href="#criar-comunidade">+ Criar Comunidade</a>
+        </div>
+        <!-- Placeholder para Login/Mobile -->
+        <div class="user-actions">
+            <a href="pages/profile.html">Entrar/Registrar</a>
+        </div>
     </aside>
 
-    <!-- Main Content -->
-    <main class="main-content ml-0 lg:ml-64 p-6 transition-all duration-300">
-        <!-- Welcome Banner -->
-        <section class="welcome-banner relative" aria-label="Banner de boas-vindas">
-            <div class="banner-overlay absolute inset-0 bg-black opacity-50"></div>
-            <picture>
-                <source
-                    srcset="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80&fm=webp"
-                    type="image/webp">
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
-                    alt="Pessoas colaborando em um ambiente de aprendizado"
-                    class="banner-image w-full h-56 object-cover rounded-lg" loading="lazy"
-                    onerror="this.src='https://via.placeholder.com/1200x220?text=Banner+Laços';">
-            </picture>
-            <div class="banner-content absolute inset-0 flex items-center justify-center text-center text-white">
-                <div>
-                    <h1 class="text-4xl font-bold mb-4">Bem-vindo à Comunidade Laços</h1>
-                    <p class="text-lg mb-6">Conecte-se, troque habilidades e aprenda com uma comunidade global por meio
-                        da permuta!</p>
-                    <a href="javascript:void(0);"
-                        class="join-btn bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition">Junte-se
-                        Agora</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Introdução à Proposta -->
-        <section class="intro-section py-12">
-            <h2 class="text-3xl font-semibold text-center mb-8">Descubra a Laços</h2>
-            <p class="text-center mb-8 max-w-3xl mx-auto">A Laços é uma plataforma inovadora que conecta pessoas para
-                trocar habilidades sem dinheiro. Aqui, você pode ensinar o que sabe e aprender o que deseja, criando
-                laços de aprendizado e colaboração. Seja culinária, programação, música ou yoga, nossa comunidade está
-                pronta para transformar conhecimento em conexões!</p>
-            <div class="stats-grid grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto" role="list">
-                <div class="stat-card p-6 bg-white rounded-lg shadow-md text-center" role="listitem">
-                    <h3 class="text-3xl font-bold text-green-600">50K+</h3>
-                    <p class="text-gray-600">Membros Ativos</p>
-                </div>
-                <div class="stat-card p-6 bg-white rounded-lg shadow-md text-center" role="listitem">
-                    <h3 class="text-3xl font-bold text-green-600">10K+</h3>
-                    <p class="text-gray-600">Trocas Realizadas</p>
-                </div>
-                <div class="stat-card p-6 bg-white rounded-lg shadow-md text-center" role="listitem">
-                    <h3 class="text-3xl font-bold text-green-600">500+</h3>
-                    <p class="text-gray-600">Eventos Mensais</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Como Funciona -->
-        <section class="how-it-works py-12">
-            <h2 class="text-3xl font-semibold text-center mb-8">Como Funciona</h2>
-            <div class="steps-grid grid grid-cols-1 md:grid-cols-3 gap-6" role="list">
-                <div class="step-card p-6 bg-white rounded-lg shadow-md text-center" role="listitem">
-                    <picture>
-                        <source
-                            srcset="https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=400&q=80&fm=webp"
-                            type="image/webp">
-                        <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=400&q=80"
-                            alt="Pessoa criando perfil na plataforma Laços"
-                            class="w-full h-48 object-cover rounded-lg mb-4" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/400x200?text=Cadastro';">
-                    </picture>
-                    <h3 class="text-xl font-semibold mb-2">1. Cadastre-se</h3>
-                    <p class="text-gray-600">Crie sua conta gratuita e liste suas habilidades e interesses.</p>
-                </div>
-                <div class="step-card p-6 bg-white rounded-lg shadow-md text-center" role="listitem">
-                    <picture>
-                        <source
-                            srcset="https://images.unsplash.com/photo-1519085360753-afccb5ee5962?auto=format&fit=crop&w=400&q=80&fm=webp"
-                            type="image/webp">
-                        <img src="https://images.unsplash.com/photo-1519085360753-afccb5ee5962?auto=format&fit=crop&w=400&q=80"
-                            alt="Pessoas conectando-se para trocar habilidades"
-                            class="w-full h-48 object-cover rounded-lg mb-4" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/400x200?text=Conexão';">
-                    </picture>
-                    <h3 class="text-xl font-semibold mb-2">2. Conecte-se</h3>
-                    <p class="text-gray-600">Encontre membros com habilidades complementares para trocar.</p>
-                </div>
-                <div class="step-card p-6 bg-white rounded-lg shadow-md text-center" role="listitem">
-                    <picture>
-                        <source
-                            srcset="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80&fm=webp"
-                            type="image/webp">
-                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80"
-                            alt="Pessoas aprendendo juntas em um evento da Laços"
-                            class="w-full h-48 object-cover rounded-lg mb-4" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/400x200?text=Aprendizado';">
-                    </picture>
-                    <h3 class="text-xl font-semibold mb-2">3. Troque e Cresça</h3>
-                    <p class="text-gray-600">Ensine, aprenda e participe de eventos para crescer na comunidade!</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Por Que Laços? -->
-        <section class="why-lacos py-12">
-            <h2 class="text-3xl font-semibold text-center mb-8">Por Que Escolher a Laços?</h2>
-            <div class="benefits-grid grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto" role="list">
-                <div class="benefit-card p-6 bg-white rounded-lg shadow-md text-center" role="listitem">
-                    <h3 class="text-xl font-semibold mb-2 text-green-600">Aprendizado Colaborativo</h3>
-                    <p class="text-gray-600">Conecte-se com pessoas que compartilham seus interesses e aprenda de forma
-                        prática.</p>
-                </div>
-                <div class="benefit-card p-6 bg-white rounded-lg shadow-md text-center" role="listitem">
-                    <h3 class="text-xl font-semibold mb-2 text-green-600">Economia de Permuta</h3>
-                    <p class="text-gray-600">Troque habilidades sem gastar dinheiro, valorizando seu conhecimento.</p>
-                </div>
-                <div class="benefit-card p-6 bg-white rounded-lg shadow-md text-center" role="listitem">
-                    <h3 class="text-xl font-semibold mb-2 text-green-600">Comunidade Global</h3>
-                    <p class="text-gray-600">Participe de eventos e conheça membros de todo o mundo.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Habilidades em Destaque -->
-        <section class="skills-highlights py-12">
-            <h2 class="text-3xl font-semibold text-center mb-8">Habilidades em Destaque</h2>
-            <div class="skills-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto" role="list">
-                <div class="skill-card p-6 bg-white rounded-lg shadow-md text-center" role="listitem">
-                    <h3 class="text-xl font-semibold mb-2 text-green-600">Idiomas</h3>
-                    <p class="text-gray-600">Aprenda inglês, espanhol ou japonês com a comunidade.</p>
-                </div>
-                <div class="skill-card p-6 bg-white rounded-lg shadow-md text-center" role="listitem">
-                    <h3 class="text-xl font-semibold mb-2 text-green-600">Design Gráfico</h3>
-                    <p class="text-gray-600">Crie logos e banners incríveis.</p>
-                </div>
-                <div class="skill-card p-6 bg-white rounded-lg shadow-md text-center" role="listitem">
-                    <h3 class="text-xl font-semibold mb-2 text-green-600">Música</h3>
-                    <p class="text-gray-600">Domine violão, piano ou produção musical.</p>
-                </div>
-                <div class="skill-card p-6 bg-white rounded-lg shadow-md text-center" role="listitem">
-                    <h3 class="text-xl font-semibold mb-2 text-green-600">Culinária</h3>
-                    <p class="text-gray-600">Explore sabores globais com chefs.</p>
-                </div>
-                <div class="skill-card p-6 bg-white rounded-lg shadow-md text-center" role="listitem">
-                    <h3 class="text-xl font-semibold mb-2 text-green-600">Yoga</h3>
-                    <p class="text-gray-600">Pratique bem-estar com instrutores.</p>
-                </div>
-                <div class="skill-card p-6 bg-white rounded-lg shadow-md text-center" role="listitem">
-                    <h3 class="text-xl font-semibold mb-2 text-green-600">Programação</h3>
-                    <p class="text-gray-600">Aprenda Python, JavaScript ou web.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Eventos em Destaque -->
-        <section class="featured-events py-12">
-            <h2 class="text-3xl font-semibold text-center mb-8">Eventos em Destaque</h2>
-            <div id="eventsCarousel" class="events-carousel flex overflow-x-auto space-x-6 pb-4 snap-x snap-mandatory"
-                role="list">
-                <div class="event-card w-80 bg-white rounded-lg shadow-md flex-shrink-0 snap-start" role="listitem">
-                    <picture>
-                        <source
-                            srcset="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80&fm=webp"
-                            type="image/webp">
-                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80"
-                            alt="Workshop de Violão online" class="w-full h-48 object-cover rounded-t-lg" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/400x120?text=Workshop+Violão';">
-                    </picture>
-                    <div class="p-4">
-                        <h3 class="text-xl font-semibold mb-2">Workshop de Violão - 22/05/2025</h3>
-                        <p class="text-gray-600 mb-4">Às 18h, online. Aprenda acordes!</p>
-                        <a href="javascript:void(0);"
-                            class="event-link text-green-600 hover:text-green-800 font-semibold">Inscreva-se</a>
+    <!-- Seção Principal -->
+    <main class="main-content">
+        <header>
+            <input type="text" placeholder="Pesquisar no Laços (ex: Inglês, Jardinagem)" aria-label="Barra de Pesquisa">
+            <button type="button">Pesquisar</button>
+        </header>
+        <section id="home">
+            <h2>Bem-vindo ao Laços!</h2>
+            <p>Conecte-se com pessoas para trocar habilidades e aprender algo novo de forma colaborativa. Explore,
+                ensine e cresça juntos!</p>
+            <div class="featured-section">
+                <h3>Destaques da Comunidade</h3>
+                <div class="post">
+                    <h4>João ensina Inglês</h4>
+                    <p>Procurando alguém para trocar por aulas de jardinagem. Nível intermediário, 1h por semana.
+                        Avaliação: 4.8/5 (10 trocas).</p>
+                    <div class="post-actions">
+                        <a href="pages/schedule.html"><button>Agendar Troca</button></a>
+                        <a href="pages/profile.html?id=joao"><button>Ver Perfil</button></a>
                     </div>
                 </div>
-                <div class="event-card w-80 bg-white rounded-lg shadow-md flex-shrink-0 snap-start" role="listitem">
-                    <picture>
-                        <source
-                            srcset="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=400&q=80&fm=webp"
-                            type="image/webp">
-                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=400&q=80"
-                            alt="Feira de Trocas em São Paulo" class="w-full h-48 object-cover rounded-t-lg"
-                            loading="lazy" onerror="this.src='https://via.placeholder.com/400x120?text=Feira+Trocas';">
-                    </picture>
-                    <div class="p-4">
-                        <h3 class="text-xl font-semibold mb-2">Feira de Trocas - 28/05/2025</h3>
-                        <p class="text-gray-600 mb-4">Presencial em São Paulo.</p>
-                        <a href="javascript:void(0);"
-                            class="event-link text-green-600 hover:text-green-800 font-semibold">Saiba Mais</a>
-                    </div>
-                </div>
-                <div class="event-card w-80 bg-white rounded-lg shadow-md flex-shrink-0 snap-start" role="listitem">
-                    <picture>
-                        <source
-                            srcset="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=80&fm=webp"
-                            type="image/webp">
-                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=80"
-                            alt="Aula de Yoga online" class="w-full h-48 object-cover rounded-t-lg" loading="lazy"
-                            onerror="this.src='https://via.placeholder.com/400x120?text=Aula+Yoga';">
-                    </picture>
-                    <div class="p-4">
-                        <h3 class="text-xl font-semibold mb-2">Aula de Yoga - 30/05/2025</h3>
-                        <p class="text-gray-600 mb-4">Às 10h, online. Relaxe!</p>
-                        <a href="javascript:void(0);"
-                            class="event-link text-green-600 hover:text-green-800 font-semibold">Participar</a>
+                <div class="post">
+                    <h4>Maria ensina Jardinagem</h4>
+                    <p>Ensino técnicas básicas de cultivo. Interessada em aprender inglês ou culinária. Disponível aos
+                        sábados.</p>
+                    <div class="post-actions">
+                        <a href="pages/schedule.html"><button>Agendar Troca</button></a>
+                        <a href="pages/profile.html?id=maria"><button>Ver Perfil</button></a>
                     </div>
                 </div>
             </div>
-            <div class="carousel-controls flex justify-center space-x-4 mt-4">
-                <button class="carousel-prev bg-green-600 text-white p-2 rounded-full hover:bg-green-700 transition"
-                    aria-label="Evento anterior">◄</button>
-                <button class="carousel-next bg-green-600 text-white p-2 rounded-full hover:bg-green-700 transition"
-                    aria-label="Próximo evento">►</button>
+            <!-- Placeholder para Chamada à Ação -->
+            <div class="call-to-action">
+                <h3>Comece Agora!</h3>
+                <p>Crie seu perfil, adicione suas habilidades e encontre alguém para trocar.</p>
+                <a href="pages/profile.html"><button>Crie seu Perfil</button></a>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-green-800 text-white p-6 mt-12">
-        <div class="max-w-7xl mx-auto text-center">
-            <p>© 2025 Laços. Todos os direitos reservados.</p>
-            <nav class="footer-links flex justify-center space-x-6 mt-4" aria-label="Links do rodapé">
-                <a href="index.html" class="text-white hover:text-gray-200" aria-current="page">Home</a>
-                <a href="#about" class="text-white hover:text-gray-200">Sobre</a>
-                <a href="#contact" class="text-white hover:text-gray-200">Contato</a>
-                <a href="#privacy" class="text-white hover:text-gray-200">Privacidade</a>
-                <a href="#terms" class="text-white hover:text-gray-200">Termos de Uso</a>
-            </nav>
+    <!-- Barra Lateral Direita -->
+    <aside class="right-sidebar" aria-label="Posts Recentes">
+        <h3>Posts Recentes</h3>
+        <ul>
+            <li><a href="#">Como começar uma troca de habilidades?</a></li>
+            <li><a href="pages/matching.html">Dicas para encontrar o match perfeito</a></li>
+            <li><a href="pages/communities.html">Participe de uma comunidade hoje!</a></li>
+        </ul>
+        <!-- Placeholder para Anúncios ou Eventos -->
+        <div class="events">
+            <h4>Eventos Próximos</h4>
+            <p><a href="pages/schedule.html">Workshop de Jardinagem - 25/05/2025</a></p>
         </div>
+    </aside>
+
+    <footer>
+        <p><a href="pages/about.html">Sobre</a> | <a href="pages/contact.html">Contato</a> | <a
+                href="pages/privacy.html">Privacidade</a></p>
+        <p>&copy; 2025 Laços - Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Notification -->
-    <div class="notification hidden fixed top-4 right-4 bg-green-600 text-white p-4 rounded-lg shadow-md"
-        id="notification" role="alert">
-        <p></p>
-    </div>
-
-    <!-- Modal de Login -->
-    <div id="loginModal"
-        class="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50"
-        role="dialog" aria-labelledby="login-title" aria-modal="true" aria-describedby="login-description">
-        <div
-            class="modal-content bg-white p-6 rounded-lg shadow-xl max-w-md w-full transform transition-all duration-300 scale-95">
-            <button class="modal-close absolute top-4 right-4 text-gray-600 hover:text-green-600 text-2xl"
-                id="closeLoginModal" aria-label="Fechar modal de login">×</button>
-            <div class="login-container text-center">
-                <a href="index.html"
-                    class="logo flex items-center justify-center text-2xl font-bold text-green-600 mb-6"
-                    aria-label="Página inicial da Comunidade Laços">
-                    <span aria-hidden="true" class="mr-2">🌐</span> Laços
-                </a>
-                <div class="modal-header">
-                    <h1 id="login-title" class="text-2xl font-semibold mb-2">Entrar na Comunidade</h1>
-                    <p id="login-description" class="modal-description text-gray-600">Acesse sua conta para explorar e
-                        trocar habilidades.</p>
-                </div>
-                <form id="loginForm" novalidate autocomplete="on" class="mt-6" aria-label="Formulário de login">
-                    <div class="form-group mb-4">
-                        <label for="modal-email" class="form-label block text-sm font-medium mb-1">E-mail</label>
-                        <input type="email" id="modal-email" name="email" placeholder="seu@email.com" required
-                            autocomplete="email"
-                            class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400"
-                            aria-describedby="email-error email-help" aria-invalid="false">
-                        <small id="email-help" class="form-help block text-xs text-gray-600 mt-1">Exemplo:
-                            seu.nome@exemplo.com</small>
-                        <span id="email-error" class="error hidden text-xs text-red-600 mt-1" role="alert">Por favor,
-                            insira um e-mail válido.</span>
-                    </div>
-                    <div class="form-group mb-4">
-                        <label for="modal-password" class="form-label block text-sm font-medium mb-1">Senha</label>
-                        <div class="password-wrapper relative">
-                            <input type="password" id="modal-password" name="password" placeholder="Sua senha" required
-                                autocomplete="current-password" minlength="8"
-                                class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 pr-10"
-                                aria-describedby="password-error password-help" aria-invalid="false">
-                            <button type="button" id="toggle-password"
-                                class="toggle-password absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-600 hover:text-green-600"
-                                aria-label="Mostrar ou ocultar senha">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                                    <circle cx="12" cy="12" r="3" />
-                                </svg>
-                            </button>
-                        </div>
-                        <small id="password-help" class="form-help block text-xs text-gray-600 mt-1">Mínimo de 8
-                            caracteres.</small>
-                        <span id="password-error" class="error hidden text-xs text-red-600 mt-1" role="alert">A senha
-                            deve ter pelo menos 8 caracteres.</span>
-                    </div>
-                    <button type="submit"
-                        class="login-btn w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition disabled:bg-gray-400 disabled:cursor-not-allowed"
-                        disabled aria-label="Entrar (botão desativado até validação)">
-                        Entrar
-                    </button>
-                    <div class="links flex justify-between mt-4 text-sm">
-                        <a href="javascript:void(0);" id="forgotPassword" class="text-green-600 hover:text-green-800"
-                            aria-label="Recuperar senha">Esqueci a senha</a>
-                        <a href="javascript:void(0);" id="signUp" class="text-green-600 hover:text-green-800"
-                            aria-label="Criar nova conta">Criar conta</a>
-                    </div>
-                    <div class="social-login mt-6 text-center">
-                        <p class="text-gray-600 mb-4">Ou entre com:</p>
-                        <div class="social-buttons flex justify-center space-x-4">
-                            <button type="button"
-                                class="social-btn google flex items-center bg-white border border-gray-300 hover:bg-gray-100 text-gray-800 py-2 px-4 rounded-lg transition"
-                                aria-label="Entrar com Google">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="#DB4437" aria-hidden="true">
-                                    <path
-                                        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
-                                    <path
-                                        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
-                                    <path
-                                        d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" />
-                                </svg>
-                                <span class="ml-2">Google</span>
-                            </button>
-                            <button type="button"
-                                class="social-btn facebook flex items-center bg-white border border-gray-300 hover:bg-gray-100 text-gray-800 py-2 px-4 rounded-lg transition"
-                                aria-label="Entrar com Facebook">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="#3B5998" aria-hidden="true">
-                                    <path
-                                        d="M12 2C6.48 2 2 6.48 2 12c0 4.84 3.54 8.87 8.16 9.6V15H8v-2h2v-1.5c0-2.18 1.16-3.29 3.59-3.29.98 0 1.96.19 2.24.27v2.1h-1.53c-.66 0-1.12.67-1.12 1.34V13h2.18l-.3 2H13v6.6c4.62-.73 8.16-4.76 8.16-9.6 0-5.52-4.48-10-10-10z" />
-                                </svg>
-                                <span class="ml-2">Facebook</span>
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <script src="js/main.js" defer></script>
+    <script src="assets/js/scripts.js"></script>
 </body>
 
 </html>
