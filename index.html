@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Comunidade Laços - Plataforma de troca de habilidades para conectar pessoas e promover aprendizado colaborativo!">
+    <meta name="description"
+        content="Comunidade Laços - Plataforma de troca de habilidades para conectar pessoas e promover aprendizado colaborativo!">
     <meta name="keywords" content="comunidade, troca de habilidades, permuta, eventos, Laços, aprendizado colaborativo">
     <meta name="author" content="Comunidade Laços">
+    <meta name="robots" content="index, follow">
     <title>Laços - Página Inicial</title>
-    <link rel="icon" type="image/png" href="https://via.placeholder.com/32">
+    <link rel="icon" type="image/png" href="https://via.placeholder.com/32" sizes="32x32">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Header -->
     <header>
         <div class="header-content">
-            <div class="logo">🌐 Laços</div>
-            <nav class="main-nav">
-                <a href="index.html" class="nav-link active">Home</a>
+            <a href="index.html" class="logo" aria-label="Página inicial da Comunidade Laços">
+                <span aria-hidden="true">🌐</span> Laços
+            </a>
+            <nav class="main-nav" aria-label="Navegação principal">
+                <a href="index.html" class="nav-link active" aria-current="page">Home</a>
                 <a href="popular.html" class="nav-link">Popular</a>
-                <input type="text" placeholder="Pesquisar na Comunidade" class="search-bar" aria-label="Pesquisar na comunidade">
-                <a href="javascript:void(0);" class="login-btn-header" id="openLoginModal" title="Entrar">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-label="Ícone de login">
-                        <title>Ícone de login</title>
-                        <circle cx="12" cy="8" r="4"/>
-                        <path d="M21 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/>
+                <input type="text" placeholder="Pesquisar na Comunidade" class="search-bar"
+                    aria-label="Pesquisar na comunidade" id="search-bar">
+                <button class="login-btn-header" id="openLoginModal" aria-label="Abrir modal de login">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="8" r="4" />
+                        <path d="M21 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2" />
                     </svg>
-                    Entrar
-                </a>
+                    <span>Entrar</span>
+                </button>
             </nav>
         </div>
     </header>
@@ -38,35 +45,45 @@
     <aside class="sidebar" aria-label="Navegação lateral">
         <nav>
             <div class="communities">
-                <p>Comunidades</p>
-                <a href="create-community.html" class="nav-link">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#4A7C59" aria-label="Ícone de Criar Comunidade">
-                        <title>Ícone de Criar Comunidade</title>
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/>
-                    </svg>
-                    Criar Comunidade
-                </a>
-                <a href="#mercado-trocas" class="nav-link">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#4A7C59" aria-label="Ícone de Mercado de Trocas">
-                        <title>Ícone de Mercado de Trocas</title>
-                        <path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm4 4h4v4H9V9zm0 6h4v2H9v-2zm6-6h2v4h-2V9zm0 6h2v2h-2v-2z"/>
-                    </svg>
-                    Mercado de Trocas
-                </a>
-                <a href="#habilidades-destaque" class="nav-link">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#4A7C59" aria-label="Ícone de Habilidades em Destaque">
-                        <title>Ícone de Habilidades em Destaque</title>
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
-                    </svg>
-                    Habilidades em Destaque
-                </a>
-                <a href="#eventos-oficinas" class="nav-link">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="#4A7C59" aria-label="Ícone de Eventos e Oficinas">
-                        <title>Ícone de Eventos e Oficinas</title>
-                        <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 16H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1zm-4-9h-4v-2h4v2zm0 4h-4v-2h4v2zm0 4h-4v-2h4v2z"/>
-                    </svg>
-                    Eventos e Oficinas
-                </a>
+                <p id="communities-label">Comunidades</p>
+                <ul aria-labelledby="communities-label">
+                    <li>
+                        <a href="create-community.html" class="nav-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#4A7C59" aria-hidden="true">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm5 11h-4v4h-2v-4H7v-2h4V7h2v4h4v2z" />
+                            </svg>
+                            Criar Comunidade
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#mercado-trocas" class="nav-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#4A7C59" aria-hidden="true">
+                                <path
+                                    d="M3 3h18v18H3V3zm2 2v14h14V5H5zm4 4h4v4H9V9zm0 6h4v2H9v-2zm6-6h2v4h-2V9zm0 6h2v2h-2v-2z" />
+                            </svg>
+                            Mercado de Trocas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#habilidades-destaque" class="nav-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#4A7C59" aria-hidden="true">
+                                <path
+                                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" />
+                            </svg>
+                            Habilidades em Destaque
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#eventos-oficinas" class="nav-link">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="#4A7C59" aria-hidden="true">
+                                <path
+                                    d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 16H6c-.55 0-1-.45-1-1V6c0-.55.45-1 1-1h12c.55 0 1 .45 1 1v12c0 .55-.45 1-1 1zm-4-9h-4v-2h4v2zm0 4h-4v-2h4v2zm0 4h-4v-2h4v2z" />
+                            </svg>
+                            Eventos e Oficinas
+                        </a>
+                    </li>
+                </ul>
             </div>
         </nav>
     </aside>
@@ -74,11 +91,15 @@
     <!-- Main Content -->
     <main class="main-content">
         <!-- Welcome Banner -->
-        <section class="welcome-banner">
+        <section class="welcome-banner" aria-label="Banner de boas-vindas">
             <div class="banner-overlay"></div>
             <picture>
-                <source srcset="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80&fm=webp" type="image/webp">
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Banner da Comunidade Laços, mostrando pessoas colaborando" class="banner-image" loading="lazy" onerror="this.src='https://via.placeholder.com/1200x220?text=Banner+Laços';">
+                <source
+                    srcset="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80&fm=webp"
+                    type="image/webp">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+                    alt="Pessoas colaborando em um ambiente de aprendizado" class="banner-image" loading="lazy"
+                    onerror="this.src='https://via.placeholder.com/1200x220?text=Banner+Laços';">
             </picture>
             <div class="banner-content">
                 <h1>Bem-vindo à Comunidade Laços</h1>
@@ -90,17 +111,20 @@
         <!-- Introdução à Proposta -->
         <section class="intro-section">
             <h2>Descubra a Laços</h2>
-            <p>A Laços é uma plataforma inovadora que conecta pessoas para trocar habilidades sem dinheiro. Aqui, você pode ensinar o que sabe e aprender o que deseja, criando laços de aprendizado e colaboração. Seja culinária, programação, música ou yoga, nossa comunidade está pronta para transformar conhecimento em conexões!</p>
-            <div class="stats-grid">
-                <div class="stat-card">
+            <p>A Laços é uma plataforma inovadora que conecta pessoas para trocar habilidades sem dinheiro. Aqui, você
+                pode ensinar o que sabe e aprender o que deseja, criando laços de aprendizado e colaboração. Seja
+                culinária, programação, música ou yoga, nossa comunidade está pronta para transformar conhecimento em
+                conexões!</p>
+            <div class="stats-grid" role="list">
+                <div class="stat-card" role="listitem">
                     <h3>50K+</h3>
                     <p>Membros Ativos</p>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card" role="listitem">
                     <h3>10K+</h3>
                     <p>Trocas Realizadas</p>
                 </div>
-                <div class="stat-card">
+                <div class="stat-card" role="listitem">
                     <h3>500+</h3>
                     <p>Eventos Mensais</p>
                 </div>
@@ -110,27 +134,39 @@
         <!-- Como Funciona -->
         <section class="how-it-works">
             <h2>Como Funciona</h2>
-            <div class="steps-grid">
-                <div class="step-card">
+            <div class="steps-grid" role="list">
+                <div class="step-card" role="listitem">
                     <picture>
-                        <source srcset="https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=400&q=80&fm=webp" type="image/webp">
-                        <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=400&q=80" alt="Pessoa criando perfil" loading="lazy" onerror="this.src='https://via.placeholder.com/400x200?text=Cadastro';">
+                        <source
+                            srcset="https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=400&q=80&fm=webp"
+                            type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=400&q=80"
+                            alt="Pessoa criando perfil na plataforma Laços" loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/400x200?text=Cadastro';">
                     </picture>
                     <h3>1. Cadastre-se</h3>
                     <p>Crie sua conta gratuita e liste suas habilidades e interesses.</p>
                 </div>
-                <div class="step-card">
+                <div class="step-card" role="listitem">
                     <picture>
-                        <source srcset="https://images.unsplash.com/photo-1519085360753-afccb5ee5962?auto=format&fit=crop&w=400&q=80&fm=webp" type="image/webp">
-                        <img src="https://images.unsplash.com/photo-1519085360753-afccb5ee5962?auto=format&fit=crop&w=400&q=80" alt="Pessoas conectando-se" loading="lazy" onerror="this.src='https://via.placeholder.com/400x200?text=Conexão';">
+                        <source
+                            srcset="https://images.unsplash.com/photo-1519085360753-afccb5ee5962?auto=format&fit=crop&w=400&q=80&fm=webp"
+                            type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1519085360753-afccb5ee5962?auto=format&fit=crop&w=400&q=80"
+                            alt="Pessoas conectando-se para trocar habilidades" loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/400x200?text=Conexão';">
                     </picture>
                     <h3>2. Conecte-se</h3>
                     <p>Encontre membros com habilidades complementares para trocar.</p>
                 </div>
-                <div class="step-card">
+                <div class="step-card" role="listitem">
                     <picture>
-                        <source srcset="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80&fm=webp" type="image/webp">
-                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80" alt="Pessoas aprendendo" loading="lazy" onerror="this.src='https://via.placeholder.com/400x200?text=Aprendizado';">
+                        <source
+                            srcset="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80&fm=webp"
+                            type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80"
+                            alt="Pessoas aprendendo juntas em um evento da Laços" loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/400x200?text=Aprendizado';">
                     </picture>
                     <h3>3. Troque e Cresça</h3>
                     <p>Ensine, aprenda e participe de eventos para crescer na comunidade!</p>
@@ -141,16 +177,16 @@
         <!-- Por Que Laços? -->
         <section class="why-lacos">
             <h2>Por Que Escolher a Laços?</h2>
-            <div class="benefits-grid">
-                <div class="benefit-card">
+            <div class="benefits-grid" role="list">
+                <div class="benefit-card" role="listitem">
                     <h3>Aprendizado Colaborativo</h3>
                     <p>Conecte-se com pessoas que compartilham seus interesses e aprenda de forma prática.</p>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-card" role="listitem">
                     <h3>Economia de Permuta</h3>
                     <p>Troque habilidades sem gastar dinheiro, valorizando seu conhecimento.</p>
                 </div>
-                <div class="benefit-card">
+                <div class="benefit-card" role="listitem">
                     <h3>Comunidade Global</h3>
                     <p>Participe de eventos e conheça membros de todo o mundo.</p>
                 </div>
@@ -160,28 +196,28 @@
         <!-- Habilidades em Destaque -->
         <section class="skills-highlights">
             <h2>Habilidades em Destaque</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
+            <div class="skills-grid" role="list">
+                <div class="skill-card" role="listitem">
                     <h3>Idiomas</h3>
                     <p>Aprenda inglês, espanhol ou japonês com a comunidade.</p>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card" role="listitem">
                     <h3>Design Gráfico</h3>
                     <p>Crie logos e banners incríveis.</p>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card" role="listitem">
                     <h3>Música</h3>
                     <p>Domine violão, piano ou produção musical.</p>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card" role="listitem">
                     <h3>Culinária</h3>
                     <p>Explore sabores globais com chefs.</p>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card" role="listitem">
                     <h3>Yoga</h3>
                     <p>Pratique bem-estar com instrutores.</p>
                 </div>
-                <div class="skill-card">
+                <div class="skill-card" role="listitem">
                     <h3>Programação</h3>
                     <p>Aprenda Python, JavaScript ou web.</p>
                 </div>
@@ -191,29 +227,41 @@
         <!-- Eventos em Destaque -->
         <section class="featured-events">
             <h2>Eventos em Destaque</h2>
-            <div class="events-carousel">
-                <div class="event-card">
+            <div class="events-carousel" role="list">
+                <div class="event-card" role="listitem">
                     <picture>
-                        <source srcset="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80&fm=webp" type="image/webp">
-                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80" alt="Workshop de Violão" loading="lazy" onerror="this.src='https://via.placeholder.com/400x120?text=Workshop+Violão';">
+                        <source
+                            srcset="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80&fm=webp"
+                            type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80"
+                            alt="Workshop de Violão online" loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/400x120?text=Workshop+Violão';">
                     </picture>
                     <h3>Workshop de Violão - 22/05/2025</h3>
                     <p>Às 18h, online. Aprenda acordes!</p>
                     <a href="javascript:void(0);" class="event-link">Inscreva-se</a>
                 </div>
-                <div class="event-card">
+                <div class="event-card" role="listitem">
                     <picture>
-                        <source srcset="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=400&q=80&fm=webp" type="image/webp">
-                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=400&q=80" alt="Feira de Trocas" loading="lazy" onerror="this.src='https://via.placeholder.com/400x120?text=Feira+Trocas';">
+                        <source
+                            srcset="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=400&q=80&fm=webp"
+                            type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=400&q=80"
+                            alt="Feira de Trocas em São Paulo" loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/400x120?text=Feira+Trocas';">
                     </picture>
                     <h3>Feira de Trocas - 28/05/2025</h3>
                     <p>Presencial em São Paulo.</p>
                     <a href="javascript:void(0);" class="event-link">Saiba Mais</a>
                 </div>
-                <div class="event-card">
+                <div class="event-card" role="listitem">
                     <picture>
-                        <source srcset="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=80&fm=webp" type="image/webp">
-                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=80" alt="Aula de Yoga" loading="lazy" onerror="this.src='https://via.placeholder.com/400x120?text=Aula+Yoga';">
+                        <source
+                            srcset="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=80&fm=webp"
+                            type="image/webp">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&q=80"
+                            alt="Aula de Yoga online" loading="lazy"
+                            onerror="this.src='https://via.placeholder.com/400x120?text=Aula+Yoga';">
                     </picture>
                     <h3>Aula de Yoga - 30/05/2025</h3>
                     <p>Às 10h, online. Relaxe!</p>
@@ -230,36 +278,40 @@
     <!-- Footer -->
     <footer>
         <p>© 2025 Laços. Todos os direitos reservados.</p>
-        <div class="footer-links">
-            <a href="index.html">Home</a>
+        <nav class="footer-links" aria-label="Links do rodapé">
+            <a href="index.html" aria-current="page">Home</a>
             <a href="#about">Sobre</a>
             <a href="#contact">Contato</a>
             <a href="#privacy">Privacidade</a>
             <a href="#terms">Termos de Uso</a>
-        </div>
+        </nav>
     </footer>
 
     <!-- Notification -->
-    <div class="notification hidden" id="notification">
+    <div class="notification hidden" id="notification" role="alert">
         <p></p>
     </div>
 
     <!-- Modal de Login -->
-    <div id="loginModal" class="modal-overlay hidden" aria-hidden="true">
+    <div id="loginModal" class="modal-overlay hidden" role="dialog" aria-labelledby="login-title" aria-modal="true">
         <div class="modal-content">
             <button class="modal-close" id="closeLoginModal" aria-label="Fechar modal">×</button>
             <div class="login-container">
-                <div class="logo">🌐 Laços</div>
-                <h1>Entrar</h1>
+                <a href="index.html" class="logo" aria-label="Página inicial da Comunidade Laços">
+                    <span aria-hidden="true">🌐</span> Laços
+                </a>
+                <h1 id="login-title">Entrar</h1>
                 <form id="loginForm" autocomplete="on">
                     <div class="form-group">
                         <label for="modal-email">E-mail</label>
-                        <input type="email" id="modal-email" name="email" placeholder="seu@email.com" required autocomplete="username" aria-describedby="email-error">
+                        <input type="email" id="modal-email" name="email" placeholder="seu@email.com" required
+                            autocomplete="email" aria-describedby="email-error">
                         <span id="email-error" class="error hidden">Por favor, insira um e-mail válido.</span>
                     </div>
                     <div class="form-group">
                         <label for="modal-password">Senha</label>
-                        <input type="password" id="modal-password" name="password" placeholder="Sua senha" required autocomplete="current-password" aria-describedby="password-error">
+                        <input type="password" id="modal-password" name="password" placeholder="Sua senha" required
+                            autocomplete="current-password" aria-describedby="password-error">
                         <span id="password-error" class="error hidden">A senha deve ter pelo menos 8 caracteres.</span>
                     </div>
                     <button type="submit" class="login-btn">Entrar</button>
@@ -271,5 +323,8 @@
             </div>
         </div>
     </div>
-    <script src="script.js" defer></script>
+
+    <script src="script.js"></script>
+</body>
+
 </html>

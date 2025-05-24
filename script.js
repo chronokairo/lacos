@@ -82,105 +82,109 @@ document.addEventListener('DOMContentLoaded', () => {
         showNotification('Bem-vindo à Comunidade Laços! Explore as trocas de habilidades.'), 2000
     );
 
-    // Modal Login
+    // Elementos do DOM
     const loginModal = document.getElementById('loginModal');
     const openLoginModal = document.getElementById('openLoginModal');
     const closeLoginModal = document.getElementById('closeLoginModal');
     const loginForm = document.getElementById('loginForm');
+    const notification = document.getElementById('notification');
+    const carouselPrev = document.querySelector('.carousel-prev');
+    const carouselNext = document.querySelector('.carousel-next');
+    const eventsCarousel = document.querySelector('.events-carousel');
 
-    if (openLoginModal && loginModal && closeLoginModal && loginForm) {
-        openLoginModal.addEventListener('click', (e) => {
-            e.preventDefault();
-            loginModal.classList.remove('hidden');
-            loginModal.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
-            const modalEmail = document.getElementById('modal-email');
-            if (modalEmail) modalEmail.focus();
-        });
+    // Login Modal
+    function toggleModal(show = true) {
+        loginModal.classList.toggle('hidden', !show);
+        loginModal.setAttribute('aria-hidden', (!show).toString());
+    }
 
-        closeLoginModal.addEventListener('click', () => {
-            loginModal.classList.add('hidden');
-            loginModal.setAttribute('aria-hidden', 'true');
-            document.body.style.overflow = '';
-            loginForm.reset();
-            clearErrors();
-        });
+    openLoginModal?.addEventListener('click', () => toggleModal(true));
+    closeLoginModal?.addEventListener('click', () => toggleModal(false));
 
-        window.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && !loginModal.classList.contains('hidden')) {
-                loginModal.classList.add('hidden');
-                loginModal.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = '';
-                loginForm.reset();
-                clearErrors();
-            }
-        });
+    // Fechar modal quando clicar fora
+    loginModal?.addEventListener('click', (e) => {
+        if (e.target === loginModal) {
+            toggleModal(false);
+        }
+    });
 
-        loginModal.addEventListener('click', (e) => {
-            if (e.target === loginModal) {
-                loginModal.classList.add('hidden');
-                loginModal.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = '';
-                loginForm.reset();
-                clearErrors();
-            }
-        });
+    // Login Form
+    loginForm?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('modal-email').value;
+        const password = document.getElementById('modal-password').value;
 
-        function clearErrors() {
-            document.querySelectorAll('.error').forEach(error => error.classList.add('hidden'));
+        if (!validateEmail(email)) {
+            showError('email-error', 'Por favor, insira um e-mail válido.');
+            return;
         }
 
-        loginForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = document.getElementById('modal-email').value.trim();
-            const password = document.getElementById('modal-password').value;
-            let valid = true;
+        if (password.length < 8) {
+            showError('password-error', 'A senha deve ter pelo menos 8 caracteres.');
+            return;
+        }
 
-            clearErrors();
+        // Simulação de login
+        showNotification('Login realizado com sucesso!');
+        toggleModal(false);
+    });
 
-            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                document.getElementById('email-error').classList.remove('hidden');
-                valid = false;
-            }
-            if (!password || password.length < 8) {
-                document.getElementById('password-error').classList.remove('hidden');
-                valid = false;
-            }
+    // Carousel de Eventos
+    let currentSlide = 0;
 
-            if (valid) {
-                loginModal.classList.add('hidden');
-                loginModal.setAttribute('aria-hidden', 'true');
-                document.body.style.overflow = '';
-                loginForm.reset();
-                showNotification('Login realizado com sucesso!');
-            }
-        });
+    function updateCarousel() {
+        if (eventsCarousel) {
+            const cards = eventsCarousel.querySelectorAll('.event-card');
+            cards.forEach((card, index) => {
+                card.style.transform = `translateX(${(index - currentSlide) * 100}%)`;
+            });
+        }
     }
 
-    // Create Community Form
-    const createCommunityForm = document.getElementById('createCommunityForm');
-    if (createCommunityForm) {
-        createCommunityForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const name = document.getElementById('community-name').value.trim();
-            const description = document.getElementById('community-description').value.trim();
-            let valid = true;
+    carouselPrev?.addEventListener('click', () => {
+        const cards = eventsCarousel?.querySelectorAll('.event-card');
+        if (cards && currentSlide > 0) {
+            currentSlide--;
+            updateCarousel();
+        }
+    });
 
-            document.querySelectorAll('.error').forEach(error => error.classList.add('hidden'));
+    carouselNext?.addEventListener('click', () => {
+        const cards = eventsCarousel?.querySelectorAll('.event-card');
+        if (cards && currentSlide < cards.length - 1) {
+            currentSlide++;
+            updateCarousel();
+        }
+    });
 
-            if (!name || name.length < 3) {
-                document.getElementById('name-error').classList.remove('hidden');
-                valid = false;
-            }
-            if (!description || description.length < 10) {
-                document.getElementById('description-error').classList.remove('hidden');
-                valid = false;
-            }
-
-            if (valid) {
-                showNotification(`Comunidade "${name}" criada com sucesso!`);
-                createCommunityForm.reset();
-            }
-        });
+    // Funções Utilitárias
+    function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
+
+    function showError(elementId, message) {
+        const errorElement = document.getElementById(elementId);
+        if (errorElement) {
+            errorElement.textContent = message;
+            errorElement.classList.remove('hidden');
+        }
+    }
+
+    function showNotification(message, type = 'success') {
+        const notificationElement = document.getElementById('notification');
+        if (notificationElement) {
+            notificationElement.querySelector('p').textContent = message;
+            notificationElement.className = `notification ${type}`;
+            notificationElement.classList.remove('hidden');
+
+            setTimeout(() => {
+                notificationElement.classList.add('hidden');
+            }, 3000);
+        }
+    }
+
+    // Inicialização
+    document.addEventListener('DOMContentLoaded', () => {
+        updateCarousel();
+    });
 });

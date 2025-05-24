@@ -1,8 +1,8 @@
 /* Variáveis CSS para consistência e reutilização */
 :root {
-    /* Cores ajustadas para maior contraste e acessibilidade */
+    /* Cores ajustadas para melhor contraste e acessibilidade (WCAG 2.1) */
     --primary-color: #10B981;
-    /* Verde padrão (botões, destaques) */
+    /* Verde padrão (destaques, botões) */
     --secondary-color: #1E5F4A;
     /* Verde escuro (hover, secundário) */
     --accent-color: #34D399;
@@ -18,10 +18,12 @@
     --error-color: #DC2626;
     /* Vermelho para erros */
 
-    /* Bordas e sombras */
+    /* Bordas, sombras e transições */
     --border-radius: 8px;
-    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    /* Sombra mais suave */
     --focus-outline: 2px solid var(--accent-color);
+    --transition-base: all 0.3s ease-in-out;
 
     /* Tamanhos de fonte */
     --font-size-base: 16px;
@@ -34,9 +36,6 @@
     --spacing-md: 16px;
     --spacing-lg: 24px;
     --spacing-xl: 32px;
-
-    /* Transições */
-    --transition-base: all 0.3s ease-in-out;
 }
 
 /* Reset e Estilos Base */
@@ -159,6 +158,7 @@ header {
 
 .search-bar:focus {
     border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
 }
 
 .login-btn-header {
@@ -168,9 +168,10 @@ header {
     font-weight: 600;
     color: var(--primary-color);
     padding: var(--spacing-sm) var(--spacing-md);
+    border: 1px solid var(--primary-color);
     border-radius: var(--border-radius);
     background-color: transparent;
-    border: 1px solid var(--primary-color);
+    transition: var(--transition-base);
 }
 
 .login-btn-header:hover {
@@ -198,6 +199,7 @@ header {
     padding: var(--spacing-lg);
     box-shadow: var(--box-shadow);
     overflow-y: auto;
+    transition: var(--transition-base);
 }
 
 .sidebar nav p {
@@ -234,6 +236,7 @@ header {
     margin-left: 270px;
     padding: var(--spacing-xl) var(--spacing-md);
     min-height: calc(100vh - var(--spacing-xl));
+    transition: var(--transition-base);
 }
 
 h1 {
@@ -319,6 +322,7 @@ h3 {
 
 .join-btn:hover {
     background-color: #059669;
+    transform: translateY(-2px);
 }
 
 /* Intro Section */
@@ -352,6 +356,7 @@ h3 {
 
 .stat-card:hover {
     transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .stat-card h3 {
@@ -382,6 +387,7 @@ h3 {
 
 .step-card:hover {
     transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .step-card img {
@@ -415,6 +421,7 @@ h3 {
 
 .benefit-card:hover {
     transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Skills Highlights */
@@ -440,6 +447,7 @@ h3 {
 
 .skill-card:hover {
     transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Featured Events */
@@ -465,6 +473,7 @@ h3 {
 
 .event-card:hover {
     transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .event-card img {
@@ -535,6 +544,7 @@ h3 {
 
 .post-card:hover {
     transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .post-card img {
@@ -573,6 +583,7 @@ h3 {
 
 .person-card:hover {
     transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .person-avatar {
@@ -609,6 +620,7 @@ h3 {
 .filter-options input:focus,
 .filter-options select:focus {
     border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
 }
 
 .filter-btn {
@@ -623,6 +635,7 @@ h3 {
 
 .filter-btn:hover {
     background-color: #059669;
+    transform: translateY(-2px);
 }
 
 /* Communities */
@@ -650,6 +663,7 @@ h3 {
 
 .community-card:hover {
     transform: translateY(-4px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
 .community-card img {
@@ -688,166 +702,93 @@ footer {
     color: var(--secondary-color);
 }
 
-/* Notification */
-.notification {
-    position: fixed;
-    bottom: var(--spacing-lg);
-    right: var(--spacing-lg);
-    background-color: var(--accent-color);
-    color: var(--card-bg);
-    padding: var(--spacing-md);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    z-index: 1000;
-    animation: fadeIn 0.3s ease-in-out;
-}
-
-.notification.hidden {
-    display: none;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Modal de Login */
+/* Modal */
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 2000;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    z-index: 1000;
 }
 
-.modal-overlay.active {
-    opacity: 1;
-}
-
-.modal-content {
-    background-color: var(--card-bg);
-    padding: var(--spacing-xl);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    position: relative;
-    max-width: 400px;
-    width: 90%;
-    transform: scale(0.95);
-    transition: transform 0.3s ease-in-out;
-}
-
-.modal-overlay.active .modal-content {
-    transform: scale(1);
-}
-
-.modal-close {
-    position: absolute;
-    top: var(--spacing-sm);
-    right: var(--spacing-sm);
-    background: none;
-    border: none;
-    font-size: var(--font-size-lg);
-    color: var(--muted-color);
-    cursor: pointer;
-    transition: var(--transition-base);
-}
-
-.modal-close:hover {
-    color: var(--primary-color);
-}
-
-.login-container {
-    text-align: center;
-}
-
-.login-container .logo {
-    margin-bottom: var(--spacing-lg);
-}
-
-.login-container h1 {
-    font-size: var(--font-size-xl);
-    margin-bottom: var(--spacing-lg);
-}
-
-.form-group {
-    margin-bottom: var(--spacing-md);
-    text-align: left;
-}
-
-.form-group label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: var(--spacing-sm);
-    color: var(--text-color);
-}
-
-.form-group input {
-    width: 100%;
-    padding: var(--spacing-sm);
-    border: 1px solid var(--muted-color);
-    border-radius: var(--border-radius);
-    transition: var(--transition-base);
-}
-
-.form-group input:focus {
-    border-color: var(--primary-color);
-}
-
-.error {
-    color: var(--error-color);
-    font-size: 14px;
-    margin-top: var(--spacing-sm);
-    transition: var(--transition-base);
-}
-
-.error.hidden {
+.modal-overlay.hidden {
     display: none;
 }
 
-.login-btn {
-    background-color: var(--accent-color);
-    color: var(--card-bg);
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    position: relative;
+    max-width: 500px;
+    width: 90%;
+}
+
+/* Notificações */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 1rem;
+    border-radius: 4px;
+    background: #4CAF50;
+    color: white;
+    z-index: 1000;
+    transition: opacity 0.3s ease;
+}
+
+.notification.hidden {
+    display: none;
+}
+
+/* Carousel */
+.events-carousel {
+    position: relative;
+    overflow: hidden;
     width: 100%;
-    padding: var(--spacing-sm);
+}
+
+.event-card {
+    position: absolute;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.carousel-prev,
+.carousel-next {
+    padding: 0.5rem 1rem;
     border: none;
-    border-radius: var(--border-radius);
-    margin-top: var(--spacing-md);
+    background: #4A7C59;
+    color: white;
     cursor: pointer;
-    transition: var(--transition-base);
+    border-radius: 4px;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background: #3a6347;
+}
+
+/* Interações */
+.nav-link:hover,
+.event-link:hover {
+    color: #4A7C59;
 }
 
 .login-btn:hover {
-    background-color: #059669;
-}
-
-.links {
-    margin-top: var(--spacing-lg);
-    display: flex;
-    justify-content: space-between;
-}
-
-.links a {
-    color: var(--secondary-color);
-    font-size: 14px;
-    transition: var(--transition-base);
-}
-
-.links a:hover {
-    color: var(--primary-color);
+    background: #3a6347;
 }
 
 /* Responsividade */
