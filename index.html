@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Laços - Plataforma de troca de habilidades e aprendizado colaborativo">
+    <meta name="keywords" content="troca de habilidades, ensino, aprendizado, comunidade">
     <title>Laços - Troca de Habilidades</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -25,58 +28,101 @@
         </nav>
         <div class="custom-feeds">
             <h3>Feeds Personalizados</h3>
-            <a href="#criar-feed">+ Criar um Feed Personalizado</a>
-        </div>
-        <div class="communities">
-            <h3>Comunidades</h3>
-            <ul>
-                <li><a href="pages/communities.html#violao">t/violao</a></li>
-                <li><a href="pages/communities.html#webdesign">t/webdesign</a></li>
-            </ul>
-            <a href="#criar-comunidade">+ Criar Comunidade</a>
-        </div>
-        <!-- Placeholder para Login/Mobile -->
-        <div class="user-actions">
-            <a href="pages/profile.html">Entrar/Registrar</a>
+            <a href="#criar-feed" class="button">+ Criar um Feed Personalizado</a>
         </div>
     </aside>
 
     <!-- Seção Principal -->
     <main class="main-content">
         <header>
-            <input type="text" placeholder="Pesquisar no Laços (ex: Inglês, Jardinagem)" aria-label="Barra de Pesquisa">
-            <button type="button">Pesquisar</button>
+            <!-- Logotipo -->
+            <div class="header-logo">
+                <a href="index.html">
+                    <img src="assets/images/logo.png" alt="Logotipo Laços" class="logo-img">
+                </a>
+            </div>
+            <!-- Barra de Pesquisa -->
+            <form role="search" class="search-form">
+                <label for="search" class="sr-only">Pesquisar:</label>
+                <input type="search" id="search" name="search" placeholder="Pesquisar no Laços (ex: Inglês, Jardinagem)"
+                    aria-label="Barra de Pesquisa">
+                <button type="submit" aria-label="Pesquisar">Pesquisar</button>
+            </form>
+            <!-- Ações do Usuário -->
+            <div class="user-actions">
+                <a href="pages/profile.html" class="button">Entrar/Registrar</a>
+            </div>
         </header>
+
         <section id="home">
             <h2>Bem-vindo ao Laços!</h2>
             <p>Conecte-se com pessoas para trocar habilidades e aprender algo novo de forma colaborativa. Explore,
                 ensine e cresça juntos!</p>
+
             <div class="featured-section">
                 <h3>Destaques da Comunidade</h3>
-                <div class="post">
-                    <h4>João ensina Inglês</h4>
-                    <p>Procurando alguém para trocar por aulas de jardinagem. Nível intermediário, 1h por semana.
-                        Avaliação: 4.8/5 (10 trocas).</p>
-                    <div class="post-actions">
-                        <a href="pages/schedule.html"><button>Agendar Troca</button></a>
-                        <a href="pages/profile.html?id=joao"><button>Ver Perfil</button></a>
-                    </div>
-                </div>
-                <div class="post">
-                    <h4>Maria ensina Jardinagem</h4>
+
+                <article class="post">
+                    <header>
+                        <h4>João ensina Inglês</h4>
+                        <div class="rating">
+                            <span class="score">4.8/5</span>
+                            <span class="exchanges">(10 trocas)</span>
+                        </div>
+                    </header>
+                    <p>Procurando alguém para trocar por aulas de jardinagem. Nível intermediário, 1h por semana.</p>
+                    <img src="assets/images/profile-joao.jpg" alt="Foto de perfil do João" loading="lazy">
+                    <footer class="post-actions">
+                        <a href="pages/schedule.html" class="button">Agendar Troca</a>
+                        <a href="pages/profile.html?id=joao" class="button">Ver Perfil</a>
+                    </footer>
+                </article>
+
+                <article class="post">
+                    <header>
+                        <h4>Maria ensina Jardinagem</h4>
+                    </header>
                     <p>Ensino técnicas básicas de cultivo. Interessada em aprender inglês ou culinária. Disponível aos
                         sábados.</p>
-                    <div class="post-actions">
-                        <a href="pages/schedule.html"><button>Agendar Troca</button></a>
-                        <a href="pages/profile.html?id=maria"><button>Ver Perfil</button></a>
-                    </div>
-                </div>
+                    <img src="assets/images/profile-maria.jpg" alt="Foto de perfil da Maria" loading="lazy">
+                    <footer class="post-actions">
+                        <a href="pages/schedule.html" class="button">Agendar Troca</a>
+                        <a href="pages/profile.html?id=maria" class="button">Ver Perfil</a>
+                    </footer>
+                </article>
+
+                <article class="post">
+                    <header>
+                        <h4>Carlos ensina Culinária</h4>
+                    </header>
+                    <p>Aprenda receitas simples e saudáveis. Interessado em aprender violão. Disponível às
+                        quartas-feiras.</p>
+                    <img src="assets/images/profile-carlos.jpg" alt="Foto de perfil do Carlos" loading="lazy">
+                    <footer class="post-actions">
+                        <a href="pages/schedule.html" class="button">Agendar Troca</a>
+                        <a href="pages/profile.html?id=carlos" class="button">Ver Perfil</a>
+                    </footer>
+                </article>
+
+                <article class="post">
+                    <header>
+                        <h4>Ana ensina Violão</h4>
+                    </header>
+                    <p>Aulas para iniciantes e intermediários. Quer aprender fotografia. Disponível aos domingos.</p>
+                    <img src="assets/images/profile-ana.jpg" alt="Foto de perfil da Ana" loading="lazy">
+                    <footer class="post-actions">
+                        <a href="pages/schedule.html" class="button">Agendar Troca</a>
+                        <a href="pages/profile.html?id=ana" class="button">Ver Perfil</a>
+                    </footer>
+                </article>
             </div>
-            <!-- Placeholder para Chamada à Ação -->
-            <div class="call-to-action">
-                <h3>Comece Agora!</h3>
-                <p>Crie seu perfil, adicione suas habilidades e encontre alguém para trocar.</p>
-                <a href="pages/profile.html"><button>Crie seu Perfil</button></a>
+
+            <div class="account-prompt">
+                <h3>Crie uma Conta para Continuar</h3>
+                <p>Para acessar mais destaques, agendar trocas e explorar toda a comunidade, crie uma conta agora!</p>
+                <p><strong>Nota:</strong> Este conteúdo está disponível apenas para usuários registrados.
+                    <a href="pages/profile.html" class="button">Crie sua conta</a>
+                </p>
             </div>
         </section>
     </main>
@@ -89,17 +135,20 @@
             <li><a href="pages/matching.html">Dicas para encontrar o match perfeito</a></li>
             <li><a href="pages/communities.html">Participe de uma comunidade hoje!</a></li>
         </ul>
-        <!-- Placeholder para Anúncios ou Eventos -->
-        <div class="events">
+
+        <section class="events">
             <h4>Eventos Próximos</h4>
             <p><a href="pages/schedule.html">Workshop de Jardinagem - 25/05/2025</a></p>
-        </div>
+        </section>
     </aside>
 
     <footer>
-        <p><a href="pages/about.html">Sobre</a> | <a href="pages/contact.html">Contato</a> | <a
-                href="pages/privacy.html">Privacidade</a></p>
-        <p>&copy; 2025 Laços - Todos os direitos reservados.</p>
+        <nav>
+            <a href="pages/about.html">Sobre</a> |
+            <a href="pages/contact.html">Contato</a> |
+            <a href="pages/privacy.html">Privacidade</a>
+        </nav>
+        <p>© 2025 Laços - Todos os direitos reservados.</p>
     </footer>
 
     <script src="assets/js/scripts.js"></script>
