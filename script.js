@@ -1,190 +1,151 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Real-Time Clock and Date
-    function updateTime() {
-        const now = new Date();
-        const timeOptions = { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: 'America/Sao_Paulo' };
-        const dateOptions = { weekday: 'long', day: '2-digit', month: '2-digit', year: 'numeric' };
-        const timeDisplay = document.getElementById('timeDisplay');
-        const currentDate = document.getElementById('currentDate');
-        if (timeDisplay) {
-            timeDisplay.textContent = now.toLocaleTimeString('pt-BR', timeOptions);
-        }
-        if (currentDate) {
-            currentDate.textContent = now.toLocaleDateString('pt-BR', dateOptions);
-        }
-    }
-    setInterval(updateTime, 1000);
-    updateTime();
+    // Constantes
+    const CAROUSEL_INTERVAL = 5000;
+    const MIN_PASSWORD_LENGTH = 8;
+    
+    // Elements
+    const elements = {
+        sidebar: document.getElementById('sidebar'),
+        toggleSidebar: document.getElementById('toggleSidebar'),
+        loginModal: document.getElementById('loginModal'),
+        loginForm: document.getElementById('loginForm'),
+        emailInput: document.getElementById('modal-email'),
+        passwordInput: document.getElementById('modal-password'),
+        carousel: document.getElementById('eventsCarousel'),
+        notification: document.getElementById('notification')
+    };
 
-    // Highlight Active Nav Link
-    const navLinks = document.querySelectorAll('.main-nav .nav-link');
-    navLinks.forEach(link => {
-        if (link.href === window.location.href) {
-            link.classList.add('active');
-        }
-        link.addEventListener('click', () => {
-            navLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
-        });
-    });
+    // Mobile Menu
+    const initializeMobileMenu = () => {
+        const toggleMenu = () => {
+            elements.sidebar.classList.toggle('-translate-x-full');
+            document.body.classList.toggle('overflow-hidden');
+        };
 
-    // Toggle Comments with Event Delegation
-    document.getElementById('postContainer')?.addEventListener('click', (e) => {
-        if (e.target.classList.contains('comment-toggle')) {
-            const section = e.target.nextElementSibling;
-            section.classList.toggle('hidden');
-            e.target.textContent = section.classList.contains('hidden')
-                ? `Comentários (${section.children.length})`
-                : 'Ocultar Comentários';
-            e.target.setAttribute('aria-expanded', !section.classList.contains('hidden'));
-        }
-    });
+        elements.toggleSidebar.addEventListener('click', toggleMenu);
 
-    // Dynamic Upvotes with Local Storage
-    document.getElementById('postContainer')?.addEventListener('click', (e) => {
-        if (e.target.closest('.upvote-btn')) {
-            const button = e.target.closest('.upvote-btn');
-            const voteSpan = button.querySelector('span');
-            let votes = parseInt(voteSpan.dataset.votes) || parseInt(voteSpan.textContent);
-            votes++;
-            voteSpan.textContent = votes;
-            voteSpan.dataset.votes = votes;
-            button.classList.add('active');
-            const postTitle = button.closest('.post').querySelector('.post-title').textContent;
-            localStorage.setItem(`votes_${postTitle}`, votes);
-        }
-    });
-
-    // Load Saved Votes
-    document.querySelectorAll('.upvote-btn').forEach(button => {
-        const voteSpan = button.querySelector('span');
-        const postTitle = button.closest('.post')?.querySelector('.post-title')?.textContent;
-        if (postTitle) {
-            const savedVotes = localStorage.getItem(`votes_${postTitle}`);
-            if (savedVotes) {
-                voteSpan.textContent = savedVotes;
-                voteSpan.dataset.votes = savedVotes;
-                button.classList.add('active');
+        // Fecha menu ao clicar fora
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth < 1024 && 
+                !elements.sidebar.contains(e.target) && 
+                !elements.toggleSidebar.contains(e.target)) {
+                elements.sidebar.classList.add('-translate-x-full');
+                document.body.classList.remove('overflow-hidden');
             }
-        }
-    });
+        });
+    };
 
-    // Notification System
-    function showNotification(message) {
-        const notification = document.getElementById('notification');
-        if (notification) {
-            notification.querySelector('p').textContent = message;
-            notification.classList.remove('hidden');
-            setTimeout(() => notification.classList.add('hidden'), 5000);
-        }
-    }
-    setTimeout(() =>
-        showNotification('Bem-vindo à Comunidade Laços! Explore as trocas de habilidades.'), 2000
-    );
+    // Modal Handling
+    const initializeModal = () => {
+        const openModal = () => {
+            elements.loginModal.classList.remove('hidden');
+            elements.emailInput.focus();
+            document.body.classList.add('overflow-hidden');
+        };
 
-    // Elementos do DOM
-    const loginModal = document.getElementById('loginModal');
-    const openLoginModal = document.getElementById('openLoginModal');
-    const closeLoginModal = document.getElementById('closeLoginModal');
-    const loginForm = document.getElementById('loginForm');
-    const notification = document.getElementById('notification');
-    const carouselPrev = document.querySelector('.carousel-prev');
-    const carouselNext = document.querySelector('.carousel-next');
-    const eventsCarousel = document.querySelector('.events-carousel');
+        const closeModal = () => {
+            elements.loginModal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        };
 
-    // Login Modal
-    function toggleModal(show = true) {
-        loginModal.classList.toggle('hidden', !show);
-        loginModal.setAttribute('aria-hidden', (!show).toString());
-    }
+        document.getElementById('openLoginModal').addEventListener('click', openModal);
+        document.getElementById('closeLoginModal').addEventListener('click', closeModal);
+        
+        // Fecha modal com ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
 
-    openLoginModal?.addEventListener('click', () => toggleModal(true));
-    closeLoginModal?.addEventListener('click', () => toggleModal(false));
+        // Fecha modal ao clicar fora
+        elements.loginModal.addEventListener('click', (e) => {
+            if (e.target === elements.loginModal) closeModal();
+        });
+    };
 
-    // Fechar modal quando clicar fora
-    loginModal?.addEventListener('click', (e) => {
-        if (e.target === loginModal) {
-            toggleModal(false);
-        }
-    });
+    // Form Validation
+    const initializeFormValidation = () => {
+        const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        
+        const updateValidation = () => {
+            const email = elements.emailInput.value.trim();
+            const password = elements.passwordInput.value;
+            
+            const isEmailValid = validateEmail(email);
+            const isPasswordValid = password.length >= MIN_PASSWORD_LENGTH;
+            
+            elements.emailInput.classList.toggle('border-red-500', !isEmailValid);
+            elements.passwordInput.classList.toggle('border-red-500', !isPasswordValid);
+            
+            const submitBtn = elements.loginForm.querySelector('button[type="submit"]');
+            submitBtn.disabled = !(isEmailValid && isPasswordValid);
+        };
 
-    // Login Form
-    loginForm?.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const email = document.getElementById('modal-email').value;
-        const password = document.getElementById('modal-password').value;
+        elements.loginForm.addEventListener('input', updateValidation);
+        elements.loginForm.addEventListener('submit', handleSubmit);
+    };
 
-        if (!validateEmail(email)) {
-            showError('email-error', 'Por favor, insira um e-mail válido.');
-            return;
-        }
-
-        if (password.length < 8) {
-            showError('password-error', 'A senha deve ter pelo menos 8 caracteres.');
-            return;
-        }
-
-        // Simulação de login
-        showNotification('Login realizado com sucesso!');
-        toggleModal(false);
-    });
-
-    // Carousel de Eventos
-    let currentSlide = 0;
-
-    function updateCarousel() {
-        if (eventsCarousel) {
-            const cards = eventsCarousel.querySelectorAll('.event-card');
-            cards.forEach((card, index) => {
-                card.style.transform = `translateX(${(index - currentSlide) * 100}%)`;
+    // Carousel
+    const initializeCarousel = () => {
+        let currentSlide = 0;
+        const slides = elements.carousel.children;
+        
+        const updateCarousel = () => {
+            const cardWidth = slides[0].offsetWidth + 24;
+            elements.carousel.scrollTo({
+                left: currentSlide * cardWidth,
+                behavior: 'smooth'
             });
-        }
-    }
+        };
 
-    carouselPrev?.addEventListener('click', () => {
-        const cards = eventsCarousel?.querySelectorAll('.event-card');
-        if (cards && currentSlide > 0) {
-            currentSlide--;
+        const nextSlide = () => {
+            currentSlide = (currentSlide + 1) % slides.length;
             updateCarousel();
-        }
-    });
+        };
 
-    carouselNext?.addEventListener('click', () => {
-        const cards = eventsCarousel?.querySelectorAll('.event-card');
-        if (cards && currentSlide < cards.length - 1) {
-            currentSlide++;
+        const prevSlide = () => {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
             updateCarousel();
-        }
-    });
+        };
 
-    // Funções Utilitárias
-    function validateEmail(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
+        // Controls
+        document.querySelector('.carousel-next').addEventListener('click', nextSlide);
+        document.querySelector('.carousel-prev').addEventListener('click', prevSlide);
 
-    function showError(elementId, message) {
-        const errorElement = document.getElementById(elementId);
-        if (errorElement) {
-            errorElement.textContent = message;
-            errorElement.classList.remove('hidden');
-        }
-    }
+        // Touch support
+        let touchStartX = 0;
+        elements.carousel.addEventListener('touchstart', e => {
+            touchStartX = e.touches[0].clientX;
+        }, { passive: true });
 
-    function showNotification(message, type = 'success') {
-        const notificationElement = document.getElementById('notification');
-        if (notificationElement) {
-            notificationElement.querySelector('p').textContent = message;
-            notificationElement.className = `notification ${type}`;
-            notificationElement.classList.remove('hidden');
+        elements.carousel.addEventListener('touchend', e => {
+            const touchEndX = e.changedTouches[0].clientX;
+            const diff = touchStartX - touchEndX;
 
-            setTimeout(() => {
-                notificationElement.classList.add('hidden');
-            }, 3000);
-        }
-    }
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) nextSlide();
+                else prevSlide();
+            }
+        }, { passive: true });
 
-    // Inicialização
-    document.addEventListener('DOMContentLoaded', () => {
-        updateCarousel();
-    });
+        // Auto-scroll
+        let interval = setInterval(nextSlide, CAROUSEL_INTERVAL);
+        
+        elements.carousel.addEventListener('mouseenter', () => clearInterval(interval));
+        elements.carousel.addEventListener('mouseleave', () => {
+            interval = setInterval(nextSlide, CAROUSEL_INTERVAL);
+        });
+
+        // Resize handling
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(updateCarousel, 100);
+        });
+    };
+
+    // Initialize
+    initializeMobileMenu();
+    initializeModal();
+    initializeFormValidation();
+    initializeCarousel();
 });
