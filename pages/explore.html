@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explorar - Laços</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+
+<body>
+    <!-- Menu Lateral Esquerdo -->
+    <aside class="sidebar" aria-label="Navegação Lateral">
+        <div class="logo">
+            <img src="../assets/images/logo.png" alt="Logotipo Laços" class="logo-img">
+            <h1>Laços</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="communities.html">Comunidades</a></li>
+                <li><a href="explore.html">Explorar</a></li>
+                <li><a href="profile.html">Meu Perfil</a></li>
+            </ul>
+        </nav>
+        <div class="custom-feeds">
+            <h3>Feeds Personalizados</h3>
+            <a href="#criar-feed" class="button">+ Criar um Feed Personalizado</a>
+        </div>
+        <div class="create-community">
+            <h3>Comunidades</h3>
+            <a href="create-community.html" class="button">+ Criar uma Comunidade</a>
+        </div>
+    </aside>
+
+    <!-- Seção Principal -->
+    <main class="main-content">
+        <header>
+            <form role="search" class="search-form">
+                <label for="search" class="sr-only">Pesquisar habilidades:</label>
+                <input type="search" id="search" name="search" placeholder="Buscar habilidades ou pessoas...">
+                <button type="submit" aria-label="Pesquisar">Pesquisar</button>
+            </form>
+        </header>
+
+        <section class="filters">
+            <h2>Filtros</h2>
+            <div class="filter-group">
+                <label>
+                    <input type="checkbox" name="skill" value="programacao">
+                    Programação
+                </label>
+                <label>
+                    <input type="checkbox" name="skill" value="musica">
+                    Música
+                </label>
+                <label>
+                    <input type="checkbox" name="skill" value="idiomas">
+                    Idiomas
+                </label>
+                <label>
+                    <input type="checkbox" name="skill" value="fotografia">
+                    Fotografia
+                </label>
+
+                <!-- Novos filtros -->
+                <label>
+                    <input type="checkbox" name="skill" value="design">
+                    Design
+                </label>
+                <label>
+                    <input type="checkbox" name="skill" value="culinaria">
+                    Culinária
+                </label>
+                <label>
+                    <input type="checkbox" name="skill" value="artesanato">
+                    Artesanato
+                </label>
+                <label>
+                    <input type="checkbox" name="skill" value="yoga">
+                    Yoga
+                </label>
+            </div>
+
+            <!-- Filtros adicionais -->
+            <div class="filter-group mt-3">
+                <h3>Disponibilidade</h3>
+                <label>
+                    <input type="checkbox" name="availability" value="manha">
+                    Manhã
+                </label>
+                <label>
+                    <input type="checkbox" name="availability" value="tarde">
+                    Tarde
+                </label>
+                <label>
+                    <input type="checkbox" name="availability" value="noite">
+                    Noite
+                </label>
+                <label>
+                    <input type="checkbox" name="availability" value="fds">
+                    Fins de semana
+                </label>
+            </div>
+        </section>
+
+        <!-- Nova seção de Destaques -->
+        <section class="featured-section">
+            <h2>Destaques da Semana</h2>
+            <div class="featured-cards">
+                <div class="featured-card">
+                    <div class="featured-badge">Popular</div>
+                    <img src="../assets/images/profile-maria.jpg" alt="Foto de Maria">
+                    <h3>Maria ensina Yoga</h3>
+                    <p>Instrutora certificada com 5 anos de experiência. Interessada em aprender fotografia.</p>
+                    <p><strong>Disponibilidade:</strong> Manhãs - Seg a Sex</p>
+                    <div class="rating">
+                        <span>★★★★★</span>
+                        <small>(32 avaliações)</small>
+                    </div>
+                    <div class="card-actions">
+                        <a href="schedule.html?user=maria" class="button">Agendar Troca</a>
+                        <a href="profile.html?id=maria" class="button">Ver Perfil</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cards">
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="../assets/images/profile-joao.jpg" alt="Foto de João">
+                <h3>João ensina Programação</h3>
+                <p>Especializado em desenvolvimento web front-end. Interessado em aprender design.</p>
+                <p><strong>Disponibilidade:</strong> Terças e Quintas</p>
+                <div class="card-actions">
+                    <a href="schedule.html?user=joao" class="button">Agendar Troca</a>
+                    <a href="profile.html?id=joao" class="button">Ver Perfil</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="../assets/images/profile-ana.jpg" alt="Foto de Ana">
+                <h3>Ana ensina Fotografia</h3>
+                <p>Fotógrafa profissional. Busca aprender inglês avançado.</p>
+                <p><strong>Disponibilidade:</strong> Fins de semana</p>
+                <div class="card-actions">
+                    <a href="schedule.html?user=ana" class="button">Agendar Troca</a>
+                    <a href="profile.html?id=ana" class="button">Ver Perfil</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <img src="../assets/images/profile-carlos.jpg" alt="Foto de Carlos">
+                <h3>Carlos ensina Música</h3>
+                <p>Professor de violão e teoria musical. Interessado em aprender programação.</p>
+                <p><strong>Disponibilidade:</strong> Segundas e Quartas</p>
+                <div class="card-actions">
+                    <a href="schedule.html?user=carlos" class="button">Agendar Troca</a>
+                    <a href="profile.html?id=carlos" class="button">Ver Perfil</a>
+                </div>
+            </div>
+
+            <!-- Novos cards -->
+            <div class="card">
+                <img src="../assets/images/profile-lucia.jpg" alt="Foto de Lúcia">
+                <h3>Lúcia ensina Design</h3>
+                <p>Designer UI/UX com foco em interfaces mobile. Quer aprender violão.</p>
+                <p><strong>Disponibilidade:</strong> Noites - Ter e Qui</p>
+                <div class="skill-tags">
+                    <span class="tag">Figma</span>
+                    <span class="tag">Adobe XD</span>
+                    <span class="tag">Sketch</span>
+                </div>
+                <div class="card-actions">
+                    <a href="schedule.html?user=lucia" class="button">Agendar Troca</a>
+                    <a href="profile.html?id=lucia" class="button">Ver Perfil</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="../assets/images/profile-pedro.jpg" alt="Foto de Pedro">
+                <h3>Pedro ensina Culinária</h3>
+                <p>Chef especializado em culinária italiana. Busca aulas de inglês.</p>
+                <p><strong>Disponibilidade:</strong> Manhãs - Sáb e Dom</p>
+                <div class="skill-level">
+                    <div class="level-badge advanced">Avançado</div>
+                    <small>5 anos de experiência</small>
+                </div>
+                <div class="card-actions">
+                    <a href="schedule.html?user=pedro" class="button">Agendar Troca</a>
+                    <a href="profile.html?id=pedro" class="button">Ver Perfil</a>
+                </div>
+            </div>
+        </section>
+
+        <div class="pagination">
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">Próximo</a>
+        </div>
+    </main>
+
+    <!-- Adicione estes estilos ao seu CSS -->
+    <style>
+        .featured-section {
+            margin: 2rem 0;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .featured-card {
+            position: relative;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .featured-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #5b8c85;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .tag {
+            background: #e8f0ef;
+            color: #5b8c85;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+        }
+
+        .skill-level {
+            margin: 1rem 0;
+        }
+
+        .level-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            background: #e8f0ef;
+            color: #5b8c85;
+        }
+
+        .rating {
+            color: #ffc107;
+            margin: 0.5rem 0;
+        }
+    </style>
+</body>
+
+</html>

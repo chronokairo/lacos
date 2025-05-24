@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil - Laços</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <!-- Menu Lateral -->
+    <aside class="sidebar" aria-label="Navegação Lateral">
+        <div class="logo">
+            <img src="../assets/images/logo.png" alt="Logotipo Laços" class="logo-img">
+            <h1>Laços</h1>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="communities.html">Comunidades</a></li>
+                <li><a href="explore.html">Explorar</a></li>
+                <li><a href="profile.html" class="active">Meu Perfil</a></li>
+            </ul>
+        </nav>
+        <div class="custom-feeds">
+            <h3>Feeds Personalizados</h3>
+            <a href="#criar-feed" class="button">+ Criar um Feed Personalizado</a>
+        </div>
+        <div class="create-community">
+            <h3>Comunidades</h3>
+            <a href="create-community.html" class="button">+ Criar uma Comunidade</a>
+        </div>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <!-- Cabeçalho do Perfil -->
+        <section class="profile-header">
+            <div class="profile-cover">
+                <img src="../assets/images/cover-default.jpg" alt="Capa do perfil" class="cover-image">
+                <button class="edit-cover">Editar Capa</button>
+            </div>
+            <div class="profile-info">
+                <div class="profile-avatar">
+                    <img src="../assets/images/avatar-default.jpg" alt="Foto de perfil">
+                    <button class="edit-avatar">Editar Foto</button>
+                </div>
+                <div class="profile-details">
+                    <h1>Maria Silva</h1>
+                    <p class="profile-bio">Designer UX/UI | Aprendendo fotografia | Ensino design thinking</p>
+                    <div class="profile-stats">
+                        <span>120 Trocas</span>
+                        <span>4.8 ★★★★★</span>
+                        <span>Membro desde 2024</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Principal -->
+        <div class="profile-content">
+            <!-- Habilidades -->
+            <section class="profile-section skills-section">
+                <h2>Minhas Habilidades</h2>
+                <div class="skills-grid">
+                    <div class="skill-card teaching">
+                        <h3>Posso Ensinar</h3>
+                        <ul>
+                            <li>UX/UI Design</li>
+                            <li>Design Thinking</li>
+                            <li>Prototipagem</li>
+                        </ul>
+                        <button class="add-skill">+ Adicionar Habilidade</button>
+                    </div>
+                    <div class="skill-card learning">
+                        <h3>Quero Aprender</h3>
+                        <ul>
+                            <li>Fotografia</li>
+                            <li>Edição de Vídeo</li>
+                            <li>Marketing Digital</li>
+                        </ul>
+                        <button class="add-skill">+ Adicionar Interesse</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Histórico de Trocas -->
+            <section class="profile-section exchanges-section">
+                <h2>Histórico de Trocas</h2>
+                <div class="exchanges-grid">
+                    <div class="exchange-card">
+                        <div class="exchange-info">
+                            <img src="../assets/images/user1.jpg" alt="Foto de João">
+                            <div>
+                                <h4>Troca com João</h4>
+                                <p>UX Design ↔ Fotografia</p>
+                                <span class="date">15/05/2025</span>
+                            </div>
+                        </div>
+                        <div class="exchange-rating">
+                            <span>★★★★★</span>
+                            <p>"Ótima experiência! Aprendi muito sobre fotografia."</p>
+                        </div>
+                    </div>
+                    <!-- Mais cards de troca aqui -->
+                </div>
+            </section>
+
+            <!-- Comunidades -->
+            <section class="profile-section communities-section">
+                <h2>Minhas Comunidades</h2>
+                <div class="communities-grid">
+                    <div class="community-card">
+                        <img src="../assets/images/community-design.jpg" alt="Comunidade de Design">
+                        <h4>Design Thinking Brasil</h4>
+                        <p>Moderadora</p>
+                    </div>
+                    <!-- Mais cards de comunidade aqui -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Sobre o Laços</h4>
+                <p>Conectando pessoas através do compartilhamento de conhecimentos.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="about.html">Sobre</a></li>
+                    <li><a href="contact.html">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Laços - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
