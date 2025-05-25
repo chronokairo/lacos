@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Funciona o Laços</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <style>
+        nav {
+            transition: background-color 0.3s ease;
+        }
+
+        nav.sticky {
+            position: sticky;
+            top: 0;
+            background-color: rgba(51, 51, 51, 0.95);
+            z-index: 1000;
+        }
+
+        .step,
+        .faq-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .step:hover,
+        .faq-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background: linear-gradient(to right, #007bff, #00c4b4);
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .faq-toggle {
+            cursor: pointer;
+        }
+
+        .faq-answer {
+            display: none;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 text-gray-800 font-sans">
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="bg-gray-800 text-white p-4">
+        <div class="container mx-auto flex flex-wrap justify-between items-center">
+            <a href="/main.html" class="text-white no-underline font-bold text-2xl">Laços</a>
+            <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 mt-4 md:mt-0">
+                <li><a href="comofunciona.html" class="block px-4 py-2 bg-gray-600 text-blue-300 rounded">Como
+                        Funciona</a></li>
+                <li><a href="habilidade.html"
+                        class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Habilidades
+                        em Destaque</a></li>
+                <li><a href="comunidade.html"
+                        class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Participe
+                        da Comunidade</a></li>
+                <li><a href="mercado.html"
+                        class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Mercado
+                        de Trocas</a></li>
+                <li><a href="eventos.html"
+                        class="block px-4 py-2 hover:bg-gray-600 hover:text-blue-300 rounded transition">Eventos
+                        e Oficinas</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="text-white py-16 text-center">
+        <div class="container mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold">Como Funciona o Laços</h1>
+            <p class="text-lg md:text-xl mt-4">Aprenda como trocar habilidades de forma simples e colaborativa!</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- O que é o Laços -->
+        <div class="bg-white p-8 rounded-lg shadow-lg max-w-4xl mx-auto">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">O que é o Laços?</h2>
+            <p class="text-lg leading-relaxed mb-6">O Laços é uma plataforma inovadora que conecta pessoas interessadas
+                em trocar habilidades e conhecimentos. A ideia é simples: você ensina algo que sabe e aprende algo que
+                deseja, sem a necessidade de pagamentos financeiros. Seja ensinar culinária, aprender um idioma ou
+                trocar dicas de marketing, o Laços promove o aprendizado mútuo e a colaboração.</p>
+
+            <h2 class="text-2xl font-bold text-blue-600 mb-4">Como funciona?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="step bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-2">1. Cadastro</h3>
+                    <p>Crie uma conta na plataforma e preencha seu perfil com suas habilidades e interesses. Um perfil
+                        detalhado aumenta suas chances de encontrar bons parceiros!</p>
+                </div>
+                <div class="step bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-2">2. Busca</h3>
+                    <p>Navegue pela plataforma para encontrar pessoas que oferecem as habilidades que você deseja
+                        aprender. Use filtros como categoria ou localização para refinar sua busca.</p>
+                </div>
+                <div class="step bg-white p-6 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-semibold text-blue-600 mb-2">3. Conexão</h3>
+                    <p>Entre em contato com outros usuários para combinar uma troca de habilidades. Discuta expectativas
+                        e formatos (online ou presencial).</p>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="text-2xl font-bold text-blue-600 mt-8 mb-4">Dicas para uma Troca Bem-Sucedida</h2>
+        <ul class="list-disc pl-6 mb-6 text-lg">
+            <li>Seja claro sobre suas expectativas: defina o tempo, formato e nível de habilidade desejado.</li>
+            <li>Prepare-se para ensinar: organize seu conteúdo para facilitar o aprendizado do outro.</li>
+            <li>Respeite o tempo do parceiro: cumpra os horários combinados e seja pontual.</li>
+            <li>Comunique-se abertamente: tire dúvidas e ajuste a troca conforme necessário.</li>
+            <li>Divirta-se: aproveite o processo de ensinar e aprender algo novo!</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-blue-600 mt-8 mb-4">Benefícios do Laços</h2>
+        <ul class="list-disc pl-6 mb-6 text-lg">
+            <li>Aprenda novas habilidades de forma gratuita, economizando em cursos ou aulas.</li>
+            <li>Compartilhe seu conhecimento com outras pessoas, contribuindo para a comunidade.</li>
+            <li>Construa uma rede de contatos com interesses semelhantes, abrindo portas para colaborações futuras.</li>
+            <li>Promova a colaboração e o aprendizado mútuo, fortalecendo laços e desenvolvendo-se pessoal e
+                profissionalmente.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold text-blue-600 mt-8 mb-4">Perguntas Frequentes</h2>
+        <div class="space-y-4">
+            <div class="faq-item bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h3 class="faq-toggle text-xl font-semibold text-blue-600 mb-2">Posso trocar habilidades mesmo sem
+                    experiência profissional?</h3>
+                <p class="faq-answer text-lg">Sim! No Laços, todos os níveis de habilidade são bem-vindos. Você pode
+                    oferecer algo que sabe, como cozinhar uma receita caseira, e aprender algo novo, como tocar um
+                    instrumento básico.</p>
+            </div>
+            <div class="faq-item bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h3 class="faq-toggle text-xl font-semibold text-blue-600 mb-2">As trocas são sempre presenciais?</h3>
+                <p class="faq-answer text-lg">Não! Você pode combinar trocas presenciais ou online, via videochamadas ou
+                    troca de materiais. Escolha o formato que for mais conveniente para ambos.</p>
+            </div>
+            <div class="faq-item bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                <h3 class="faq-toggle text-xl font-semibold text-blue-600 mb-2">E se a troca não funcionar como
+                    esperado?</h3>
+                <p class="faq-answer text-lg">Você pode conversar com seu parceiro para ajustar a troca ou encerrá-la
+                    respeitosamente. Use o sistema de avaliação para compartilhar sua experiência e ajudar a comunidade.
+                </p>
+            </div>
+        </div>
+        </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white text-center py-6">
+            <p>© 2025 Laços. Todos os direitos reservados.</p>
+        </footer>
+
+        <!-- JavaScript for Sticky Navbar, Smooth Scroll, and FAQ Toggle -->
+        <script>
+            // Sticky Navbar
+            window.addEventListener('scroll', () => {
+                const navbar = document.getElementById('navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('sticky');
+                } else {
+                    navbar.classList.remove('sticky');
+                }
+            });
+
+            // Smooth Scroll
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // FAQ Toggle
+            document.querySelectorAll('.faq-toggle').forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const answer = toggle.nextElementSibling;
+                    answer.classList.toggle('active');
+                });
+            });
+        </script>
+</body>
+
+</html>
