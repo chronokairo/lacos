@@ -77,3 +77,6 @@ Contribuições são bem-vindas! Por favor, leia nosso [guia de contribuição](
 
 ## Licença 📝
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## Como executar 
+npx nodemon main.js

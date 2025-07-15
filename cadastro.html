@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro - Laços</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .login-container {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .login-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        .btn-submit {
+            background: linear-gradient(to right, #007bff, #00c4b4);
+        }
+        .btn-submit:hover {
+            background: linear-gradient(to right, #0056b3, #009b8d);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-black bg-opacity-70">
+    <div class="login-container bg-white bg-opacity-90 backdrop-blur-md rounded-lg shadow-xl w-full max-w-md mx-4 flex flex-col overflow-hidden p-8">
+        <h2 class="text-2xl font-bold text-center text-blue-600 mb-6">Cadastro Laços</h2>
+        <form id="registerForm" class="space-y-4">
+            <div>
+                <label class="block text-sm font-semibold text-gray-700">E-mail</label>
+                <input type="email" id="regEmail" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Digite seu e-mail">
+            </div>
+            <div>
+                <label class="block text-sm font-semibold text-gray-700">Senha</label>
+                <input type="password" id="regPassword" required class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Crie uma senha">
+            </div>
+            <button type="submit" class="w-full btn-submit text-white p-3 rounded-lg font-semibold transition-all duration-300">Cadastrar</button>
+            <div id="registerMsg" class="mt-2 text-center text-sm"></div>
+        </form>
+        <div class="mt-6 text-center">
+            <p class="text-sm">Já tem uma conta? <a href="index.html" class="text-blue-600 hover:underline">Faça login</a></p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = document.getElementById('regEmail').value;
+            const password = document.getElementById('regPassword').value;
+            const msg = document.getElementById('registerMsg');
+            msg.textContent = '';
+            try {
+                const res = await fetch('/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+                const data = await res.json();
+                if (res.ok) {
+                    msg.textContent = 'Cadastro realizado com sucesso!';
+                    msg.className = 'mt-2 text-center text-green-600 text-sm';
+                    setTimeout(() => { window.location.href = 'index.html'; }, 1200);
+                } else {
+                    msg.textContent = data.error || 'Erro ao cadastrar.';
+                    msg.className = 'mt-2 text-center text-red-600 text-sm';
+                }
+            } catch (err) {
+                msg.textContent = 'Erro de conexão com o servidor.';
+                msg.className = 'mt-2 text-center text-red-600 text-sm';
+            }
+        });
+    </script>
+</body>
+</html>

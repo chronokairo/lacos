@@ -1,0 +1,14 @@
+[
+  {
+    "email": "admin@lacos.com",
+    "password": "$2b$10$QWERTYUIOPASDFGHJKLZXCVBNM1234567890abcdefg"
+  },
+  {
+    "email": "user@lacos.com",
+    "password": "$2b$10$ZXCVBNMASDFGHJKLQWERTYUIOP1234567890abcdefg"
+  },
+  {
+    "email": "bolsonaro@gmail.com",
+    "password": "$2b$10$OJqup3CnIMxNCbDhXdyUk.f9LjOKBg2Fo3lkUrYjkkscKGUIud.Ay"
+  }
+]
