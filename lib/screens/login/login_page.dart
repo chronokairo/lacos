@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import '../../services/local_data_service.dart';
 
 class LoginPage extends StatefulWidget {
@@ -41,13 +42,17 @@ class _LoginPageState extends State<LoginPage> {
       body: Stack(
         children: [
           // Fundo com imagem
-          Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: NetworkImage(
-                  'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1350&q=80',
-                ),
-                fit: BoxFit.cover,
+          SizedBox.expand(
+            child: CachedNetworkImage(
+              imageUrl: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1350&q=80',
+              fit: BoxFit.cover,
+              placeholder: (context, url) => Container(
+                color: Colors.grey[300],
+                child: const Center(child: CircularProgressIndicator()),
+              ),
+              errorWidget: (context, url, error) => Container(
+                color: Colors.grey[300],
+                child: const Icon(Icons.error),
               ),
             ),
           ),
@@ -101,9 +106,16 @@ class _LoginPageState extends State<LoginPage> {
                           prefixIcon: Icon(Icons.email),
                         ),
                         keyboardType: TextInputType.emailAddress,
-                        validator: (value) => value == null || value.isEmpty
-                            ? 'Informe o email'
-                            : null,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Informe o email';
+                          }
+                          final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');
+                          if (!emailRegex.hasMatch(value)) {
+                            return 'Email inválido';
+                          }
+                          return null;
+                        },
                       ),
                       const SizedBox(height: 16),
                       TextFormField(

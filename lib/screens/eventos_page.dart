@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/models.dart';
-import '../../services/local_data_service.dart';
+import '../services/local_data_service.dart';
+import '../widgets/app_drawer.dart';
 
 class EventosPage extends StatefulWidget {
   const EventosPage({super.key});
@@ -139,6 +140,7 @@ class _EventosPageState extends State<EventosPage> {
     final eventos = LocalDataService().eventos;
     return Scaffold(
       appBar: AppBar(title: const Text('Eventos')),
+      drawer: const AppDrawer(),
       body: ListView(
         children: [
           if (eventos.isEmpty)

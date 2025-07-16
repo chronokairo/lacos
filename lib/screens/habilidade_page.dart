@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/models.dart';
-import '../../services/local_data_service.dart';
+import '../services/local_data_service.dart';
+import '../widgets/app_drawer.dart';
 
 class HabilidadePage extends StatefulWidget {
   const HabilidadePage({super.key});
@@ -143,14 +144,37 @@ class _HabilidadePageState extends State<HabilidadePage> {
   }
 
   void _removerHabilidade(Habilidade habilidade) {
-    final usuario = LocalDataService().usuarioLogado;
-    if (usuario != null) {
-      setState(() {
-        usuario.habilidades = usuario.habilidades
-            .where((h) => h.id != habilidade.id)
-            .toList();
-      });
-    }
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('Confirmar Exclusão'),
+        content: Text('Deseja realmente remover a habilidade "${habilidade.nome}"?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Cancelar'),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+            onPressed: () {
+              final usuario = LocalDataService().usuarioLogado;
+              if (usuario != null) {
+                setState(() {
+                  usuario.habilidades = usuario.habilidades
+                      .where((h) => h.id != habilidade.id)
+                      .toList();
+                });
+              }
+              Navigator.pop(context);
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(content: Text('Habilidade removida com sucesso')),
+              );
+            },
+            child: const Text('Remover'),
+          ),
+        ],
+      ),
+    );
   }
 
   @override
@@ -159,6 +183,7 @@ class _HabilidadePageState extends State<HabilidadePage> {
     final habilidades = usuario?.habilidades ?? [];
     return Scaffold(
       appBar: AppBar(title: const Text('Habilidades')),
+      drawer: const AppDrawer(),
       body: Column(
         children: [
           // Trocas em Destaque

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../services/local_data_service.dart';
+import '../widgets/app_drawer.dart';
 
 class OfertaTroca {
   final String nome;
@@ -67,6 +68,7 @@ class _MercadoPageState extends State<MercadoPage> {
 
     return Scaffold(
       appBar: AppBar(title: const Text('Mercado de Trocas')),
+      drawer: const AppDrawer(),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16),

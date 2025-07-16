@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/app_drawer.dart';
 
 class ComoFuncionaPage extends StatelessWidget {
   const ComoFuncionaPage({super.key});
@@ -10,6 +11,7 @@ class ComoFuncionaPage extends StatelessWidget {
         title: const Text('Como Funciona o Laços'),
         backgroundColor: const Color(0xFF007bff),
       ),
+      drawer: const AppDrawer(),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [

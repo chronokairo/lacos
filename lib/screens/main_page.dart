@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import '../widgets/app_drawer.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
@@ -13,13 +15,22 @@ class MainPage extends StatelessWidget {
         title: const Text('Laços'),
         centerTitle: true,
       ),
+      drawer: const AppDrawer(),
       body: Stack(
         children: [
           // Background image with overlay
           SizedBox.expand(
-            child: Image.network(
-              'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1920&q=80',
+            child: CachedNetworkImage(
+              imageUrl: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1920&q=80',
               fit: BoxFit.cover,
+              placeholder: (context, url) => Container(
+                color: Colors.grey[300],
+                child: const Center(child: CircularProgressIndicator()),
+              ),
+              errorWidget: (context, url, error) => Container(
+                color: Colors.grey[300],
+                child: const Icon(Icons.error),
+              ),
             ),
           ),
           Container(
@@ -65,7 +76,7 @@ class MainPage extends StatelessWidget {
                           ),
                         ),
                         onPressed: () {
-                          // Navegar para Como Funciona
+                          Navigator.pushNamed(context, '/comofunciona');
                         },
                         child: const Text('Saiba Como Funciona'),
                       ),
@@ -161,7 +172,7 @@ class MainPage extends StatelessWidget {
                               ),
                             ),
                             onPressed: () {
-                              // Navegar para habilidades
+                              Navigator.pushNamed(context, '/habilidade');
                             },
                             child: const Text('Explorar Habilidades'),
                           ),
@@ -176,7 +187,7 @@ class MainPage extends StatelessWidget {
                               ),
                             ),
                             onPressed: () {
-                              // Navegar para mercado
+                              Navigator.pushNamed(context, '/mercado');
                             },
                             child: const Text('Visitar Mercado'),
                           ),
