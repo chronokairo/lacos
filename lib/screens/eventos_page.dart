@@ -92,6 +92,7 @@ class _EventosPageState extends State<EventosPage> {
                       titulo: _tituloController.text,
                       descricao: _descricaoController.text,
                       data: _dataEvento!,
+                      creatorId: LocalDataService().usuarioLogado?.id ?? '',
                     ),
                   );
                   setState(() {});

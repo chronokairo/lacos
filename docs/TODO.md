@@ -25,27 +25,38 @@
 - [x] Widget drawer para navegação
 - [x] Temas e estilos básicos aplicados
 
+### ✅ **Segurança e Validação (Implementado em Dezembro 2024)**
+- [x] Hash de senhas implementado (proteção básica)
+- [x] Validação robusta de formulários com regex
+- [x] Sanitização de inputs para prevenir XSS
+- [x] Remoção de credenciais hardcoded do repositório
+- [x] Tratamento abrangente de erros com try-catch
+- [x] Widgets reutilizáveis de erro e loading
+- [x] Diálogos de confirmação para ações destrutivas
+- [x] Extração de constantes para arquivo dedicado
+- [x] Validação de email duplicado no cadastro
+- [x] Feedback adequado para usuário em erros
+
 ## Em andamento
 <!-- Adicione aqui itens que estão em desenvolvimento -->
 
 ## A fazer
 
-### 🔒 **URGENTE - Segurança (Crítico)**
-- [ ] Implementar hash de senhas (bcrypt) - **CRÍTICO - senhas em texto plano**
-- [ ] Remover credenciais hardcoded do repositório (usuarios.json)
-- [ ] Adicionar sanitização e validação de inputs
-- [ ] Implementar autenticação segura baseada em tokens
+### 🔒 **URGENTE - Segurança Restante (Crítico)**
+- [ ] Implementar autenticação segura baseada em tokens JWT
 - [ ] Adicionar rate limiting e validação de sessão
-- [ ] Implementar HTTPS e headers seguros
+- [ ] Implementar HTTPS e headers seguros no backend
+- [ ] Melhorar hash de senhas (usar crypto package com bcrypt/scrypt)
+- [ ] Implementar logout automático por inatividade
+- [ ] Adicionar verificação de força de senha (maiúscula, símbolo)
 
 ### ⚠️ **Alta Prioridade**
-- [ ] Implementar tratamento abrangente de erros (try-catch, error boundaries)
-- [ ] Adicionar validação robusta de formulários (regex email, senha forte)
 - [ ] Implementar gerenciamento de estado adequado (Provider/Riverpod/Bloc)
 - [ ] Adicionar persistência local de dados (SQLite/Hive)
 - [ ] Criar sistema de testes abrangente (widget, integration, unit)
-- [ ] Adicionar estados de loading para todas operações async
-- [ ] Implementar diálogos de confirmação para ações destrutivas
+- [ ] Implementar error boundaries para widgets
+- [ ] Adicionar logs estruturados e monitoramento
+- [ ] Implementar recuperação de senha via email
 
 ### 🎨 **Experiência do Usuário**
 - [ ] Padronizar componentes UI (design system)
@@ -82,13 +93,14 @@
 - [ ] Suporte para scaling de texto
 
 ### 🏗️ **Arquitetura e Código**
-- [ ] Refatorar LocalDataService em serviços específicos
-- [ ] Extrair constantes para arquivo dedicado
+- [ ] Refatorar LocalDataService em serviços específicos (UserService, EventService)
 - [ ] Dividir widgets grandes em componentes menores
 - [ ] Implementar documentação e comentários
 - [ ] Padronizar convenções de nomenclatura
 - [ ] Remover imports não utilizados e código morto
 - [ ] Garantir null safety completo
+- [ ] Implementar padrão Repository para abstração de dados
+- [ ] Criar interceptors para requisições HTTP
 
 ### 🧪 **Testes**
 - [ ] Testes de widget para todas as telas

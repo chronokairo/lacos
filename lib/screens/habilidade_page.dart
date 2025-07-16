@@ -61,6 +61,7 @@ class _HabilidadePageState extends State<HabilidadePage> {
                       id: DateTime.now().millisecondsSinceEpoch.toString(),
                       nome: _nomeController.text,
                       descricao: _descricaoController.text,
+                      userId: usuario.id,
                     );
                     setState(() {
                       usuario.habilidades = [
@@ -126,6 +127,7 @@ class _HabilidadePageState extends State<HabilidadePage> {
                           id: habilidade.id,
                           nome: _nomeController.text,
                           descricao: _descricaoController.text,
+                          userId: usuario.id,
                         );
                       }
                     });
@@ -148,7 +150,9 @@ class _HabilidadePageState extends State<HabilidadePage> {
       context: context,
       builder: (context) => AlertDialog(
         title: const Text('Confirmar Exclusão'),
-        content: Text('Deseja realmente remover a habilidade "${habilidade.nome}"?'),
+        content: Text(
+          'Deseja realmente remover a habilidade "${habilidade.nome}"?',
+        ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
@@ -167,7 +171,9 @@ class _HabilidadePageState extends State<HabilidadePage> {
               }
               Navigator.pop(context);
               ScaffoldMessenger.of(context).showSnackBar(
-                const SnackBar(content: Text('Habilidade removida com sucesso')),
+                const SnackBar(
+                  content: Text('Habilidade removida com sucesso'),
+                ),
               );
             },
             child: const Text('Remover'),

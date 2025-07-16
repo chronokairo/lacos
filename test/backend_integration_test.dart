@@ -11,6 +11,7 @@ void main() {
         titulo: 'Evento Teste',
         descricao: 'Descrição',
         data: DateTime.now(),
+        creatorId: 'creator_1',
       );
       service.adicionarEvento(evento);
       expect(service.eventos.length, greaterThan(0));
@@ -31,6 +32,7 @@ void main() {
         id: 'h1',
         nome: 'Dart',
         descricao: 'Linguagem',
+        userId: '2',
       );
       service.adicionarHabilidadeAoUsuario('2', habilidade);
       expect(

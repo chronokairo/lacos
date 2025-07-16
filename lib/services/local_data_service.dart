@@ -1,6 +1,6 @@
 import 'dart:convert';
-import 'dart:math';
 import '../models/models.dart';
+import '../constants/app_constants.dart';
 
 /// Serviço local para simular persistência de dados em memória.
 class LocalDataService {
@@ -19,19 +19,18 @@ class LocalDataService {
   bool autenticar(String email, String senha) {
     try {
       if (email.isEmpty || senha.isEmpty) return false;
-      
+
       final user = _usuarios.firstWhere(
         (u) => u.email.toLowerCase() == email.toLowerCase(),
         orElse: () => Usuario(id: '', nome: '', email: '', senha: ''),
       );
-      
+
       if (user.id.isNotEmpty && _verificarSenha(senha, user.senha)) {
         _usuarioLogado = user;
         return true;
       }
       return false;
     } catch (e) {
-      print('Erro na autenticação: $e');
       return false;
     }
   }
@@ -46,16 +45,20 @@ class LocalDataService {
       if (!_validarEmail(usuario.email)) {
         throw Exception('Email inválido');
       }
-      
+
       if (!_validarSenha(usuario.senha)) {
-        throw Exception('Senha deve ter pelo menos 6 caracteres');
+        throw Exception(
+          'Senha deve ter pelo menos ${AppConstants.minPasswordLength} caracteres',
+        );
       }
-      
+
       // Verificar se email já existe
-      if (_usuarios.any((u) => u.email.toLowerCase() == usuario.email.toLowerCase())) {
+      if (_usuarios.any(
+        (u) => u.email.toLowerCase() == usuario.email.toLowerCase(),
+      )) {
         throw Exception('Email já cadastrado');
       }
-      
+
       // Hash da senha antes de salvar
       final usuarioComSenhaHash = Usuario(
         id: usuario.id,
@@ -64,11 +67,10 @@ class LocalDataService {
         senha: _hashSenha(usuario.senha),
         habilidades: usuario.habilidades,
       );
-      
+
       _usuarios.add(usuarioComSenhaHash);
       return true;
     } catch (e) {
-      print('Erro no cadastro: $e');
       return false;
     }
   }
@@ -93,20 +95,19 @@ class LocalDataService {
       if (user.id.isNotEmpty) {
         final habilidadeSanitizada = Habilidade(
           id: habilidade.id,
+          userId: user.id,
           nome: _sanitizarTexto(habilidade.nome),
           descricao: _sanitizarTexto(habilidade.descricao),
         );
         user.habilidades = [...user.habilidades, habilidadeSanitizada];
       }
-    } catch (e) {
-      print('Erro ao adicionar habilidade: $e');
-    }
+    } catch (e) {}
   }
 
   // Métodos de segurança e validação
   String _hashSenha(String senha) {
     // Implementação simples de hash (em produção usar crypto package)
-    final bytes = utf8.encode(senha + 'salt_lacos_2024');
+    final bytes = utf8.encode(senha + AppConstants.passwordSalt);
     final digest = bytes.fold(0, (prev, curr) => prev + curr);
     return digest.toString();
   }
@@ -121,13 +122,14 @@ class LocalDataService {
   }
 
   bool _validarSenha(String senha) {
-    return senha.length >= 6;
+    return senha.length >= AppConstants.minPasswordLength;
   }
 
   String _sanitizarTexto(String texto) {
     // Remove caracteres perigosos e normaliza
-    return texto.trim()
-        .replaceAll(RegExp(r'[<>"\']'), '')
+    return texto
+        .trim()
+        .replaceAll(RegExp(r'''[<>"']'''), '')
         .replaceAll(RegExp(r'\s+'), ' ');
   }
 }
