@@ -79,6 +79,72 @@ class ComoFuncionaPage extends StatelessWidget {
               ),
             ),
           ),
+          const SizedBox(height: 24),
+
+          // Como Funciona o Agente IA
+          Card(
+            elevation: 4,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Container(
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(16),
+                gradient: LinearGradient(
+                  colors: [Colors.purple.shade50, Colors.blue.shade50],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+              ),
+              padding: const EdgeInsets.all(20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.psychology,
+                        color: Color(0xFF6f42c1),
+                        size: 28,
+                      ),
+                      SizedBox(width: 12),
+                      Text(
+                        'Como Funciona o Agente IA?',
+                        style: TextStyle(
+                          color: Color(0xFF6f42c1),
+                          fontSize: 22,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 16),
+                  Text(
+                    'O Laços possui um agente inteligente que funciona como seu assistente pessoal para encontrar as melhores conexões e oportunidades de troca:',
+                    style: TextStyle(fontSize: 16, height: 1.5),
+                  ),
+                  SizedBox(height: 12),
+                  _AgentFeature(
+                    icon: Icons.search,
+                    title: 'Encontra Matches Perfeitos',
+                    description: 'Analisa seu perfil e encontra usuários com habilidades complementares, calculando a compatibilidade ideal.',
+                  ),
+                  SizedBox(height: 12),
+                  _AgentFeature(
+                    icon: Icons.recommend,
+                    title: 'Recomendações Personalizadas',
+                    description: 'Sugere novas habilidades para aprender baseado em seus interesses e nas tendências da plataforma.',
+                  ),
+                  SizedBox(height: 12),
+                  _AgentFeature(
+                    icon: Icons.lightbulb,
+                    title: 'Dicas Inteligentes',
+                    description: 'Oferece dicas personalizadas para melhorar seu perfil e aumentar suas chances de sucesso nas trocas.',
+                  ),
+                ],
+              ),
+            ),
+          ),
           const SizedBox(height: 32),
 
           // Como funciona? (Steps)
@@ -290,6 +356,60 @@ class _BulletList extends StatelessWidget {
             ),
           )
           .toList(),
+    );
+  }
+}
+
+class _AgentFeature extends StatelessWidget {
+  final IconData icon;
+  final String title;
+  final String description;
+
+  const _AgentFeature({
+    required this.icon,
+    required this.title,
+    required this.description,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          padding: const EdgeInsets.all(8),
+          decoration: BoxDecoration(
+            color: const Color(0xFF6f42c1).withOpacity(0.1),
+            borderRadius: BorderRadius.circular(8),
+          ),
+          child: Icon(
+            icon,
+            color: const Color(0xFF6f42c1),
+            size: 20,
+          ),
+        ),
+        const SizedBox(width: 12),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  color: Color(0xFF6f42c1),
+                ),
+              ),
+              const SizedBox(height: 4),
+              Text(
+                description,
+                style: const TextStyle(fontSize: 14, height: 1.4),
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

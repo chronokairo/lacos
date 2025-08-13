@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'providers/auth_provider.dart';
 import 'providers/skills_provider.dart';
 import 'providers/events_provider.dart';
+import 'providers/agent_provider.dart';
 import 'screens/login/login_page.dart';
 import 'screens/login/cadastro_page.dart';
 import 'screens/comofunciona_page.dart';
@@ -13,6 +14,7 @@ import 'screens/mercado_page.dart';
 import 'screens/main_page.dart';
 import 'screens/onboarding_page.dart';
 import 'screens/splash_screen.dart';
+import 'screens/agente_page.dart';
 import 'theme/app_theme.dart';
 
 void main() {
@@ -48,6 +50,17 @@ class MyApp extends StatelessWidget {
             return events ?? EventsProvider();
           },
         ),
+        ChangeNotifierProxyProvider<AuthProvider, AgentProvider>(
+          create: (_) => AgentProvider(),
+          update: (_, auth, agent) {
+            if (auth.isAuthenticated && auth.currentUser != null && agent != null) {
+              agent.carregarDadosAgente(auth.currentUser!.id);
+            } else if (!auth.isAuthenticated && agent != null) {
+              agent.limparDados();
+            }
+            return agent ?? AgentProvider();
+          },
+        ),
       ],
       child: Consumer<AuthProvider>(
         builder: (context, authProvider, _) {
@@ -65,6 +78,7 @@ class MyApp extends StatelessWidget {
               '/mercado': (context) => const MercadoPage(),
               '/main': (context) => const MainPage(),
               '/onboarding': (context) => const OnboardingPage(),
+              '/agente': (context) => const AgentePage(),
             },
           );
         },

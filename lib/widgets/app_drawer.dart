@@ -67,6 +67,15 @@ class AppDrawer extends StatelessWidget {
                 },
               ),
               ListTile(
+                leading: const Icon(Icons.psychology),
+                title: const Text('Agente IA'),
+                subtitle: const Text('Recomendações e matches'),
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.pushNamed(context, '/agente');
+                },
+              ),
+              ListTile(
                 leading: const Icon(Icons.help),
                 title: const Text('Como Funciona'),
                 onTap: () {
