@@ -19,7 +19,10 @@ A new Flutter project.
 - **Eventos:** Veja, adicione e detalhe eventos.
 - **Habilidades:** Gerencie suas habilidades (adicionar, editar, remover).
 - **Mercado:** Gerencie itens do mercado (adicionar, visualizar, remover).
+- **Agente IA:** Descubra matches perfeitos e recomendações personalizadas baseadas em inteligência artificial.
 
 ## Documentação detalhada
 
 Consulte o arquivo [`docs/USO.md`](docs/USO.md) para instruções detalhadas de uso de cada página.
+
+Para entender como funciona o Agente IA, consulte [`docs/AGENTE.md`](docs/AGENTE.md).

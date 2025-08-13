@@ -17,6 +17,7 @@
 - [x] Validação básica de formulários (campos obrigatórios)
 - [x] Tema personalizado e design consistente
 - [x] Página "Como Funciona" com conteúdo informativo
+- [x] Sistema de Agente IA com recomendações e matching inteligente
 
 ### ✅ **Estrutura e Organização**
 - [x] Estrutura básica de pastas e arquivos
@@ -68,12 +69,12 @@
 - [ ] Adicionar animações e transições suaves
 
 ### 🚀 **Funcionalidades Principais Faltantes**
-- [ ] Sistema real de matching/troca de habilidades
+- [x] Sistema real de matching/troca de habilidades (implementado via Agente IA)
 - [ ] Sistema de mensagens/chat in-app
 - [ ] Perfis completos de usuário com fotos
 - [ ] Sistema de avaliações e reviews
 - [ ] Sistema de notificações push
-- [ ] Algoritmo de recomendação de habilidades
+- [x] Algoritmo de recomendação de habilidades (implementado via Agente IA)
 - [ ] Configurações e preferências do usuário
 
 ### ⚡ **Performance**

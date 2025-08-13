@@ -27,3 +27,9 @@
 - Veja a lista de itens do mercado.
 - Clique no botão "+" para adicionar um novo item.
 - Toque em um item para ver detalhes e removê-lo se desejar.
+
+## Agente IA
+- Acesse recomendações personalizadas baseadas em seu perfil.
+- Veja matches com outros usuários e suas compatibilidades.
+- Receba dicas inteligentes para melhorar sua experiência na plataforma.
+- O agente analisa suas habilidades e sugere conexões relevantes automaticamente.
